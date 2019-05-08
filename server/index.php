@@ -1,5 +1,5 @@
 <?php
-<?php require_once("functions.php");?>
+require_once("functions.php");
 if (isset($_GET["do"])) {
     $do=$_GET["do"];
 } else {

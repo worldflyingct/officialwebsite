@@ -8,42 +8,83 @@ function ExecuteSql ($sql, $params=array()) {
     return $stmt->fetchAll();
 }
 
-function websitetitle () {
-    $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='title'");
-    echo $res[0]["cvalue"];
+function WebsiteTitle () {
+    static $title = null;
+    if ($title === null) {
+        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='title'");
+        $title = $res[0]["cvalue"];
+    }
+    echo $title;
 }
 
-function websitekeywords () {
-    $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='keywords'");
-    echo $res[0]["cvalue"];
+function WebsiteKeyWords () {
+    static $keywords = null;
+    if ($keywords === null) {
+        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='keywords'");
+        $keywords = $res[0]["cvalue"];
+    }
+    echo $keywords;
 }
 
-function websitedescription () {
-    $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='description'");
-    echo $res[0]["cvalue"];
+function WebsiteDescription () {
+    static $description = null;
+    if ($description === null) {
+        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='description'");
+        $description = $res[0]["cvalue"];
+    }
+    echo $description;
 }
 
-function websiteaddress () {
-    $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='address'");
-    echo $res[0]["cvalue"];
+function WebsiteAddress () {
+    static $address = null;
+    if ($address === null) {
+        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='address'");
+        $address = $res[0]["cvalue"];
+    }
+    echo $address;
 }
 
-function websiteQQ () {
-    $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='QQ'");
-    echo $res[0]["cvalue"];
+function WebsiteQQ () {
+    static $QQ = null;
+    if ($QQ === null) {
+        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='QQ'");
+        $QQ = $res[0]["cvalue"];
+    }
+    echo $QQ;
 }
 
-function websitetelephone () {
-    $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='telephone'");
-    echo $res[0]["cvalue"];
+function WebsiteTelephone () {
+    static $telephone = null;
+    if ($telephone === null) {
+        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='telephone'");
+        $telephone = $res[0]["cvalue"];
+    }
+    echo $telephone;
 }
 
-function websitemobile () {
-    $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='mobile'");
-    echo $res[0]["cvalue"];
+function WebsiteMobile () {
+    static $mobile = null;
+    if ($mobile === null) {
+        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='mobile'");
+        $mobile = $res[0]["cvalue"];
+    }
+    echo $mobile;
 }
 
-function websiteemail () {
-    $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='email'");
-    echo $res[0]["cvalue"];
+function WebsiteEmail () {
+    static $email = null;
+    if ($email === null) {
+        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='email'");
+        $email = $res[0]["cvalue"];
+    }
+    echo $email;
+}
+
+function WebsiteImportantWord () {
+    static $importantword = null;
+    if ($importantword === null) {
+        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='importantword'");
+        $importantword = $res[0]["cvalue"];
+    }
+    echo $importantword;
 }

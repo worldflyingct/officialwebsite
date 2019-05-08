@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="keywords" content="<?php websitekeywords ();?>"/>
-    <meta name="description" content="<?php websitedescription ();?>"/>
+    <meta name="keywords" content="<?php WebsiteKeyWords ();?>"/>
+    <meta name="description" content="<?php WebsiteDescription ();?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="imgs/favicon.ico">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/wbootstrap.css">
     <link rel="stylesheet" href="css/windex.css">
     <link rel="stylesheet" type="text/css" href="css/xinnav.css">
-    <title><?php websitetitle ();?>_首页</title>
+    <title><?php WebsiteTitle ();?>_首页</title>
     <script src="js/wjquery-3.1.0.min.js"></script>
     <script src="js/wbootstrap.min.js"></script>
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
@@ -20,7 +20,7 @@
 <?php require("header.php");?>
 <div class="main">
         <div class="elevator1">
-            <img style="width:100%;" src="imgs/wbg2.png" alt="武汉app开发">
+            <img style="width:100%;" src="imgs/wbg2.png" alt="<?php WebsiteImportantWord ();?>">
         </div>
         <div class="elevator2">
             <div class="bg">
@@ -168,7 +168,7 @@
                             <ul class="left-ul">
                                 <li>
                                     <div class="strength-profile-left">
-                                        <img src="imgs/mafan/strength1.png" alt="武汉app开发">
+                                        <img src="imgs/mafan/strength1.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                     <div class="strength-profile-right">
                                         <p>一支优秀的团队</p>
@@ -177,7 +177,7 @@
                                 </li>
                                 <li>
                                     <div class="strength-profile-left">
-                                        <img src="imgs/mafan/strength2.png" alt="武汉app开发">
+                                        <img src="imgs/mafan/strength2.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                     <div class="strength-profile-right">
                                         <p>扎实的技术</p>
@@ -186,7 +186,7 @@
                                 </li>
                                 <li>
                                     <div class="strength-profile-left">
-                                        <img src="imgs/mafan/strength3.png" alt="武汉app开发">
+                                        <img src="imgs/mafan/strength3.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                     <div class="strength-profile-right">
                                         <p>个性化设计</p>
@@ -197,7 +197,7 @@
                         </div>
                         <div class="strength-center">
                             <p class="center-icon">
-                                <img src="imgs/mafan/strength7.png" alt="武汉app开发">
+                                <img src="imgs/mafan/strength7.png" alt="<?php WebsiteImportantWord ();?>">
                             </p>
                             <p class="center-title">标准化的管理开发流程</p>
                             <p class="center-content">从商务洽谈、需求分析到项目交付乃至售后服务的全流程，均采取先进的科学管理模式，并对客户可见，放心、可靠。</p>
@@ -206,7 +206,7 @@
                             <ul class="left-ul">
                                 <li style="border-right: 1px solid #3e3e3e;border-left: none">
                                     <div class="strength-profile-left">
-                                        <img src="imgs/mafan/strength4.png" alt="武汉app开发">
+                                        <img src="imgs/mafan/strength4.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                     <div class="strength-profile-right">
                                         <p>用户需求的精准把控</p>
@@ -215,7 +215,7 @@
                                 </li>
                                 <li style="border-right: 1px solid #3e3e3e;border-left: none">
                                     <div class="strength-profile-left">
-                                        <img src="imgs/mafan/strength5.png" alt="武汉app开发">
+                                        <img src="imgs/mafan/strength5.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                     <div class="strength-profile-right">
                                         <p>行业前瞻和洞悉</p>
@@ -224,7 +224,7 @@
                                 </li>
                                 <li style="border-right: 1px solid #3e3e3e;border-left: none">
                                     <div class="strength-profile-left">
-                                        <img src="imgs/mafan/strength6.png" alt="武汉app开发">
+                                        <img src="imgs/mafan/strength6.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                     <div class="strength-profile-right">
                                         <p>完善的售后跟踪服务</p>
@@ -245,7 +245,7 @@
                 <p>segmentation scheme</p>
             </div>
             <div class="dbody">
-                <img src="imgs/welevator5.png" alt="武汉app开发">
+                <img src="imgs/welevator5.png" alt="<?php WebsiteImportantWord ();?>">
             </div>
         </div>
     </div>
@@ -259,11 +259,11 @@
                 <img src="imgs/erweima.jpg" alt="">
             </div>
             <div class="zi">
-                <p>地址：<?php websiteaddress ();?></p>
-                <p>QQ：<?php websiteQQ ();?></p>
-                <p>电话：<?php websitetelephone ();?></p>
-                <p>手机：<?php websitemobile ();?></p>
-                <p>邮箱：<?php websiteemail ();?></p>
+                <p>地址：<?php WebsiteQQ ();?></p>
+                <p>QQ：<?php WebsiteQQ ();?></p>
+                <p>电话：<?php WebsiteTelephone ();?></p>
+                <p>手机：<?php WebsiteMobile ();?></p>
+                <p>邮箱：<?php WebsiteEmail ();?></p>
             </div>
         </div>
     </div>

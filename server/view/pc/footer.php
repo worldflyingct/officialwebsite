@@ -2,27 +2,27 @@
     <ul>
         <li><span>在线咨询</span><img id="close" src="imgs/close.png"></li>
         <li class="qqhao">
-            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php websiteQQ ();?>&site=qq&menu=yes">
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php WebsiteQQ ();?>&site=qq&menu=yes">
                 <i></i>
             </a>
-            <i></i><?php websiteQQ ();?></li>
+            <i></i><?php WebsiteQQ ();?></li>
         <li>
             <div><i></i>联系方式</div>
-            <p><?php websitetelephone ();?></p>
+            <p><?php WebsiteTelephone ();?></p>
         </li>
     </ul>
 </div>
 <div class="footer">
     <div class="top">
-        <img src="imgs/wcontact-bg.png" alt="武汉app开发">
+        <img src="imgs/wcontact-bg.png" alt="<?php WebsiteImportantWord ();?>">
     </div>
     <div class="bottom clearfix">
         <ul>
-            <li>地址：<?php websiteaddress ();?></li>
-            <li>QQ：<?php websiteQQ ();?></li>
-            <li>电话：<?php websitetelephone ();?></li>
-            <li>手机：<?php websitemobile ();?></li>
-            <li>邮箱：<?php websiteemail ();?></li>
+            <li>地址：<?php WebsiteQQ ();?></li>
+            <li>QQ：<?php WebsiteQQ ();?></li>
+            <li>电话：<?php WebsiteTelephone ();?></li>
+            <li>手机：<?php WebsiteMobile ();?></li>
+            <li>邮箱：<?php WebsiteEmail ();?></li>
         </ul>
         <div id="container"></div>
     </div>

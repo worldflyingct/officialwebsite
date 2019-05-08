@@ -22,7 +22,7 @@
 </script>
 <nav>
     <div class="nav-center">
-        <div class="logo"><img src="imgs/wlogo2.png" alt="武汉app开发"></div>
+        <div class="logo"><img src="imgs/wlogo2.png" alt="<?php WebsiteImportantWord ();?>"></div>
         <ul class="navbar">
             <li>
 <?php if ($do == "index") { ?>

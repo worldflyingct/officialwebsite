@@ -1,0 +1,43 @@
+nav {
+    position: fixed;
+    top: 0px;
+    z-index: 9999;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    height: 67px;
+}
+nav:hover {
+    box-shadow: 0 4px 3px rgba(167,164,164,0.4);
+    transition: box-shadow .5s ease-in-out;
+}
+
+.nav-center {
+    width: 90%;
+    height: 53px;
+    margin: 7px auto;
+}
+.logo {
+    display: inline-block;
+    float: left;
+}
+.navbar {
+    float: right;
+    height: 100%;
+    margin: 0;
+    border: 0;
+}
+.navbar li {
+    float: left;
+    height: 100%;
+    margin: 0px 30px;
+}
+.navbar a {
+    display: inline-block;
+    height: 100%;
+    line-height: 4em;
+    color: rgb(177, 177, 177);
+    text-decoration: none;
+}
+.navbar a:hover{
+    color: #000;
+}

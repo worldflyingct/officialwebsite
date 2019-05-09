@@ -35,7 +35,7 @@
 <?php if ($do == "iot") { ?>
                 <a href="#" style="color: #000" >物联网</a>
 <?php } else { ?>
-                <a href="/lot.html"  >物联网</a>
+                <a href="/iot.html"  >物联网</a>
 <?php } ?>
             </li>
             <li>

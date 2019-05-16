@@ -259,7 +259,7 @@
                 <img src="imgs/erweima.jpg" alt="">
             </div>
             <div class="zi">
-                <p>地址：<?php WebsiteQQ ();?></p>
+                <p>地址：<?php WebsiteAddress ();?></p>
                 <p>QQ：<?php WebsiteQQ ();?></p>
                 <p>电话：<?php WebsiteTelephone ();?></p>
                 <p>手机：<?php WebsiteMobile ();?></p>
@@ -281,9 +281,7 @@
                 map.panTo(new_point);
         }
         theLocation();
-
-
-         var i=0;
+        var i=0;
         $(".contact").mouseover(function(){
             if(i==0){
                 $(this).animate({right:"0px"});

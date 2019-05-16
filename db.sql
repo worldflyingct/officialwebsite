@@ -13,11 +13,29 @@
 
 -- Dumping structure for table homepage.wf_config
 CREATE TABLE IF NOT EXISTS `wf_config` (
-  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `ckey` varchar(16) NOT NULL DEFAULT '',
   `cvalue` longtext NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+-- Data exporting was unselected.
+-- Dumping structure for table homepage.wf_news
+CREATE TABLE IF NOT EXISTS `wf_news` (
+  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `pagetitle` varchar(50) NOT NULL,
+  `pagedescription` text NOT NULL,
+  `pagekeyword` varchar(128) NOT NULL,
+  `articletitle` varchar(50) NOT NULL,
+  `articlecontext` text NOT NULL,
+  `thumbnail` varchar(50) NOT NULL,
+  `articletype` tinyint(4) NOT NULL,
+  `createtime` datetime NOT NULL,
+  `modifytime` datetime NOT NULL,
+  `publishtime` datetime NOT NULL,
+  `status` bit(1) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -88,3 +88,62 @@ function WebsiteImportantWord () {
     }
     echo $importantword;
 }
+
+function GetNewsList () {
+    static $newsList = null;
+    global $_GET;
+    if ($newsList === null) {
+        $offset = isset($_GET["page"]) ? $_GET["page"]-1 : 0;
+        if (isset($_GET["type"])) {
+            $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `articletype`=? AND `publishtime` < NOW() LIMIT 5 OFFSET ?";
+            $param = array ($_GET["type"], $offset);
+        } else {
+            $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `publishtime` < NOW() LIMIT 5 OFFSET ?";
+            $param = array ($offset);
+        }
+        $res = ExecuteSql ($sql, $param);
+        $newsList = $res;
+    }
+    return $newsList;
+}
+
+function GetNewsTotalPage () {
+    static $totalpage = null;
+    global $_GET;
+    if ($totalpage === null) {
+        if (isset($_GET["type"])) {
+            $sql = "SELECT COUNT(*) as count FROM `wf_news` WHERE `status`=1 AND `articletype`=? AND `publishtime` < NOW()";
+            $param = array ($_GET["type"]);
+        } else {
+            $sql = "SELECT COUNT(*) as count FROM `wf_news` WHERE `status`=1 AND `publishtime` < NOW()";
+            $param = array ();
+        }
+        $res = ExecuteSql ($sql, $param);
+        $newscount = $res[0]["count"];
+        $totalpage = ceil($newscount / 5);
+    }
+    return $totalpage;
+}
+
+function GetNewsPaging () {
+    static $pagings = null;
+    global $_GET;
+    if ($pagings === null) {
+        $totalpage = GetNewsTotalPage ();
+        $page = isset($_GET["page"]) ? $_GET["page"] : 1;
+        if ($totalpage < 5) {
+            $t = array ();
+            for ($i=1;$i<-$totalpage;$i++) {
+                array_push($t, $i);
+            }
+            $pagings = $t;
+        } else if ($totalpage - $page > 2) {
+            $pagings = array ($page-2, $page-1, $page, $page+1, $page+2);
+        } else if ($page < 2) {
+            $pagings = array (1,2,3,4,5);
+        } else {
+            $pagings = array ($totalpage-5, $totalpage-4, $totalpage-3, $totalpage-2, $totalpage-1);
+        }
+    }
+    return $pagings;
+}

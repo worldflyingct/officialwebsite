@@ -63,7 +63,7 @@
 <?php if ($do == "join") { ?>
                 <a href="#" style="color: #000" >人才合作</a>
 <?php } else { ?>
-                <a href="/index-our-rencai.html"  >人才合作</a>
+                <a href="/recruit.html"  >人才合作</a>
 <?php } ?>
             </li>
         </ul>

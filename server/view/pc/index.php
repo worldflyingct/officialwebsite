@@ -32,7 +32,7 @@
                     <div class="clearfix">
                         <ul class="one">
                             <li>
-                                <a href="/index-solution-gym.html">
+                                <a href="/gym.html">
                                     <div></div>
                                     <h3>仓储管理系统</h3>
                                     <i></i>
@@ -48,7 +48,7 @@
                         </ul>
                         <ul class="tow">
                             <li>
-                                <a href="/index-solution-nongye.html">
+                                <a href="/agriculture.html">
                                     <div></div>
                                     <h3>智慧农业</h3>
                                     <i></i>

@@ -6,7 +6,7 @@
     <meta name="description" content="<?php WebsiteDescription ();?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="imgs/favicon2.ico">
+    <link rel="shortcut icon" href="imgs/favicon.ico">
     <link rel="stylesheet" href="css/winit.css">
     <link rel="stylesheet" href="css/wbootstrap.css">
     <link rel="stylesheet" href="css/xinnav.css">
@@ -42,14 +42,14 @@
         <h3>从消费级到工业级物联网，满足你所需</h3>
         <p><span></span></p>
         <ul>
-            <li><img src="imgs/IoT/fdhg.png" alt=""></li>
-            <li><img src="imgs/IoT/fghfg.png" alt=""></li>
-            <li><img src="imgs/IoT/dfhd.png" alt=""></li>
-            <li><img src="imgs/IoT/rtfh.png" alt=""></li>
-            <li><img src="imgs/IoT/vcnjvfbn.png" alt=""></li>
-            <li><img src="imgs/IoT/vngvg.png" alt=""></li>
-            <li><img src="imgs/IoT/cxgfhgf.png" alt=""></li>
-            <li><img src="imgs/IoT/dfhdhd.png" alt=""></li>
+            <li><img src="imgs/IoT/fdhg.png" alt="<?php WebsiteImportantWord ();?>"></li>
+            <li><img src="imgs/IoT/fghfg.png" alt="<?php WebsiteImportantWord ();?>"></li>
+            <li><img src="imgs/IoT/dfhd.png" alt="<?php WebsiteImportantWord ();?>"></li>
+            <li><img src="imgs/IoT/rtfh.png" alt="<?php WebsiteImportantWord ();?>"></li>
+            <li><img src="imgs/IoT/vcnjvfbn.png" alt="<?php WebsiteImportantWord ();?>"></li>
+            <li><img src="imgs/IoT/vngvg.png" alt="<?php WebsiteImportantWord ();?>"></li>
+            <li><img src="imgs/IoT/cxgfhgf.png" alt="<?php WebsiteImportantWord ();?>"></li>
+            <li><img src="imgs/IoT/dfhdhd.png" alt="<?php WebsiteImportantWord ();?>"></li>
         </ul>
     </div>
     <div class="tower5">

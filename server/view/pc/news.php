@@ -51,28 +51,37 @@
         </div>
         <div class="new-page">
             <ul class="clearfix">
-                <li>
-                    <a href="/news<?php if (isset($_GET["type"])) echo "-type-".$_GET["type"];?>.html" class="bianse">首页</a>
-                </li>
 <?php
-foreach (GetNewsPaging() as $paging) {
-    $page = isset($_GET["page"]) ? $_GET["page"] : 1;
-    if ($page == $paging) {
+$page = isset($_GET["page"]) ? $_GET["page"] : 1;
+if ($page > 1) {
 ?>
                 <li>
-                    <a href="javascript:;" class="active-a"><?php echo $paging;?></a>
+                    <a href="news<?php if (isset($_GET["type"])) echo "-type-".$_GET["type"];?>.html" class="bianse">首页</a>
+                </li>
+<?php
+}
+$newsPagings = GetNewsPagings();
+foreach ($newsPagings as $newsPaging) {
+    if ($page == $newsPaging) {
+?>
+                <li>
+                    <a href="javascript:;" class="active-a"><?php echo $newsPaging;?></a>
                 </li>
 <?php } else { ?>
                 <li>
-                    <a href="news-<?php if (isset($_GET["type"])) echo "-type-".$_GET["type"];if ($paging != 1) echo "-page-".$paging;?>.html"><?php echo $paging;?></a>
+                    <a href="news-<?php if (isset($_GET["type"])) echo "-type-".$_GET["type"];if ($newsPaging != 1) echo "-page-".$newsPaging;?>.html"><?php echo $newsPaging;?></a>
                 </li>
 <?php
     }
 }
+if ($page < GetNewsTotalPage ()) {
 ?>
                 <li>
                     <a href="news-<?php if (isset($_GET["type"])) echo "-type-".$_GET["type"]."-page-".GetNewsTotalPage ();?>.html" class="bianse">尾页</a>
                 </li>
+<?php
+}
+?>
             </ul>
         </div>
     </div>

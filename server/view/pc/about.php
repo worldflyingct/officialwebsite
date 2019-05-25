@@ -166,6 +166,7 @@
             </li>
         </ul>
     </div>
+<?php if (0) { ?>
     <div class="our-team">
         <h1>我们的团队</h1>
         <h3>Our team</h3>
@@ -335,6 +336,7 @@
             <div class="swiper-pagination"></div>
         </div>
     </div>
+<?php } ?>
     <div class="our-partner">
         <h1>我们的合作伙伴</h1>
         <h3>Our partners</h3>

@@ -8,6 +8,21 @@ function ExecuteSql ($sql, $params=array()) {
     return $stmt->fetchAll();
 }
 
+function IsMobile() {
+    $mobile_list = array('Android', 'iPhone', 'iPod', 'Mobile', 'Google Wireless Transcoder', 'Windows CE', 'WindowsCE', 'Symbian', 'armv6l', 'armv5', 'CentOS', 'mowser', 'AvantGo', 'Opera Mobi',
+        'J2ME/MIDP', 'Smartphone', 'Go.Web', 'Palm', 'iPAQ', 'Profile/MIDP', 'Configuration/CLDC-', '160×160', '176×220', '240×240', '240×320', '320×240', 'UP.Browser', 'UP.Link',
+        'SymbianOS', 'PalmOS', 'PocketPC', 'SonyEricsson', 'Nokia', 'BlackBerry', 'Vodafone', 'BenQ', 'Novarra-Vision', 'Iris', 'NetFront', 'HTC_', 'Xda_', 'SAMSUNG-SGH', 'Wapaka',
+        'DoCoMo');
+    $found_mobile = false;
+    foreach($mobile_list as $v) {
+        if(strstr($_SERVER['HTTP_USER_AGENT'], $v) != null) {
+            $found_mobile = true;
+            break;
+        }
+    }
+    return $found_mobile;
+}
+
 function WebsiteTitle () {
     static $title = null;
     if ($title === null) {
@@ -80,6 +95,15 @@ function WebsiteEmail () {
     echo $email;
 }
 
+function WebsiteRecord () {
+    static $record = null;
+    if ($record === null) {
+        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='record'");
+        $record = $res[0]["cvalue"];
+    }
+    echo $record;
+}
+
 function WebsiteImportantWord () {
     static $importantword = null;
     if ($importantword === null) {
@@ -125,7 +149,7 @@ function GetNewsTotalPage () {
     return $totalpage;
 }
 
-function GetNewsPaging () {
+function GetNewsPagings () {
     static $pagings = null;
     global $_GET;
     if ($pagings === null) {
@@ -146,4 +170,114 @@ function GetNewsPaging () {
         }
     }
     return $pagings;
+}
+
+function GetArticleInfo () {
+    static $info = null;
+    global $_GET;
+    if ($info === null) {
+        $res = ExecuteSql ("SELECT `title`,`desc`,`publishtime`,`context` FROM `wf_news` WHERE `Id`=? AND `publishtime` < NOW() AND `status`=1",
+                array ($_GET["id"]));
+        if (count($res) != 0) {
+            $info = $res[0];
+        } else {
+            $info = array (
+                "title" => "文章不存在",
+                "desc" => "文章不存在，请检查您的链接。",
+                "publishtime" => "0000-00-00 00:00:00",
+                "context" => "文章不存在，请检查您的链接。"
+            );
+        }
+    }
+    return $info;
+}
+
+function ArticleTitle () {
+    $info = GetArticleInfo ();
+    echo $info["title"];
+}
+
+function ArticleDesc () {
+    $info = GetArticleInfo ();
+    echo $info["desc"];
+}
+
+function ArticlePublicTime () {
+    $info = GetArticleInfo ();
+    echo $info["publishtime"];
+}
+
+function ArticleContext () {
+    $info = GetArticleInfo ();
+    echo $info["context"];
+}
+
+function GetPreviousArticleInfo () {
+    static $info = null;
+    global $_GET;
+    if ($info === null) {
+        if (isset($_GET["id"])) {
+            $res = ExecuteSql ("SELECT `ID`,`title` FROM `wf_news` WHERE `Id`<? AND `publishtime` < NOW() AND `status`=1 LIMIT 1",
+                    array ($_GET["id"]));
+            if (count($res) != 0) {
+                $info = $res[0];
+                return $info;
+            }
+        }
+        $info = array (
+            "ID" => 0,
+            "title" => "文章不存在"
+        );
+    }
+    return $info;
+}
+
+function PreviousArticleId () {
+    $info = GetPreviousArticleInfo ();
+    echo $info["ID"];
+}
+
+function PreviousArticleTitle () {
+    $info = GetPreviousArticleInfo ();
+    echo $info["title"];
+}
+
+function CheckPreviousArticle () {
+    $info = GetPreviousArticleInfo ();
+    return $info["ID"] === 0 ? false : true;
+}
+
+function GetNextArticleInfo () {
+    static $info = null;
+    global $_GET;
+    if ($info === null) {
+        if (isset($_GET["id"])) {
+            $res = ExecuteSql ("SELECT `ID`,`title` FROM `wf_news` WHERE `Id`>? AND `publishtime` < NOW() AND `status`=1 LIMIT 1",
+                    array ($_GET["id"]));
+            if (count($res) != 0) {
+                $info = $res[0];
+                return $info;
+            }
+        }
+        $info = array (
+            "ID" => 0,
+            "title" => "文章不存在"
+        );
+    }
+    return $info;
+}
+
+function NextArticleId () {
+    $info = GetNextArticleInfo ();
+    echo $info["ID"];
+}
+
+function NextArticleTitle () {
+    $info = GetNextArticleInfo ();
+    echo $info["title"];
+}
+
+function CheckNextArticle () {
+    $info = GetNextArticleInfo ();
+    return $info["ID"] === 0 ? false : true;
 }

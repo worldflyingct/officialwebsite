@@ -18,7 +18,7 @@
     </div>
     <div class="bottom clearfix">
         <ul>
-            <li>地址：<?php WebsiteQQ ();?></li>
+            <li>地址：<?php WebsiteAddress ();?></li>
             <li>QQ：<?php WebsiteQQ ();?></li>
             <li>电话：<?php WebsiteTelephone ();?></li>
             <li>手机：<?php WebsiteMobile ();?></li>
@@ -33,7 +33,7 @@
         <img src="imgs/erweima.jpg">
     </div>
     <div class="clearfix">
-        <p>鄂ICP备16014230号-1</p>
+        <p><?php WebsiteRecord ();?></p>
         <i id="chuxian" style="background: url('imgs/phone123.png')no-repeat;background-size: 100%;"></i>
         <i id="weixin" style="background: url(imgs/weixin123.png)no-repeat;background-size: 100%;"></i>
     </div>

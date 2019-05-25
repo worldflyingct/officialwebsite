@@ -1,0 +1,358 @@
+
+ body {
+    background: #fff;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
+    margin: 0;
+    padding: 0;
+}
+.contain{
+    width:100%;
+    margin:0 auto;
+    margin-top: 67px;
+}
+.contain>.section1{
+    width:100%;
+    margin:0 auto;
+    background:#dddfe1;
+}
+.contain>.section2{
+    width:100%;
+    margin:0 auto;
+    background:#dddfe1;
+}
+.contain>.section3{
+    width:100%;
+    height:600px;
+    margin:0 auto;
+    background:#dddfe1;
+}
+.contain>.section4{
+    width:100%;
+    margin-top:10%;
+    margin:0 auto;
+    background:#dddfe1;
+}
+/* ---------------------------------- */
+.contain>.section1>.power-back>img{
+    width: 100%;
+}
+.back>img{
+    width:30%;
+    height:18%;
+    position: absolute;
+    margin:0 auto;
+    top:23%;
+    left:35%;
+}
+.text{
+    position:absolute;
+    top:25%;
+    left:39.5%;
+}
+.text>.p1{
+    font-size: 330%;
+    color:white;
+}
+.text>.p2{
+    font-size: 120%;
+    color:white;
+    padding-left:7%;
+}
+/* ----------------------------- */
+.section2>.power-one{
+    width:1200px;
+    margin:0 auto;
+    height:560px;
+    padding-top: 4%;
+    position: relative;
+}
+.section2>.power-one>div{
+    float:left;
+}
+.section2>.power-one>.picture1{
+    width:55%;
+    height: 100%;
+}
+.section2>.power-one>.picture1>img{
+    width: 100%;
+    height: 98%;
+}
+.section2>.power-one>.text1{
+    width:45%;
+    height:548px;
+    background: #597aa3;
+}
+.section2>.power-one>.text1>p{
+    color:#fff;
+    font-size:18px;
+    padding:18% 10%;
+    text-align: left;
+}
+.text1>h2{
+    margin-top: 10%;
+    margin-left: 10%;
+    font-size: 30px;
+    color:#fff;
+}
+/* -------------------------------------------- */
+.section3>.power-two{
+    width:100%;
+    height:100%;
+    margin:0 auto;
+    position: relative;
+}
+.power-two>img{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+}
+.power-two>ul{
+    width:1200px;
+    left:50%;
+    margin-left: -600px;
+    top:10%;
+    position: absolute;
+}
+.power-two>ul>li{
+    width:254px;
+    height:231px;
+    padding: 12px 72px 0 72px;
+    font-size: 13px;
+    color: #fff; 
+    border:1px solid #fff;
+    float:left;
+    text-align: left;
+}
+.power-two>ul>li>p{
+    margin-top:5%;
+    margin-bottom: 5%;
+    font-size: 16px;
+}
+/* --------------------------------- */
+.section4>.power-three{
+    width:1200px;
+    height:3560px;
+    padding-top:8%;
+    margin:0 auto;
+}
+.power-three>.title>{
+    width:1200px;
+    margin:0 auto;
+    height:60px;
+}
+.power-three>.title>h2{
+    font-size: 30px;
+    font-weight:bold;
+}
+.power1{
+    width:1200px;
+    height:160px;
+    margin:0 auto;
+    margin-top:3%;
+    background:#f2f2f2;
+}
+.power1>.icon1{
+    width:1200px;
+    height:160px;
+    position: relative;
+}
+.power1>.icon1>img,
+.power1>.icon2>img,
+.power1>.icon3>img,
+.power1>.icon4>img,
+.power1>.icon5>img,
+.power1>.icon6>img,
+.power1>.icon7>img{
+   margin-left:3%;
+   margin-top:2%;
+}
+.power1>.icon1>h4,
+.power1>.icon2>h4,
+.power1>.icon3>h4,
+.power1>.icon4>h4,
+.power1>.icon5>h4,
+.power1>.icon6>h4,
+.power1>.icon7>h4{
+   padding-left:8%;
+   margin-top:-3%;
+   font-size: 24px;
+   font-weight:bold;
+}
+.power1>.icon1>p,
+.power1>.icon2>p,
+.power1>.icon3>p,
+.power1>.icon4>p,
+.power1>.icon5>p,
+.power1>.icon6>p,
+.power1>.icon7>p{
+    margin-top:1%;
+    margin-left:9%;
+    font-size: 18px;
+}
+.power1>.pic1>img{
+    width:1200px;
+    height:800px;
+}
+.power1>.pic2>img{
+    width:1200px;
+    height:420px;
+    margin-top:4%;
+}
+.power1>.pic3>img{
+    width:1200px;
+    height:700px;
+    margin-top:4%;
+}
+.power1>.icon2,
+.power1>.icon3,
+.power1>.icon4,
+.power1>.icon5,
+.power1>.icon6,
+.power1>.icon7{
+    width:1200px;
+    height:160px;
+    margin:0 auto;
+    margin-top:3%;
+    background:#f2f2f2;
+}
+/* -------------------------------------------- */
+.contact{
+    position: fixed;
+    right: -180px;
+    top:40%;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    box-shadow: 0 0 15px #000000;
+}
+.contact{
+    z-index: 100;
+}
+.contact:hover{
+    right: 0;
+}
+.contact>ul>li:first-child>span{
+    font-size: 16px;
+    vertical-align: middle;
+}
+.contact>ul>li:first-child>img{
+    width: 20px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 5;
+    position: relative;
+    left: 30px;
+}
+.contact>ul>li:first-child{
+    background: #298BE4;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    text-align: center;
+}
+.contact>ul>.qqhao{
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+}
+.contact>ul>.qqhao>a>i{
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+    background:url(../imgs/sqq.png)no-repeat;
+    background-size: 60% 60%;
+    margin-left: 40px;
+    margin-top:20px;
+}
+.contact>ul>li:last-child{
+    width: 100%;
+    height: 80px;
+    line-height: 30px;
+}
+.contact>ul>li:last-child>div>i{
+    display: block;
+    float: left;
+    width: 50px;
+    height: 50px;
+    background:url(../imgs/sphone.png)no-repeat;
+    background-size: 60% 60%;
+    margin-left: 40px;
+    margin-top:10px;
+}
+/* ------------------------------------------- */
+.footer{
+    background: #ffffff;
+}
+.footer>.bottom{
+    width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+.footer>.top{
+    width: 100%;
+}
+.footer>.top>img{
+    width: 100%;
+}
+.footer>.bottom>ul{
+    float: left;
+    margin-top:120px;
+    margin-bottom: 200px;
+}
+.footer>.bottom>ul>li{
+    color: #989898;
+    text-align: left;
+    font-size: 16px;
+    line-height: 2.3em;
+}
+.footer>.bottom>#container{
+    position: absolute;
+    float: right;
+    width: 700px;
+    height: 300px;
+    margin-top: 120px;
+    margin-left: 500px;
+}
+/* ----------------------------- */
+.dibu{
+    width: 100%;
+    height: 100px;
+    background: #595959;
+}
+.dibu>div{
+    width: 290px;
+    margin: 0 auto;
+}
+.dibu>div>p{
+    float: left;
+    line-height: 100px;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+.dibu>div>i{
+    display: block;
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin-top: 38px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.dibu>.erweima{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin-top: -200px;
+    left: 29%;
+    display: none;
+}
+.dibu>.erweima>img{
+    width: 100%;
+}

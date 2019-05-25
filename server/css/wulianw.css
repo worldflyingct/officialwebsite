@@ -1,0 +1,139 @@
+
+body,html{
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+.box2 {
+    padding-top: .426667rem;
+    padding-bottom: .826667rem;
+    padding-left: .96rem;
+}
+.box2>p:first-child{
+    font-size: 24px;
+    text-align: center;
+    color: #4d4d4d;
+    margin-right: .96rem;
+    margin-top: 20px;
+}
+.box2>p:nth-child(2){
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    color: #4d4d4d;
+    margin-right: .96rem;
+    margin-top: 15px;
+}
+.box2>ul{
+    display: inline-block;
+    list-style: none;
+}
+.box2>ul>li{
+    float: left;
+    margin-right: 1%;
+    width: 30%;
+    height: 10%;
+    padding-left: 4%;
+    margin-top: 3%;
+    margin-bottom: 4%;
+}
+.box2>ul>li>img{
+    width: 100%;
+}
+/* ==================== */
+.box4{
+    padding:3% 1%;
+}
+.box4>p:first-child{
+    font-size: 24px;
+    text-align: center;
+    color: #4d4d4d;
+    margin-right: .96rem;
+    margin-top:20px;
+}
+.box4>p:nth-child(2){
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    color: #4d4d4d;
+    margin-right: .96rem;
+    margin-top: 15px;
+}
+.box4>ul{
+    margin-top:15px;
+    display: inline-block;
+    list-style: none;
+}
+.box4>ul>li{
+    float: left;
+    margin-right: 1%;
+    margin-left: 2%;
+    width: 22%;
+    height: 10%;
+    margin-top: 4%;
+    margin-bottom: 5%;
+}
+.box4>ul>li>img{
+    width: 100%;
+}
+.box6{
+    padding-right: 4%;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    padding-left: 4%;
+}
+.box8{
+    background: #fff;
+    padding:5%;
+}
+.box8>p{
+    color: #2a36a2;
+    font-size: 15px;
+    text-indent: 0;
+    text-align: center;
+}
+.box8>ul{
+    padding: 0;
+    list-style: none;
+    margin-top: 10%;
+}
+.box8>ul>li{
+    position: relative;
+    width: 49%;
+    display: inline-block;
+}
+.box8>ul>li>img{
+    width: 100%;
+}
+.btn{
+    position: absolute;
+    font-size: 12px;
+    bottom: 22%;
+    text-align: center;
+    width: 100%;
+}
+.btn>a:first-child{
+    color: #fff;
+    padding: 2% 5%;
+    background: #0ea2ff;
+    border-radius: 4px;
+}
+.btn>a:nth-child(2){
+    color: #fff;
+    padding: 2% 5%;
+    background: #ff592d;
+    border-radius: 4px;
+    margin-left: 2%;
+}
+.box9{
+    background: #fff;
+    padding: 5%;
+}
+.box9>p{
+    color: #2a36a2;
+    font-size: 15px;
+    text-indent: 0;
+    text-align: center;
+    margin-top: 2%;
+}
+   

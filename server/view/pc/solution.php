@@ -28,7 +28,7 @@
         <div class="solve">
             <ul class="form">
                 <li class="text1">
-                    <a class="clearfix" href="/index-solution-gym.html">
+                    <a class="clearfix" href="gym.html">
                         <div class="pic1">
                             <img src="imgs/web/save.png" alt="">
                         </div>
@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li class="text1">
-                    <a class="clearfix" href="/index-solution-nongye.html">
+                    <a class="clearfix" href="agriculture.html">
                         <div class="pic2">
                             <img src="imgs/web/food.png">
                         </div>
@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li class="text1">
-                    <a class="clearfix" href="/index-solution-powerful.html">
+                    <a class="clearfix" href="powerful.html">
                         <div class="pic3">
                             <img src="imgs/web/elec.png">
                         </div>
@@ -61,7 +61,7 @@
                     </a>
                 </li>
                 <li class="text1">
-                    <a class="clearfix" href="/index-solution-cinema.html">
+                    <a class="clearfix" href="cinema.html">
                         <div class="pic4">
                             <img src="imgs/web/movie.png">
                         </div>
@@ -72,7 +72,7 @@
                     </a>
                 </li>
                 <li class="text1">
-                    <a class="clearfix" href="/index-solution-internet.html">
+                    <a class="clearfix" href="cybercafe.html">
                         <div class="pic5">
                             <img src="imgs/web/pc.png">
                         </div>
@@ -83,7 +83,7 @@
                     </a>
                 </li>
                 <li class="text1">
-                    <a class="clearfix" href="/index-solution-xiaoqu.html">
+                    <a class="clearfix" href="community.html">
                         <div class="pic6">
                             <img src="imgs/web/hotel.png">
                         </div>
@@ -103,74 +103,78 @@
                         </div>
                     </a>
                 </li>
-                <li class="text1"> </li>
+                <li class="text1"></li>
             </ul>
         </div>
     </div>
 </div>
 <div class="lianxiwo">
-        <div class="top3">
-            联系我们
-            <i id="chahca"></i>
+    <div class="top3">
+        联系我们
+        <i id="chahca"></i>
+    </div>
+    <div class="bottom3">
+        <div class="tu">
+            <img src="imgs/erweima.jpg" alt="" style="vertical-align: middle;">
         </div>
-        <div class="bottom3">
-            <div class="tu">
-                <img src="imgs/erweima.jpg" alt="" style="vertical-align: middle;">
-            </div>
-            <div class="zi">
-                <p>地点：<?php WebsiteAddress ();?></p>
-                <p>QQ：<?php WebsiteQQ ();?></p>
-                <p>电话：<?php WebsiteTelephone ();?></p>
-                <p>手机：<?php WebsiteMobile ();?></p>
-                <p>邮箱：<?php WebsiteEmail ();?></p>
-            </div>
+        <div class="zi">
+            <p>地点：<?php WebsiteAddress ();?></p>
+            <p>QQ：<?php WebsiteQQ ();?></p>
+            <p>电话：<?php WebsiteTelephone ();?></p>
+            <p>手机：<?php WebsiteMobile ();?></p>
+            <p>邮箱：<?php WebsiteEmail ();?></p>
         </div>
     </div>
+</div>
 <?php require("footer.php");?>
-<script type="text/javascript">
-        var map = new BMap.Map("container");
-        map.centerAndZoom(new BMap.Point(114.422636,30.506178),18);
-        map.enableScrollWheelZoom(true);
-        // 用经纬度设置地图中心点114.415836, 30.500568
-        function theLocation(){
-                map.clearOverlays();
-                var new_point = new BMap.Point(114.422636,30.506178);
-                var marker = new BMap.Marker(new_point);  // 创建标注
-                map.addOverlay(marker);              // 将标注添加到地图中
-                map.panTo(new_point);
-        }
-        theLocation();
-         var i=0;
-        $(".contact").mouseover(function(){
-            if(i==0){
-                $(this).animate({right:"0px"});
-                i=1;
-                console.log(i)
-            }
-
-        })
-        $("#close").click(function(){
-            $(".contact").animate({right:"-180px"},function(){
-                i=0;
-            })
-        })
-        $("#chuxian").click(function(){
-            $(".contact").animate({right:"0px"},function(){
-                i=1;
-            })
-        })
-        $('#weixin').mouseover(function(){
-            $('.erweima').css("display","block");
-        })
-         $('#weixin').mouseout(function(){
-            $('.erweima').css("display","none");
-         })
-         $("#li1").click(function(){
-             $(".lianxiwo").css("display","block")
-         })
-         $("#chahca").click(function(){
-             $(".lianxiwo").css("display","none");
-         })
-    </script>
+<script>
+var map = new BMap.Map("container");
+map.centerAndZoom(new BMap.Point(114.422636, 30.506178), 18);
+map.enableScrollWheelZoom(true);
+// 用经纬度设置地图中心点114.415836, 30.500568
+function theLocation() {
+    map.clearOverlays();
+    var new_point = new BMap.Point(114.422636, 30.506178);
+    var marker = new BMap.Marker(new_point); // 创建标注
+    map.addOverlay(marker); // 将标注添加到地图中
+    map.panTo(new_point);
+}
+theLocation();
+var i = 0;
+$(".contact").mouseover(function() {
+    if (i == 0) {
+        $(this).animate({
+            right: "0px"
+        });
+        i = 1;
+    }
+})
+$("#close").click(function() {
+    $(".contact").animate({
+        right: "-180px"
+    }, function() {
+        i = 0;
+    })
+})
+$("#chuxian").click(function() {
+    $(".contact").animate({
+        right: "0px"
+    }, function() {
+        i = 1;
+    })
+})
+$('#weixin').mouseover(function() {
+    $('.erweima').css("display", "block");
+})
+$('#weixin').mouseout(function() {
+    $('.erweima').css("display", "none");
+})
+$("#li1").click(function() {
+    $(".lianxiwo").css("display", "block")
+})
+$("#chahca").click(function() {
+    $(".lianxiwo").css("display", "none");
+})
+</script>
 </body>
 </html>

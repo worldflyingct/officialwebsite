@@ -210,8 +210,7 @@ function sendrequest() {
         },
     });
 }
-mui('.mui-scroll-wrapper').on('tap', 'a',
-function() {
+mui('.mui-scroll-wrapper').on('tap', 'a', function() {
     location.href = this.getAttribute('href')
 });
 mui.init({
@@ -255,14 +254,12 @@ mui('.mui-input-group').on('change', 'input', function() {
 mui('#offCanvasSideScroll').scroll();
 mui('#offCanvasContentScroll').scroll();
 if (mui.os.plus && mui.os.ios) {
-    offCanvasWrapper[0].addEventListener('shown',
-    function(e) {
+    offCanvasWrapper[0].addEventListener('shown', function(e) {
         plus.webview.currentWebview().setStyle({
             'popGesture': 'none',
         });
     });
-    offCanvasWrapper[0].addEventListener('hidden',
-    function(e) {
+    offCanvasWrapper[0].addEventListener('hidden', function(e) {
         plus.webview.currentWebview().setStyle({
             'popGesture': 'close',
         });
@@ -273,12 +270,10 @@ window.onload = function() {
     jQuery(".news-change").css({
         height: jQuery(".news-box-top").length * (height + 35)
     });
-    jQuery(".take-more a").on("tap",
-    function() {
+    jQuery(".take-more a").on("tap", function() {
         jQuery(this).addClass("take-more1-active");
     });
-    jQuery(".take-more a").on("release",
-    function() {
+    jQuery(".take-more a").on("release", function() {
         jQuery(this).removeClass("take-more1-active");
     });
 }

@@ -25,4 +25,7 @@ switch ($do) {
     case "cybercafe":require("view/pc/solutions/cybercafe.php");break;
     case "mobileiot":require("view/mobile/iot.php");break;
     case "mobileabout":require("view/mobile/about.php");break;
+    case "mobilerecruit":require("view/mobile/recruit.php");break;
+    case "mobilesolution":require("view/mobile/solution.php");break;
+    case "mobilenews":require("view/mobile/news.php");break;
 }

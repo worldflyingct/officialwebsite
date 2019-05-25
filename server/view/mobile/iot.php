@@ -10,6 +10,7 @@
     <title><?php WebsiteTitle ();?>_物联网</title>
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/mui.min.js"></script>
+    <link rel="shortcut icon" href="imgs/favicon.ico">
     <link rel="stylesheet" href="css/mui.min.css">
     <link rel="stylesheet" href="css/phone_init.css">
     <link rel="stylesheet" href="css/wulianw.css">

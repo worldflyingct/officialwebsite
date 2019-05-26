@@ -8,12 +8,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title><?php WebsiteTitle ();?>_智慧小区</title>
-    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
-    <script src="js/mui.min.js"></script>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/mui.min.css">
-    <link rel="stylesheet" href="css/phone_init.css">
-    <link rel="stylesheet" href="css/phone_xiaoqu.css">
+    <script type="text/javascript" src="<?php AssetsUrl ();?>/js/jquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/mui.min.js"></script>
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/mui.min.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/phone_init.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/phone_xiaoqu.css">
 </head>
 <body>
 <!-- 侧滑导航根容器 -->
@@ -24,7 +24,7 @@
         <!-- 主页面标题 -->
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="imgs/phone/wlogo2.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="">
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
@@ -32,7 +32,7 @@
             <div class="mui-scroll">
                 <!-- 主界面具体展示内容 -->
                 <div class="box1">
-                    <img src="imgs/phone/bg6.png" alt="武汉app开发">
+                    <img src="<?php AssetsUrl ();?>/imgs/phone/bg6.png" alt="武汉app开发">
                 </div>
                 <div class="box2">
                     <div class="top">
@@ -47,11 +47,11 @@
                                 <i></i>
                                 <h3>功能介绍</h3>
                             </div>
-                            <img src="imgs/phone/bg7.png" alt="武汉app开发">
+                            <img src="<?php AssetsUrl ();?>/imgs/phone/bg7.png" alt="武汉app开发">
                     </div>
                 </div>
                 <div class="box3">
-                    <img src="imgs/phone/bg8.png" alt="武汉app开发">
+                    <img src="<?php AssetsUrl ();?>/imgs/phone/bg8.png" alt="武汉app开发">
                 </div>
                 <div class="box4">
                     <div>
@@ -63,7 +63,7 @@
                             <li class="active12">
                                 <h4>RfId读卡器</h4>
                                 <p>选用网源的UHF915M</p>
-                                <img src="imgs/phone/bg19.png">
+                                <img src="<?php AssetsUrl ();?>/imgs/phone/bg19.png">
                             </li>
                             <li class="fenkai">
                                 <h4>LoRa网关</h4>
@@ -71,7 +71,7 @@
                             </li>
                             <li>
                                 <h4>485信号转LoRa传感器</h4>
-                                <img src="imgs/phone/bg20.png">
+                                <img src="<?php AssetsUrl ();?>/imgs/phone/bg20.png">
                             </li>
                             <li>
                                 <h4>防盗按钮</h4>

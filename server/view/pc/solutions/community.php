@@ -6,14 +6,14 @@
     <meta name="description" content="<?php WebsiteDescription ();?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/winit.css">
-    <link rel="stylesheet" href="css/wbootstrap.css">
-    <link rel="stylesheet" href="css/wxiaoqu.css">
-    <link rel="stylesheet" type="text/css" href="css/xinnav.css">
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/winit.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wbootstrap.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wxiaoqu.css">
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/xinnav.css">
     <title><?php WebsiteTitle ();?>_智慧小区</title>
-    <script src="js/wjquery-3.1.0.min.js"></script>
-    <script src="js/wbootstrap.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/wjquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/wbootstrap.min.js"></script>
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
 </head>
 <body>
@@ -70,56 +70,56 @@
 </div>
 <div class="elevator3 clearfix">
     <div>
-        <img src="imgs/wimg1.png" alt="武汉app开发">
+        <img src="<?php AssetsUrl ();?>/imgs/wimg1.png" alt="武汉app开发">
         <div>
             <h3>在线报修</h3>
             <p>用户可以使用app在线申请维修</p>
         </div>
     </div>
     <div>
-        <img src="imgs/wimg2.png" alt="武汉app开发">
+        <img src="<?php AssetsUrl ();?>/imgs/wimg2.png" alt="武汉app开发">
         <div>
             <h3>社区公告</h3>
             <p>物业可在app上发布社区公告</p>
         </div>
     </div>
     <div>
-        <img src="imgs/wimg3.png" alt="武汉app开发">
+        <img src="<?php AssetsUrl ();?>/imgs/wimg3.png" alt="武汉app开发">
         <div>
             <h3>投诉建议</h3>
             <p>用户可在app上发送对物业的投诉与建议</p>
         </div>
     </div>
     <div>
-        <img src="imgs/wimg4.png" alt="武汉app开发">
+        <img src="<?php AssetsUrl ();?>/imgs/wimg4.png" alt="武汉app开发">
         <div>
             <h3>视频监控</h3>
             <p>物业可在后台随时查看小区内视频监控</p>
         </div>
     </div>
     <div>
-        <img src="imgs/wimg5.png" alt="武汉app开发">
+        <img src="<?php AssetsUrl ();?>/imgs/wimg5.png" alt="武汉app开发">
         <div>
             <h3>进出口管理</h3>
             <p>车辆进出口管理</p>
         </div>
     </div>
     <div>
-        <img src="imgs/wimg6.png" alt="武汉app开发">
+        <img src="<?php AssetsUrl ();?>/imgs/wimg6.png" alt="武汉app开发">
         <div>
             <h3>查询与缴费</h3>
             <p>查询水电煤气并可直接缴费</p>
         </div>
     </div>
     <div>
-        <img src="imgs/wimg7.png" alt="武汉app开发">
+        <img src="<?php AssetsUrl ();?>/imgs/wimg7.png" alt="武汉app开发">
         <div>
             <h3>水位报警器 拷贝</h3>
             <p>水位报警，有效的防洪 拷贝</p>
         </div>
     </div>
     <div>
-        <img src="imgs/wimg8.png" alt="武汉app开发">
+        <img src="<?php AssetsUrl ();?>/imgs/wimg8.png" alt="武汉app开发">
         <div>
             <h3>更多功能</h3>
         </div>
@@ -134,7 +134,7 @@
         <li>
             <h5>RfId读卡器</h5>
             <p>选用网源的UHF915M</p>
-            <img src="imgs/wtu30.png" alt="武汉app开发">
+            <img src="<?php AssetsUrl ();?>/imgs/wtu30.png" alt="武汉app开发">
         </li>
         <li>
             <h5>LoRa网关</h5>
@@ -142,7 +142,7 @@
         </li>
         <li>
             <h5>485信号转LoRa传感器</h5>
-            <img style="margin-top: 50px;" src="imgs/wtu31.png" alt="武汉app开发">
+            <img style="margin-top: 50px;" src="<?php AssetsUrl ();?>/imgs/wtu31.png" alt="武汉app开发">
         </li>
         <li>
             <h5>防盗按钮</h5>
@@ -177,7 +177,7 @@
             <h3>业务逻辑图</h3>
         </div>
         <div class="img">
-            <img src="imgs/wsiwei.png" alt="武汉app开发">
+            <img src="<?php AssetsUrl ();?>/imgs/wsiwei.png" alt="武汉app开发">
         </div>
     </div>
 </div>

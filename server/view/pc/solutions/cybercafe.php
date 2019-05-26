@@ -5,13 +5,13 @@
     <meta name="keywords" content="<?php WebsiteKeyWords ();?>"/>
     <meta name="description" content="<?php WebsiteDescription ();?>"/>
     <meta name="viewpoint" content="width=device-width"/>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/sreset.css">
-    <link rel="stylesheet" href="css/sinter.css">
-    <link rel="stylesheet" type="text/css" href="css/xinnav.css">
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/sreset.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/sinter.css">
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/xinnav.css">
     <title><?php WebsiteTitle ();?>_无人网吧</title>
-    <script src="js/jquery-3.1.0.min.js"></script>
-    <script src="js/wbootstrap.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/jquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/wbootstrap.min.js"></script>
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
 </head>
 <body>
@@ -19,7 +19,7 @@
 <div class="contain">
     <div class="section1">
         <div class="inter-head">
-            <img src="imgs/inter/inter2.png" alt="">
+            <img src="<?php AssetsUrl ();?>/imgs/inter/inter2.png" alt="">
             <div class="background">
                 <div class="text1">
                     <h1>无人网吧房方案</h1>
@@ -34,35 +34,35 @@
                 <h2>实施目的</h2>
             </div>
             <div class="pic">
-                <img src="imgs/inter/back.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/inter/back.png" alt="">
                 <div class="text2">
                     <div class="t1">
                         <i>
-                            <img src="imgs/inter/circle.png" >
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/circle.png" >
                         </i>
                         <p>1、通过技术方式让相关硬件互联，降低人力成本，提高管理效率的，以达到提高净利润的目的。</p>
                     </div>
                     <div class="t2">
                         <i>
-                            <img src="imgs/inter/circle.png" >
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/circle.png" >
                         </i>
                         <p>2、利用App与店内设施互通，实现连接互联网，让客户产生一种方便与高端的感受，吸引更多优质客户来店内消费。</p>
                     </div>
                     <div class="t3">
                         <i>
-                            <img src="imgs/inter/circle.png" >
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/circle.png" >
                         </i>
                         <p>3、安防系统接入，通过全自动的安防系统一体化管理，提高网吧的安防水平。</p>
                     </div>
                     <div class="t4">
                         <i>
-                            <img src="imgs/inter/circle.png" >
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/circle.png" >
                         </i>
                         <p>4、通过全自动的传感器设备，监控网吧的温湿度，并作出相应的处理。以提高整体健身房的舒适度</p>
                     </div>
                     <div class="t5">
                         <i>
-                            <img src="imgs/inter/circle.png" >
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/circle.png" >
                         </i>
                         <p>5、利用支付宝/微信支付，提高支付的灵活度，增加用户使用体验。</p>
                     </div>
@@ -73,7 +73,7 @@
     <div class="section3">
         <div class="intro" style="background: url('imgs/inter/picture1.png')no-repeat">
             <div class="back1">
-                <img src="imgs/inter/back1.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/inter/back1.png" alt="">
             </div>
             <div class="text3">
                 <div class="title">
@@ -101,7 +101,7 @@
                     </li>
                     <li style="border-bottom: none">
                         <p>5.整体框架</p>
-                        <img src="imgs/inter/inter1.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/inter/inter1.png" alt="">
                     </li>
                     <li style="border-bottom: none;border-right:none">
                     </li>
@@ -116,7 +116,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="imgs/inter/chaxun.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/chaxun.png" alt="">
                         </div>
                     </div>
                     <p>
@@ -126,7 +126,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                                <img src="imgs/inter/chaxun1.png" alt="">
+                                <img src="<?php AssetsUrl ();?>/imgs/inter/chaxun1.png" alt="">
                             </div>
                     </div>
                     <p>
@@ -136,7 +136,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="imgs/inter/watch.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/watch.png" alt="">
                         </div>
                     </div>
                     <p>
@@ -146,7 +146,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="imgs/inter/right.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/right.png" alt="">
                         </div>
                     </div>
                     <p>
@@ -156,7 +156,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="imgs/inter/card.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/card.png" alt="">
                         </div>
                     </div>
                     <p>
@@ -166,7 +166,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="imgs/inter/log.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/log.png" alt="">
                         </div>
                     </div>
                     <p>
@@ -176,7 +176,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="imgs/inter/share.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/share.png" alt="">
                         </div>
                     </div>
                     <p>
@@ -186,7 +186,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="imgs/inter/more.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/more.png" alt="">
                         </div>
                     </div>
                     <p>

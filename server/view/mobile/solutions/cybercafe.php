@@ -8,11 +8,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title><?php WebsiteTitle ();?>_无人网吧</title>
-    <script src="js/mui.min.js"></script>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/mui.min.css">
-    <link rel="stylesheet" href="css/phone_init.css">
-    <link rel="stylesheet" href="css/bar.css">
+    <script src="<?php AssetsUrl ();?>/js/mui.min.js"></script>
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/mui.min.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/phone_init.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/bar.css">
 </head>
 <body>
 <!-- 侧滑导航根容器 -->
@@ -23,7 +23,7 @@
         <!-- 主页面标题 -->
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="imgs/phone/wlogo2.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="">
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
@@ -106,7 +106,7 @@
                                 </li>
                                 <li style="border-bottom: none" class="pic3">
                                     <h4>5.整体框架</h4>
-                                    <img src="imgs/mobile/power.png" alt="">
+                                    <img src="<?php AssetsUrl ();?>/imgs/mobile/power.png" alt="">
                                 </li>
                                 <li style="border-bottom: none;border-right:none">
                                 </li>
@@ -121,7 +121,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="imgs/mobile/sc.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sc.png" alt="">
                                     </div>
                                 </div>
                                 <p>
@@ -131,8 +131,8 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                            <img src="imgs/mobile/sz.png" alt="">
-                                        </div>
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sz.png" alt="">
+                                    </div>
                                 </div>
                                 <p>
                                     查询网吧使用情况
@@ -141,7 +141,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="imgs/mobile/syu.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/syu.png" alt="">
                                     </div>
                                 </div>
                                 <p>
@@ -151,7 +151,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="imgs/mobile/sw.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sw.png" alt="">
                                     </div>
                                 </div>
                                 <p>
@@ -161,7 +161,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="imgs/mobile/sy.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sy.png" alt="">
                                     </div>
                                 </div>
                                 <p>
@@ -171,7 +171,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="imgs/mobile/sj.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sj.png" alt="">
                                     </div>
                                 </div>
                                 <p>
@@ -181,7 +181,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="imgs/mobile/sf.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sf.png" alt="">
                                     </div>
                                 </div>
                                 <p>
@@ -191,7 +191,7 @@
                             <li>
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="imgs/mobile/sg.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sg.png" alt="">
                                     </div>
                                 </div>
                                 <p>

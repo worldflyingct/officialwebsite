@@ -13,30 +13,30 @@ $newsList = GetNewsList ($page, 5, $type);
     <meta name="description" content="<?php WebsiteDescription ();?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/winit.css">
-    <link rel="stylesheet" href="css/wbootstrap.css">
-    <link rel="stylesheet" href="css/wnews-list.css?74">
-    <link rel="stylesheet" type="text/css" href="css/xinnav.css">
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/winit.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wbootstrap.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wnews-list.css?74">
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/xinnav.css">
     <title><?php WebsiteTitle ();?>_新闻资讯</title>
-    <script src="js/wjquery-3.1.0.min.js"></script>
-    <script src="js/wbootstrap.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/wjquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/wbootstrap.min.js"></script>
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
 </head>
 <body>
 <?php require("header.php");?>
 <div class="top-bg">
-        <img src="imgs/news/news-bg.png" alt="">
+        <img src="<?php AssetsUrl ();?>/imgs/news/news-bg.png" alt="">
     </div>
     <div class="bottom-ul">
         <div class="new-top">
             <h3>新闻动态</h3>
             <h3>News information</h3>
             <ul class="clearfix">
-                <li><a href="news.html"<?php if (!isset($_GET["type"])) echo " class=\"active-a\"";?>>ALL+</a></li>
-                <li><a href="news-type-1.html"<?php if (isset($_GET["type"]) && $_GET["type"] == 1) echo " class=\"active-a\"";?>>公司动态</a></li>
-                <li><a href="news-type-2.html"<?php if (isset($_GET["type"]) && $_GET["type"] == 2) echo " class=\"active-a\"";?>>媒体报道</a></li>
-                <li><a href="news-type-3.html"<?php if (isset($_GET["type"]) && $_GET["type"] == 3) echo " class=\"active-a\"";?>>行业资讯</a></li>
+                <li><a href="<?php SiteUrl ();?>/news.html"<?php if (!isset($_GET["type"])) echo " class=\"active-a\"";?>>ALL+</a></li>
+                <li><a href="<?php SiteUrl ();?>/news-type-1.html"<?php if (isset($_GET["type"]) && $_GET["type"] == 1) echo " class=\"active-a\"";?>>公司动态</a></li>
+                <li><a href="<?php SiteUrl ();?>/news-type-2.html"<?php if (isset($_GET["type"]) && $_GET["type"] == 2) echo " class=\"active-a\"";?>>媒体报道</a></li>
+                <li><a href="<?php SiteUrl ();?>/news-type-3.html"<?php if (isset($_GET["type"]) && $_GET["type"] == 3) echo " class=\"active-a\"";?>>行业资讯</a></li>
             </ul>
         </div>
         <div class="new-list">
@@ -50,7 +50,7 @@ $newsList = GetNewsList ($page, 5, $type);
                         <p><?php echo $news["title"];?></p>
                         <p><?php echo $news["publishtime"];?></p>
                         <p><?php echo $news["desc"];?></p>
-                        <p><a href="article-id-<?php echo $news["ID"];?>.html">MORE</a></p>
+                        <p><a href="<?php SiteUrl ();?>/article-id-<?php echo $news["ID"];?>.html">MORE</a></p>
                     </div>
                 </li>
 <?php } ?>
@@ -62,7 +62,7 @@ $newsList = GetNewsList ($page, 5, $type);
 if ($page > 1) {
 ?>
                 <li>
-                    <a href="news<?php if ($type != 0) echo "-type-".$_GET["type"];?>.html" class="bianse">首页</a>
+                    <a href="<?php SiteUrl ();?>/news<?php if ($type != 0) echo "-type-".$_GET["type"];?>.html" class="bianse">首页</a>
                 </li>
 <?php
 }
@@ -75,11 +75,11 @@ if ($totalpage < 5) {
                 </li>
 <?php   } else if ($i == 1) { ?>
                 <li>
-                    <a href="news<?php if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
+                    <a href="<?php SiteUrl ();?>/news<?php if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
                 </li>
 <?php   } else { ?>
                 <li>
-                    <a href="news-page-<?php echo $i;if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
+                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $i;if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
                 </li>
 <?php
         }
@@ -93,7 +93,7 @@ if ($totalpage < 5) {
                 </li>
 <?php   } else { ?>
                 <li>
-                    <a href="news-page-<?php echo $i;if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
+                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $i;if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
                 </li>
 <?php
         }
@@ -107,11 +107,11 @@ if ($totalpage < 5) {
                 </li>
 <?php   } else if ($i == 1) { ?>
                 <li>
-                    <a href="news<?php if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
+                    <a href="<?php SiteUrl ();?>/news<?php if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
                 </li>
 <?php   } else { ?>
                 <li>
-                    <a href="news-page-<?php echo $i;if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
+                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $i;if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
                 </li>
 <?php
         }
@@ -125,7 +125,7 @@ if ($totalpage < 5) {
                 </li>
 <?php   } else { ?>
                 <li>
-                    <a href="news-page-<?php echo $i;if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
+                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $i;if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
                 </li>
 <?php
         }
@@ -134,7 +134,7 @@ if ($totalpage < 5) {
 if ($page != $totalpage) {
 ?>
                 <li>
-                    <a href="news-page-<?php echo $totalpage;if ($type != 0) echo "-type-".$_GET["type"];?>.html" class="bianse">尾页</a>
+                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $totalpage;if ($type != 0) echo "-type-".$_GET["type"];?>.html" class="bianse">尾页</a>
                 </li>
 <?php
 }

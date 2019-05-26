@@ -4,26 +4,26 @@ $nextArticleId = GetNextArticleId ();
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="keywords" content="<?php WebsiteKeyWords ();?>"/>
-        <meta name="description" content="<?php WebsiteDescription ();?>"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="shortcut icon" href="imgs/favicon.ico">
-        <link rel="stylesheet" href="css/winit.css">
-        <link rel="stylesheet" href="css/wbootstrap.css">
-        <link rel="stylesheet" href="css/wnews.css">
-        <link rel="stylesheet" type="text/css" href="css/xinnav.css">
-        <title><?php ArticleTitle ();?>_<?php WebsiteImportantWord ();?>_沃航科技</title>
-        <script src="js/wjquery-3.1.0.min.js"></script>
-        <script src="js/wbootstrap.min.js"></script>
-        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="<?php WebsiteKeyWords ();?>"/>
+    <meta name="description" content="<?php WebsiteDescription ();?>"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/winit.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wbootstrap.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wnews.css">
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/xinnav.css">
+    <title><?php ArticleTitle ();?>_<?php WebsiteImportantWord ();?>_沃航科技</title>
+    <script src="<?php AssetsUrl ();?>/js/wjquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/wbootstrap.min.js"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
+</head>
 <body>
 <?php require("view/pc/header.php");?>
 <div class="top-bg">
-    <img src="imgs/news/news-bg.png" alt="">
+    <img src="<?php AssetsUrl ();?>/imgs/news/news-bg.png" alt="">
 </div>
 <div class="textt">
     <h1><?php ArticleTitle ();?></h1>
@@ -32,12 +32,12 @@ $nextArticleId = GetNextArticleId ();
         <?php ArticleContext ();?>
     </div>
     <div class="xia">
-        <p>优秀解决方案推荐：<a href="agriculture.html">智慧农业解决方案</a></p>
+        <p>优秀解决方案推荐：<a href="<?php SiteUrl();?>/agriculture.html">智慧农业解决方案</a></p>
 <?php if ($previousArticleId != 0) { ?>
-        <p>上一篇：<a href="article-id-<?php echo $previousArticleId;?>.html"><?php PreviousArticleTitle ();?></a></p>
+        <p>上一篇：<a href="<?php SiteUrl();?>/article-id-<?php echo $previousArticleId;?>.html"><?php PreviousArticleTitle ();?></a></p>
 <?php } ?>
 <?php if ($nextArticleId != 0) { ?>
-        <p>下一篇：<a href="article-id-<?php echo $nextArticleId;?>.html"><?php NextArticleTitle ();?></a></p>
+        <p>下一篇：<a href="<?php SiteUrl();?>/article-id-<?php echo $nextArticleId;?>.html"><?php NextArticleTitle ();?></a></p>
 <?php } ?>
     </div>
 </div>

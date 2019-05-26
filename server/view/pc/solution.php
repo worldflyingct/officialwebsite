@@ -6,13 +6,13 @@
     <meta name="description" content="<?php WebsiteDescription ();?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/winit.css">
-    <link rel="stylesheet" href="css/sreset.css">
-    <link rel="stylesheet" href="css/sweb.css">
-    <link rel="stylesheet" type="text/css" href="css/xinnav.css">
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/winit.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/sreset.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/sweb.css">
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/xinnav.css">
     <title><?php WebsiteTitle ();?>_解决方案</title>
-    <script src="js/wjquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/wjquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
 </head>
 <body>
@@ -20,7 +20,7 @@
 <div class="contain" >
     <div class="section1">
         <div class="shead">
-            <img src="imgs/web/sback.png" alt="">
+            <img src="<?php AssetsUrl ();?>/imgs/web/sback.png" alt="">
         </div>
     </div>
     <div class="section2">
@@ -28,9 +28,9 @@
         <div class="solve">
             <ul class="form">
                 <li class="text1">
-                    <a class="clearfix" href="gym.html">
+                    <a class="clearfix" href="<?php SiteUrl ();?>/gym.html">
                         <div class="pic1">
-                            <img src="imgs/web/save.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/web/save.png" alt="">
                         </div>
                         <div class="save">
                             <h2>仓储管理系统</h2>
@@ -39,9 +39,9 @@
                     </a>
                 </li>
                 <li class="text1">
-                    <a class="clearfix" href="agriculture.html">
+                    <a class="clearfix" href="<?php SiteUrl ();?>/agriculture.html">
                         <div class="pic2">
-                            <img src="imgs/web/food.png">
+                            <img src="<?php AssetsUrl ();?>/imgs/web/food.png">
                         </div>
                         <div class="save">
                             <h2>智慧农业</h2>
@@ -50,9 +50,9 @@
                     </a>
                 </li>
                 <li class="text1">
-                    <a class="clearfix" href="powerful.html">
+                    <a class="clearfix" href="<?php SiteUrl ();?>/powerful.html">
                         <div class="pic3">
-                            <img src="imgs/web/elec.png">
+                            <img src="<?php AssetsUrl ();?>/imgs/web/elec.png">
                         </div>
                         <div class="save">
                             <h2>电力远程控制</h2>
@@ -61,9 +61,9 @@
                     </a>
                 </li>
                 <li class="text1">
-                    <a class="clearfix" href="cinema.html">
+                    <a class="clearfix" href="<?php SiteUrl ();?>/cinema.html">
                         <div class="pic4">
-                            <img src="imgs/web/movie.png">
+                            <img src="<?php AssetsUrl ();?>/imgs/web/movie.png">
                         </div>
                         <div class="save">
                             <h2>影院服务平台</h2>
@@ -72,9 +72,9 @@
                     </a>
                 </li>
                 <li class="text1">
-                    <a class="clearfix" href="cybercafe.html">
+                    <a class="clearfix" href="<?php SiteUrl ();?>/cybercafe.html">
                         <div class="pic5">
-                            <img src="imgs/web/pc.png">
+                            <img src="<?php AssetsUrl ();?>/imgs/web/pc.png">
                         </div>
                         <div class="save">
                             <h2>无人网吧</h2>
@@ -83,9 +83,9 @@
                     </a>
                 </li>
                 <li class="text1">
-                    <a class="clearfix" href="community.html">
+                    <a class="clearfix" href="<?php SiteUrl ();?>/community.html">
                         <div class="pic6">
-                            <img src="imgs/web/hotel.png">
+                            <img src="<?php AssetsUrl ();?>/imgs/web/hotel.png">
                         </div>
                         <div class="save">
                             <h2>智慧小区</h2>
@@ -96,7 +96,7 @@
                 <li class="text1" id="li1">
                     <a href="javascript:;">
                         <div class="pic7">
-                            <img src="imgs/web/more.png">
+                            <img src="<?php AssetsUrl ();?>/imgs/web/more.png">
                         </div>
                         <div class="text2">
                             <p>了解更多解决方案请联系我们</p>
@@ -115,7 +115,7 @@
     </div>
     <div class="bottom3">
         <div class="tu">
-            <img src="imgs/erweima.jpg" alt="" style="vertical-align: middle;">
+            <img src="<?php AssetsUrl ();?>/imgs/erweima.jpg" alt="" style="vertical-align: middle;">
         </div>
         <div class="zi">
             <p>地点：<?php WebsiteAddress ();?></p>

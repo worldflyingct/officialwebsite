@@ -5,12 +5,12 @@
     <meta name="keywords" content="<?php WebsiteKeyWords ();?>"/>
     <meta name="description" content="<?php WebsiteDescription ();?>"/>
     <meta name="viewpoint" content="width=device-width"/>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/sreset.css">
-    <link rel="stylesheet" href="css/scinema.css">
-    <link rel="stylesheet" type="text/css" href="css/xinnav.css">
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/sreset.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/scinema.css">
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/xinnav.css">
     <title><?php WebsiteTitle ();?>_影院服务平台</title>
-    <script src="js/wjquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/wjquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
 </head>
 <body>
@@ -18,9 +18,9 @@
 <div class="contain" style="overflow:hidden;">
     <div class="section1">
         <div class="movie-head">
-            <img style=" width:100%; height:100%;" src="imgs/sback1.png" alt="">
+            <img style=" width:100%; height:100%;" src="<?php AssetsUrl ();?>/imgs/sback1.png" alt="">
             <div class="back">
-                <img src="imgs/sback5.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/sback5.png" alt="">
                 <div class="text1">
                     <h2>影院服务平台方案</h2>
                     <h4>Theater service platform scheme</h4>
@@ -33,22 +33,22 @@
         <div class="movie-dog">
             <div class="picture">
                 <div class="pic1">
-                    <img src="imgs/movie/m1.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/m1.png" alt="">
                 </div>
                 <div class="pic2">
-                    <img src="imgs/movie/m3.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/m3.png" alt="">
                     <p></p>
                 </div>
                 <div class="pic3">
-                    <img src="imgs/movie/m2.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/m2.png" alt="">
 
                 </div>
                 <div class="pic4">
-                    <img src="imgs/movie/m4.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/m4.png" alt="">
 
                 </div>
                 <div class="pic5">
-                    <img src="imgs/movie/dog.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/dog.png" alt="">
                 </div>
             </div>
             <div class="text2">
@@ -160,15 +160,15 @@
             </div>
             <div class="pic">
                 <div class="pic1">
-                    <img src="imgs/movie/bright1.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/bright1.png" alt="">
                     <p>1.无纸化验票</p>
                 </div>
                 <div class="pic2">
-                    <img src="imgs/movie/bright2.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/bright2.png" alt="">
                     <p>2.在线选票</p>
                 </div>
                 <div class="pic3">
-                    <img src="imgs/movie/bright3.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/bright3.png" alt="">
                     <p>3.强大的数据分析能力</p>
                 </div>
             </div>
@@ -222,6 +222,6 @@ $('#weixin').mouseout(function() {
     $('.erweima').css("display", "none");
 })
 </script>
-<script src="js/sbanner.js"></script>
+<script src="<?php AssetsUrl ();?>/js/sbanner.js"></script>
 </body>
 </html>

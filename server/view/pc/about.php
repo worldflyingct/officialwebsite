@@ -5,16 +5,16 @@
     <meta name="keywords" content="<?php WebsiteKeyWords ();?>"/>
     <meta name="description" content="<?php WebsiteDescription ();?>"/>
     <meta name="viewpoint" content="width=device-width"/>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/winit.css">
-    <link rel="stylesheet" href="css/wwreset.css">
-    <link rel="stylesheet" href="css/wwhome.css">
-    <link rel="stylesheet" href="css/wwswiper.min.css">
-    <link rel="stylesheet" href="css/xinnav.css">
-    <link rel="stylesheet" href="css/xindedibu.css">
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/winit.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wwreset.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wwhome.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wwswiper.min.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/xinnav.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/xindedibu.css">
     <title><?php WebsiteTitle ();?>_关于我们</title>
-    <script src="js/jquery-3.1.0.min.js"></script>
-    <script src="js/swiper.jquery.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/jquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/swiper.jquery.min.js"></script>
     <script src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
 </head>
 <style>
@@ -58,7 +58,7 @@
 </style>
 <body>
 <?php require("header.php");?>
-<img src="imgs/pic/us-bg.png" style="width: 100%;margin-top: 67px" alt="<?php WebsiteImportantWord ();?>">
+<img src="<?php AssetsUrl ();?>/imgs/pic/us-bg.png" style="width: 100%;margin-top: 67px" alt="<?php WebsiteImportantWord ();?>">
 <div class="us-box">
     <div class="who">
         <div class="who-head">
@@ -67,7 +67,7 @@
         </div>
         <div class="who-content">
             <div class="who-content-left">
-                <img src="imgs/pic/who.png" alt="<?php WebsiteImportantWord ();?>">
+                <img src="<?php AssetsUrl ();?>/imgs/pic/who.png" alt="<?php WebsiteImportantWord ();?>">
             </div>
             <div class="who-content-right">
                 <p class="who-title">懂您所需，做您所想</p>
@@ -116,7 +116,7 @@
         <ul class="ideas-right">
             <li>
                 <div class="ideas-right-img">
-                    <img src="imgs/pic/idea1.png" alt="<?php WebsiteImportantWord ();?>">
+                    <img src="<?php AssetsUrl ();?>/imgs/pic/idea1.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div class="ideas-right-box">
                     <p class="ideas-right-title">沃航特点</p>
@@ -126,7 +126,7 @@
             </li>
             <li>
                 <div class="ideas-right-img">
-                    <img src="imgs/pic/idea2.png" alt="<?php WebsiteImportantWord ();?>">
+                    <img src="<?php AssetsUrl ();?>/imgs/pic/idea2.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div class="ideas-right-box">
                     <p class="ideas-right-title">沃航文化</p>
@@ -136,7 +136,7 @@
             </li>
             <li>
                 <div class="ideas-right-img">
-                    <img src="imgs/pic/idea3.png" alt="<?php WebsiteImportantWord ();?>">
+                    <img src="<?php AssetsUrl ();?>/imgs/pic/idea3.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div class="ideas-right-box">
                     <p class="ideas-right-title">沃航使命</p>
@@ -146,7 +146,7 @@
             </li>
             <li>
                 <div class="ideas-right-img">
-                    <img src="imgs/pic/idea4.png" alt="<?php WebsiteImportantWord ();?>">
+                    <img src="<?php AssetsUrl ();?>/imgs/pic/idea4.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div class="ideas-right-box">
                     <p class="ideas-right-title">沃航愿景</p>
@@ -156,7 +156,7 @@
             </li>
             <li>
                 <div class="ideas-right-img">
-                    <img src="imgs/pic/idea5.png" alt="<?php WebsiteImportantWord ();?>">
+                    <img src="<?php AssetsUrl ();?>/imgs/pic/idea5.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div class="ideas-right-box">
                     <p class="ideas-right-title">沃航精神</p>
@@ -174,7 +174,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -184,7 +184,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -194,7 +194,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -204,7 +204,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -214,7 +214,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -224,7 +224,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -234,7 +234,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -244,7 +244,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -254,7 +254,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -264,7 +264,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -274,7 +274,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -284,7 +284,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -294,7 +294,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -304,7 +304,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -314,7 +314,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -324,7 +324,7 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="team-div">
-                        <div class="head-img"><img src="imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
+                        <div class="head-img"><img src="<?php AssetsUrl ();?>/imgs/pic/touxiang.png" alt="<?php WebsiteImportantWord ();?>"></div>
                         <div class="team-box">
                             <p class="member-name">技术</p>
                             <p class="member-skill">5年Android、 ios应用开发经验。</p>
@@ -340,55 +340,53 @@
     <div class="our-partner">
         <h1>我们的合作伙伴</h1>
         <h3>Our partners</h3>
-        <img src="imgs/pic/partners.png" style="width: 100%" alt="<?php WebsiteImportantWord ();?>">
+        <img src="<?php AssetsUrl ();?>/imgs/pic/partners.png" style="width: 100%" alt="<?php WebsiteImportantWord ();?>">
     </div>
 </div>
 <?php require("footer.php");?>
 <script type="text/javascript">
-     var map = new BMap.Map("container");
-        map.centerAndZoom(new BMap.Point(114.422636,30.506178),18);
-        map.enableScrollWheelZoom(true);
-        // 用经纬度设置地图中心点114.415836, 30.500568
-        function theLocation(){
-                map.clearOverlays();
-                var new_point = new BMap.Point(114.422636,30.506178);
-                var marker = new BMap.Marker(new_point);  // 创建标注
-                map.addOverlay(marker);              // 将标注添加到地图中
-                map.panTo(new_point);
-        }
-        theLocation();
+var map = new BMap.Map("container");
+map.centerAndZoom(new BMap.Point(114.422636,30.506178),18);
+map.enableScrollWheelZoom(true);
+// 用经纬度设置地图中心点114.415836, 30.500568
+function theLocation(){
+        map.clearOverlays();
+        var new_point = new BMap.Point(114.422636,30.506178);
+        var marker = new BMap.Marker(new_point);  // 创建标注
+        map.addOverlay(marker);              // 将标注添加到地图中
+        map.panTo(new_point);
+}
+theLocation();
+var i=0;
+$(".contact").mouseover(function(){
+    if(i==0){
+        $(this).animate({right:"0px"});
+        i=1;
+    }
 
-         var i=0;
-        $(".contact").mouseover(function(){
-            if(i==0){
-                $(this).animate({right:"0px"});
-                i=1;
-            }
-
-        })
-        $("#close").click(function(){
-            $(".contact").animate({right:"-180px"},function(){
-                i=0;
-            })
-        })
-        $("#chuxian").click(function(){
-            $(".contact").animate({right:"0px"},function(){
-                i=1;
-            })
-        })
-        $('#weixin').mouseover(function(){
-            $('.erweima').css("display","block");
-        })
-         $('#weixin').mouseout(function(){
-            $('.erweima').css("display","none");
-         })
-</script><script>
-    var our_team = new Swiper('#team-swiper',{
-        pagination : '.swiper-pagination',
-        slidesPerView : 4,
-        slidesPerGroup : 4,
-        autoplay : 10000,
-    });
+})
+$("#close").click(function(){
+    $(".contact").animate({right:"-180px"},function(){
+        i=0;
+    })
+})
+$("#chuxian").click(function(){
+    $(".contact").animate({right:"0px"},function(){
+        i=1;
+    })
+})
+$('#weixin').mouseover(function(){
+    $('.erweima').css("display","block");
+})
+$('#weixin').mouseout(function(){
+    $('.erweima').css("display","none");
+})
+var our_team = new Swiper('#team-swiper',{
+    pagination : '.swiper-pagination',
+    slidesPerView : 4,
+    slidesPerGroup : 4,
+    autoplay : 10000,
+});
 </script>
 </body>
 </html>

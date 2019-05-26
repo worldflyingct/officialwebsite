@@ -12,12 +12,12 @@ $totalpage = 2;
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title><?php WebsiteTitle ();?>_物联网</title>
-    <script src="js/jquery-3.1.0.min.js"></script>
-    <script src="js/mui.min.js"></script>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/mui.min.css">
-    <link rel="stylesheet" href="css/phone_init.css">
-    <link rel="stylesheet" href="css/inter.css">
+    <script src="<?php AssetsUrl ();?>/js/jquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/mui.min.js"></script>
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/mui.min.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/phone_init.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/inter.css">
 </head>
 <body>
 <!-- 侧滑导航根容器 -->
@@ -28,7 +28,7 @@ $totalpage = 2;
         <!-- 主页面标题 -->
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="imgs/phone/wlogo2.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="">
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
@@ -37,7 +37,7 @@ $totalpage = 2;
                 <!-- 主界面具体展示内容 -->
                 <div class="box">
                     <a href="#">
-                        <img src="imgs/phone/bg1.png" >
+                        <img src="<?php AssetsUrl ();?>/imgs/phone/bg1.png" >
                     </a>
                 </div>
                 <div class="box1">
@@ -52,7 +52,7 @@ $totalpage = 2;
                                 <a href="mobilegym.html">
                                     <div class="pic1">
                                         <p></p>
-                                        <img src="imgs/mobile/save.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/save.png" alt="">
                                         <span></span>
                                     </div>
                                     <div class="text1">
@@ -65,7 +65,7 @@ $totalpage = 2;
                                 <a href="mobileagriculture.html">
                                     <div class="pic1">
                                         <p></p>
-                                        <img src="imgs/mobile/smai.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/smai.png" alt="">
                                         <span></span>
                                     </div>
                                     <div class="text1">
@@ -78,7 +78,7 @@ $totalpage = 2;
                                 <a href="mobilepowerful.html">
                                     <div class="pic1">
                                         <p></p>
-                                        <img src="imgs/mobile/selec.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/selec.png" alt="">
                                         <span></span>
                                     </div>
                                     <div class="text1">
@@ -92,7 +92,7 @@ $totalpage = 2;
                                 <a href="mobilecinema.html">
                                     <div class="pic1">
                                         <p></p>
-                                        <img src="imgs/mobile/smovie.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/smovie.png" alt="">
                                         <span></span>
                                     </div>
                                     <div class="text1">
@@ -105,7 +105,7 @@ $totalpage = 2;
                                 <a href="mobilecybercafe.html">
                                     <div class="pic1">
                                         <p></p>
-                                        <img src="imgs/mobile/sdian.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sdian.png" alt="">
                                         <span></span>
                                     </div>
                                     <div class="text1">
@@ -118,7 +118,7 @@ $totalpage = 2;
                                 <a href="mobilecommunity.html">
                                     <div class="pic1">
                                         <p></p>
-                                        <img src="imgs/mobile/sdas.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sdas.png" alt="">
                                         <span></span>
                                     </div>
                                     <div class="text1">
@@ -155,20 +155,20 @@ $totalpage = 2;
     </div>
 </div>
 <script>
-    mui('.mui-scroll-wrapper').on('tap','a' ,function(){location.href = this.getAttribute('href')});
-    mui.init({
-        swipeBack: false,
-    })
-    mui('.mui-scroll-wrapper').scroll({
-        deceleration: 0.0005
-        //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
-    })
-    $('#traking').on('tap','li',function(){
-        location.href = $(this).attr('data');
-    })
-    $('#trak').on('tap','li',function(){
-        location.href = $(this).attr('data');
-    })
+mui('.mui-scroll-wrapper').on('tap','a' ,function(){location.href = this.getAttribute('href')});
+mui.init({
+    swipeBack: false,
+})
+mui('.mui-scroll-wrapper').scroll({
+    deceleration: 0.0005
+    //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+})
+$('#traking').on('tap','li',function(){
+    location.href = $(this).attr('data');
+})
+$('#trak').on('tap','li',function(){
+    location.href = $(this).attr('data');
+})
 </script>
 </body>
 </html>

@@ -86,6 +86,16 @@ function WebsiteImportantWord () {
     echo $webmsg["importantword"];
 }
 
+function SiteUrl () {
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["siteurl"];
+}
+
+function AssetsUrl () {
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["assetsurl"];
+}
+
 function GetNewsList ($page = 1, $size = 5, $type = 0) {
     static $newsList = null;
     if ($newsList === null) {

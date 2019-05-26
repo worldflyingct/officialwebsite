@@ -8,11 +8,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title><?php WebsiteTitle ();?>_仓库管理</title>
-    <script src="js/mui.min.js"></script>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/mui.min.css">
-    <link rel="stylesheet" href="css/phone_init.css">
-    <link rel="stylesheet" href="css/phone_canku.css">
+    <script src="<?php AssetsUrl ();?>/js/mui.min.js"></script>
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/mui.min.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/phone_init.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/phone_canku.css">
 </head>
 <body>
 <!-- 侧滑导航根容器 -->
@@ -23,7 +23,7 @@
         <!-- 主页面标题 -->
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="imgs/phone/wlogo2.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="">
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
@@ -31,7 +31,7 @@
             <div class="mui-scroll">
             <!-- 主界面具体展示内容 -->
                 <div class="box1">
-                    <img src="imgs/phone/bg16.png">
+                    <img src="<?php AssetsUrl ();?>/imgs/phone/bg16.png">
                 </div>
                 <div class="box2">
                     <h3>系统简介</h3>
@@ -64,7 +64,7 @@
                     </ul>
                 </div>
                 <div class="box3">
-                    <img src="imgs/phone/bg17.png">
+                    <img src="<?php AssetsUrl ();?>/imgs/phone/bg17.png">
                     <h3>功能说明</h3>
                     <div style="margin-top: 30px;">
                         <h4>1.物品批量导入功能</h4>
@@ -95,7 +95,7 @@
                         <p>配置手持的RFID读卡设备，首先在RFID手持终端中输入要寻找的物品，可以通过搜索功能实现或是通过直接输入的方式实现。将RFID读卡设备的精度设置高一点，这样可以判断是否在RFID手持终端所在前方10米范围内，如果不在，就去别的位置扫。当手持RFID读卡设备发出声音，就将精度调低，缩小寻找范围，就这样一点一点你的缩小识别区域，最终将物体找到。</p>
                     </div>
                     <div>
-                        <img src="imgs/phone/bg18.png">
+                        <img src="<?php AssetsUrl ();?>/imgs/phone/bg18.png">
                     </div>
                 </div>
 <?php require("view/mobile/footer.php");?>
@@ -105,13 +105,13 @@
     </div>
 </div>
 <script>
-    mui('.mui-scroll-wrapper').on('tap','a' ,function(){location.href = this.getAttribute('href')});
-    mui.init({
-        swipeBack: false,
-    });
-    mui('.mui-scroll-wrapper').scroll({
-        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
-    });
+mui('.mui-scroll-wrapper').on('tap','a' ,function(){location.href = this.getAttribute('href')});
+mui.init({
+    swipeBack: false,
+});
+mui('.mui-scroll-wrapper').scroll({
+    deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+});
 </script>
 </body>
 </html>

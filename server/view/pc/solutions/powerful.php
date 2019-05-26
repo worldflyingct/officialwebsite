@@ -5,13 +5,13 @@
     <meta name="keywords" content="<?php WebsiteKeyWords ();?>"/>
     <meta name="description" content="<?php WebsiteDescription ();?>"/>
     <meta name="viewpoint" content="width=device-width"/>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/winit.css">
-    <link rel="stylesheet" href="css/sreset.css">
-    <link rel="stylesheet" href="css/spower.css">
-    <link rel="stylesheet" type="text/css" href="css/xinnav.css">
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/winit.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/sreset.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/spower.css">
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/xinnav.css">
     <title><?php WebsiteTitle ();?>_电力物联网系统</title>
-    <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
 </head>
 <body>
@@ -19,9 +19,9 @@
 <div class="contain" >
     <div class="section1">
         <div class="power-back" >
-            <img src="imgs/sback3.png" >
+            <img src="<?php AssetsUrl ();?>/imgs/sback3.png" >
             <div class="back">
-                <img src="imgs/sback4.png" >
+                <img src="<?php AssetsUrl ();?>/imgs/sback4.png" >
                 <div class="text">
                     <p class="p1">电力物联网系统</p>
                     <p class="p2">Power Internet of Things System </p>
@@ -32,7 +32,7 @@
     <div class="section2">
         <div class="power-one">
             <div class="picture1">
-                <img src="imgs/spicture1.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/spicture1.png" alt="">
             </div>
             <div class="text1">
                 <h2>方案简介</h2>
@@ -44,8 +44,8 @@
         </div>
     </div>
     <div class="section3">
-        <div class="power-two" style="background: url('imgs/spicture2.png');background-size:100% 100%;top:10%;">
-            <img src="imgs/sback5.png" >
+        <div class="power-two" style="background: url('<?php AssetsUrl ();?>/imgs/spicture2.png');background-size:100% 100%;top:10%;">
+            <img src="<?php AssetsUrl ();?>/imgs/sback5.png" >
             <ul class="clearfix">
                 <li style="border-top: none;border-left:none">
                     <p>先进性</p>
@@ -81,49 +81,49 @@
            </div>
             <div class="power1">
                 <div class="icon1">
-                    <img src="imgs/power/sanjiao.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
                     <h4>1.权限管理</h4>
                     <p>本权限管理系统是考虑到管理人员不可能只有一个人，有的人是管理这个片区，另一部分人是管理其他片区。有的人负责管理用户缴费，有的人负责用户报修以及设备的维护。</p>
                 </div>
                  <div class="pic1">
-                    <img src="imgs/power/quanx.png" >
+                    <img src="<?php AssetsUrl ();?>/imgs/power/quanx.png" >
                 </div>
                 <div class="icon2">
-                        <img src="imgs/power/sanjiao.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
                         <h4>2.用户管理系统</h4>
                         <p>这里的用户指的并不是管理员，而是终端用户，如果针对的是智能电表，那这个终端用户指的就将是每一户的居民，每个用户可以绑定多个智能电表，但是每个智能电表智能绑定
                                 一个用户。</p>
                 </div>
                 <div class="pic2">
-                    <img src="imgs/power/shuju2.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/power/shuju2.png" alt="">
                 </div>
                 <div class="icon3">
-                        <img src="imgs/power/sanjiao.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
                         <h4>3.设备远程控制系统</h4>
                         <p>设备远程控制系统基于推送技术实现，利用目前先进的类似 mqtt 技术，利用目前已有的以太网为基础。</p>
                 </div>
                 <div class="icon4">
-                        <img src="imgs/power/sanjiao.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
                         <h4>4.新闻资讯系统</h4>
                         <p>设备远程控制系统基于推送技术实现，利用目前先进的类似 mqtt 技术，利用目前已有的以太网为基础。</p>
                 </div>
                 <div class="icon5">
-                        <img src="imgs/power/sanjiao.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
                         <h4>5.App 系统</h4>
                         <p>App 系统主要有两个端，一个是维修师傅的那一端，用于在故障现场查看设备参数的。另一个是用户端，用于支付费用，接收报警信息等。</p>
                 </div>
                 <div class="icon6">
-                        <img src="imgs/power/sanjiao.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
                         <h4>6. 数据存储</h4>
                         <p>设备本身有存储功能，用于保证当无网络的情况下运行数据能被记录下来。同时服务端也需要有数据记录，方便统计以及查阅。</p>
                 </div>
                 <div class="icon7">
-                        <img src="imgs/power/sanjiao.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
                         <h4>7. 数据分析</h4>
                         <p>设备本身有存储功能，用于保证当无网络的情况下运行数据能被记录下来。同时服务端也需要有数据记录，方便统计以及查阅。</p>
                 </div>
                 <div class="pic3">
-                    <img src="imgs/power/shuju.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/power/shuju.png" alt="">
                 </div>
             </div>
         </div>

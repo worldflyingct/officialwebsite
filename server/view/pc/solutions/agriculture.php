@@ -6,14 +6,14 @@
     <meta name="description" content="<?php WebsiteDescription ();?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/winit.css">
-    <link rel="stylesheet" href="css/wbootstrap.css">
-    <link rel="stylesheet" href="css/wnongye.css">
-    <link rel="stylesheet" type="text/css" href="css/xinnav.css">
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/winit.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wbootstrap.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wnongye.css">
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/xinnav.css">
     <title><?php WebsiteTitle ();?>_智慧农业</title>
-    <script src="js/wjquery-3.1.0.min.js"></script>
-    <script src="js/wbootstrap.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/wjquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/wbootstrap.min.js"></script>
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
 </head>
 <body>
@@ -39,17 +39,17 @@
                 <li>
                     <h4>温室环境实时监控</h4>
                     <p>远程查看棚内的实时环境数据，包括空气温度、空气湿度、土壤温度、土壤湿度、光照度、二氧化碳浓度、氧气浓度、ph等。</p>
-                    <div><i style="background: url(imgs/wjiankong2.png)no-repeat;width: 50px;height: 50px;margin:10px auto;"></i></div>
+                    <div><i style="background: url('<?php AssetsUrl ();?>/imgs/wjiankong2.png')no-repeat;width: 50px;height: 50px;margin:10px auto;"></i></div>
                 </li>
                 <li>
                     <h4>智能报警系统</h4>
                     <p>报警提醒内容可根据模板灵活设置，根据不同客户需求可以设置不同的提醒内容，最大程度满足客户个性化需求</p>
-                    <div><i style="background: url(imgs/wbaojin.png)no-repeat;"></i></div>
+                    <div><i style="background: url('<?php AssetsUrl ();?>/imgs/wbaojin.png')no-repeat;"></i></div>
                 </li>
                 <li>
                     <h4>视频监控 </h4>
                     <p>兼容市面上所谓的支持rtsp协议的ip摄像头，有线接入大棚，大棚内转Wi-Fi </p>
-                    <div><i style="background: url(imgs/wjiankong1.png)no-repeat;"></i></div>
+                    <div><i style="background: url('<?php AssetsUrl ();?>/imgs/wjiankong1.png')no-repeat;"></i></div>
                 </li>
             </ul>
             <div class="center">
@@ -60,17 +60,17 @@
                 <li>
                     <h4>远程自动控制 </h4>
                     <p>可以自定义规则，让整个温室设备随环境参数变化 自动控制，比如当土壤湿度过低时，温室灌溉系统自动开始浇水。</p>
-                    <div style="top: -10px;"><i style="background: url(imgs/wkongzhitai.png)no-repeat;"></i></div>
+                    <div style="top: -10px;"><i style="background: url('<?php AssetsUrl ();?>/imgs/wkongzhitai.png')no-repeat;"></i></div>
                 </li>
                 <li>
                     <h4>数据分析 </h4>
                     <p>系统可以通过不同条件组合查询和对比历史环境数据</p>
-                    <div><i style="background: url(imgs/wshuju.png)no-repeat;"></i></div>
+                    <div><i style="background: url('<?php AssetsUrl ();?>/imgs/wshuju.png')no-repeat;"></i></div>
                 </li>
                 <li>
                     <h4>可定制更多功能</h4>
                     <p>可根据客户需求定制更多可实行功能。 </p>
-                    <div><i style="background: url(imgs/wgengduo.png)no-repeat;"></i></div>
+                    <div><i style="background: url('<?php AssetsUrl ();?>/imgs/wgengduo.png')no-repeat;"></i></div>
                 </li>
             </ul>
         </div>
@@ -83,22 +83,22 @@
             </div>
             <ul class="clearfix">
                 <li>
-                    <div><i style="background: url(imgs/wchuangan.png)no-repeat;width: 50px;height: 50px;margin-top: 10px;"></i></div>
+                    <div><i style="background: url('<?php AssetsUrl ();?>/imgs/wchuangan.png')no-repeat;width: 50px;height: 50px;margin-top: 10px;"></i></div>
                     <h3>传感器 </h3>
                     <p>采集温室大棚内空气中以及土壤的温度、湿度、光照、PH、CO2浓度等环境参数 </p>
                 </li>
                 <li>
-                    <div><i style="background: url(imgs/wkongzhi.png)no-repeat;"></i></div>
+                    <div><i style="background: url('<?php AssetsUrl ();?>/imgs/wkongzhi.png')no-repeat;"></i></div>
                     <h3>控制器 </h3>
                     <p>可控制洒水、农药、温度等</p>
                 </li>
                 <li>
-                    <div><i style="background: url(imgs/wapp6.png)no-repeat;"></i></div>
+                    <div><i style="background: url('<?php AssetsUrl ();?>/imgs/wapp6.png')no-repeat;"></i></div>
                     <h3>用户端app </h3>
                     <p>可以查看环境参数、操作控制器等</p>
                 </li>
                 <li>
-                    <div><i style="background: url(imgs/whotai.png)no-repeat;"></i></div>
+                    <div><i style="background: url('<?php AssetsUrl ();?>/imgs/whotai.png')no-repeat;"></i></div>
                     <h3>后台</h3>
                     <p>可设置权限、用户、设备、规则、数据等管理 </p>
                 </li>
@@ -115,7 +115,7 @@
                 <h3>用户端app以地图的方式对各个控制点进行控制以及查看各个传感器数据。地图可以自定义上传。</h3>
                 <ul>
                     <li style="margin-top: 30px;">
-                        <img src="imgs/wmap.png" alt="武汉app开发">
+                        <img src="<?php AssetsUrl ();?>/imgs/wmap.png" alt="武汉app开发">
                         <div>
                             <h5>1、查看实时环境数据</h5>
                             <p>可以实时查看棚内空气、土壤和水中的温度、湿度、二氧化碳浓度、光照、PH值等环境数据。也可以查询历史数据。便于对整体数据分析。</p>
@@ -130,14 +130,14 @@
                         </div>
                     </li>
                     <li style="margin-top: 50px;">
-                        <img src="imgs/wgonglu.png" alt="武汉app开发">
+                        <img src="<?php AssetsUrl ();?>/imgs/wgonglu.png" alt="武汉app开发">
                         <div>
                             <h5>1、摄像机显示 </h5>
                             <p>实时获取视频监控，随时查看棚内农作物情况，可以查询历史监控 </p>
                         </div>
                     </li>
                     <li>
-                        <img src="imgs/wwendu.png" alt="武汉app开发">
+                        <img src="<?php AssetsUrl ();?>/imgs/wwendu.png" alt="武汉app开发">
                         <div>
                             <h5>1、记录显示 </h5>
                             <p>显示记录采用轮播的方式，旧记录会显示在下方，新记录会显示在上方。</p>
@@ -160,7 +160,7 @@
             </div>
             <ul>
                 <li>
-                    <img src="imgs/wnongye.png" alt="武汉app开发">
+                    <img src="<?php AssetsUrl ();?>/imgs/wnongye.png" alt="武汉app开发">
                     <div>
                         <h5>1、权限管理 </h5>
                         <p>权限管理分为管理员管理、角色管理、管理员操作日志。可对管理员的权限进行编辑。记录管理员操作日志。</p>
@@ -175,7 +175,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="imgs/wnongye2.png" alt="武汉app开发">
+                    <img src="<?php AssetsUrl ();?>/imgs/wnongye2.png" alt="武汉app开发">
                     <div>
                         <h5>1、规则管理 </h5>
                         <p>可对控制器规则进行管理。</p>

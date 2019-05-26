@@ -8,11 +8,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title><?php WebsiteTitle ();?>_电力远程控制</title>
-    <script src="js/mui.min.js"></script>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/mui.min.css">
-    <link rel="stylesheet" href="css/phone_init.css">
-    <link rel="stylesheet" href="css/power.css">
+    <script src="<?php AssetsUrl ();?>/js/mui.min.js"></script>
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/mui.min.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/phone_init.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/power.css">
 </head>
 <body>
 <!-- 侧滑导航根容器 -->
@@ -23,7 +23,7 @@
         <!-- 主页面标题 -->
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="imgs/phone/wlogo2.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="">
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
@@ -109,7 +109,7 @@
                     <div class="powerful">
                         <h2>功能明细</h2>
                         <div class="p1">
-                            <img src="imgs/mobile/sanjiao.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/mobile/sanjiao.png" alt="">
                             <h4>1.权限管理系统</h4>
                             <p>本权限管理系统是考虑到管理人员不可能只有一个人，
                                 有的人是管理这个片区，另一部分人是管理其他片区。
@@ -118,11 +118,11 @@
                         </div>
                     </div>
                     <div class="powerful2">
-                        <img src="imgs/mobile/spic1.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/mobile/spic1.png" alt="">
                     </div>
                     <div class="powerful3">
                         <div class="p1">
-                            <img src="imgs/mobile/sanjiao.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/mobile/sanjiao.png" alt="">
                             <h4>2.用户管理系统</h4>
                             <p>本这里的用户指的并不是管理员，而是终端用户，
                                 如果针对的是智能电表，那这个终端用户指的就将是每一户的居民
@@ -132,11 +132,11 @@
                         </div>
                     </div>
                     <div class="powerful4">
-                        <img src="imgs/mobile/spic2.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/mobile/spic2.png" alt="">
                     </div>
                     <div class="powerful5">
                         <div class="p1">
-                            <img src="imgs/mobile/sanjiao.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/mobile/sanjiao.png" alt="">
                             <h4>3.远程控制管理系统</h4>
                             <p>设备远程控制系统基于推送技术实现，
                                 利用目前先进的类似 mqtt 技术，利用目前已有的以太网为基础。
@@ -145,7 +145,7 @@
                     </div>
                     <div class="powerful6">
                         <div class="p1">
-                            <img src="imgs/mobile/sanjiao.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/mobile/sanjiao.png" alt="">
                             <h4>4.新闻资讯系统</h4>
                             <p>新闻资讯系统用于分发一些类似用电知识，用电新闻等的相关信息。
                             </p>
@@ -153,7 +153,7 @@
                     </div>
                     <div class="powerful7">
                         <div class="p1">
-                            <img src="imgs/mobile/sanjiao.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/mobile/sanjiao.png" alt="">
                             <h4>5.App系统</h4>
                             <p>App 系统主要有两个端，一个是维修师傅的那一端，用于在故障现场查看设备参数的。
                                 另一个是用户端，用于支付费用，接收报警信息等。
@@ -162,7 +162,7 @@
                     </div>
                     <div class="powerful8">
                         <div class="p1">
-                            <img src="imgs/mobile/sanjiao.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/mobile/sanjiao.png" alt="">
                             <h4>6.数据存储</h4>
                             <p>设备本身有存储功能，用于保证当无网络的情况下运行数据能被记录下来。同时服务端也需要有数据记录，方便统计以及查阅。
                             </p>
@@ -170,14 +170,14 @@
                     </div>
                     <div class="powerful9">
                         <div class="p1">
-                            <img src="imgs/mobile/sanjiao.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/mobile/sanjiao.png" alt="">
                             <h4>7.数据分析</h4>
                             <p>设备本身有存储功能，用于保证当无网络的情况下运行数据能被记录下来。同时服务端也需要有数据记录，方便统计以及查阅。
                             </p>
                         </div>
                     </div>
                     <div class="powerful10">
-                        <img src="imgs/mobile/spic3.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/mobile/spic3.png" alt="">
                     </div>
                 </div>
 <?php require("view/mobile/footer.php");?>

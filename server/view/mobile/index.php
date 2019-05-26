@@ -8,12 +8,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title><?php WebsiteTitle ();?>_首页</title>
-    <script src="js/jquery-3.1.0.min.js"></script>
-    <script src="js/mui.min.js"></script>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/mui.min.css">
-    <link rel="stylesheet" href="css/phone_init.css">
-    <link rel="stylesheet" href="css/phone_index.css">
+    <script src="<?php AssetsUrl ();?>/js/jquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/mui.min.js"></script>
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/mui.min.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/phone_init.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/phone_index.css">
 </head>
 <body>
 <!-- 侧滑导航根容器 -->
@@ -24,7 +24,7 @@
         <!-- 主页面标题 -->
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="imgs/phone/wlogo2.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="<?php WebsiteImportantWord ();?>">
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
@@ -32,18 +32,18 @@
             <div class="mui-scroll">
             <!-- 主界面具体展示内容 -->
                 <div class="box1">
-                    <img src="imgs/phone/bg1.png" alt="武汉app开发">
+                    <img src="<?php AssetsUrl ();?>/imgs/phone/bg1.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div class="box2">
                 <div>
-                        <img src="imgs/phone/bg2.png" alt="武汉app开发">
+                        <img src="<?php AssetsUrl ();?>/imgs/phone/bg2.png" alt="<?php WebsiteImportantWord ();?>">
                         <div class="tiao">
-                            <a style="top: 25%;left: 0;" href="/mobile-solution-canku.html"></a>
-                            <a style="top: 25%;left: 40%;" href="/mobile-solution-nongye.html"></a>
-                            <a style="top: 25%;left: 80%;" href="/mobile-solution-power.html"></a>
-                            <a style="top: 70%;left: 0;" href="/mobile-solution-bar.html"></a>
-                            <a style="top: 70%;left: 40%;" href="/mobile-solution-xiaoqu.html"></a>
-                            <a style="top: 70%;left: 80%;" href="/mobile-solution-movie.html"></a>
+                            <a style="top: 25%;left: 0;" href="<?php SiteUrl();?>/mobilegym.html"></a>
+                            <a style="top: 25%;left: 40%;" href="<?php SiteUrl();?>/mobileagriculture.html"></a>
+                            <a style="top: 25%;left: 80%;" href="<?php SiteUrl();?>/mobilepowerful.html"></a>
+                            <a style="top: 70%;left: 0;" href="<?php SiteUrl();?>/mobilecybercafe.html"></a>
+                            <a style="top: 70%;left: 40%;" href="<?php SiteUrl();?>/mobilecommunity.html"></a>
+                            <a style="top: 70%;left: 80%;" href="<?php SiteUrl();?>/mobilecinema.html"></a>
                         </div>
                     </div>
                 </div>
@@ -74,33 +74,33 @@
                                 <p>本项目是一个政务类软硬件相结合的系统集成类项目，不动产自助打印终端是以现有窗口登记业务流程为依据，进行简化和优化，将业务流程电子化、自助化办理的创新成果，不仅能大大提升办事效率，减少排队；同时，该设备可实现社区化部署，市民任何时间均可就近自助办理，是落实“简政放权”的切实工作体现，节省时间、人员成本。
                                     产品的主要功能有：电子表单、指纹采集、高清摄像、电子签名、身份验证、资料扫描、人脸识别。这是国内首台不动产预受理系统，做到真正的全自助办理、无纸化绿色政务，身份证的的调档做到高效率，高准确性，并具有防破坏报警，社区化部署等特点。</p>
                             </div>
-                            <img src="imgs/phone/case1.png" alt="武汉app开发">
+                            <img src="<?php AssetsUrl ();?>/imgs/phone/case1.png" alt="<?php WebsiteImportantWord ();?>">
                         </li>
                         <li>
                             <div>
                                 <p>MiNi共享KTV是一个由软件和硬件组成的综合性集成项目，包含了手机端的微信小程序，云端服务器，以及线下主机服务器，电子显示屏，等一系列连接控制。用户通过手机微信小程序来完成用户身份验证、充值押金、扫码开门、对唱歌机的控制、完成支付并查看自己的消费信息，以及在手机端的社交。</p>
                             </div>
-                            <img src="imgs/ktv.jpg" alt="武汉app开发">
+                            <img src="<?php AssetsUrl ();?>/imgs/ktv.jpg" alt="<?php WebsiteImportantWord ();?>">
                         </li>
                         <li>
                             <div>
                                 <p>本项目产品是一款工业级应用设备，在各种物体表面上喷印上图案文字和数码，是集机电一体化的高科技产品。产品广泛应用于食品工业、化妆品工业、医药工业、汽车等零件加工行业、电线电缆行业、铝塑管行业、烟酒行业以及其它领域。可用于喷印生产日期、批号、条型码以及商标图案、防伪标记和中文字样，是贯彻卫生法和促进包装现代化强有力的设备。</p>
                             </div>
-                            <!-- <img src="" alt="武汉app开发"> -->
+                            <!-- <img src="" alt="<?php WebsiteImportantWord ();?>"> -->
                         </li>
                         <li>
                             <div>
                                 <p>本系统是一个电力行业的能效管理系统，电力能效管理系统软件借助了计算机、通信设备、计量保护装置等，为系统的实时数据采集、开关状态检测及远程控制提供了基础平台。该电力监控系统可以为企业提供“监控一体化”的整体解决方案，主要包括实时历史数据库AcrSpace、工业自动化组态软件AcrControl、电力自动化软件AcrNetPower、“软”控制策略软件AcrStrategy、通信网关服务器AcrFieldComm、OPC产品、Web门户工具等，可以广泛地应用于企业信息化、DCS系统、PLC系统、SCADA系统。</p>
                             </div>
-                            <!-- <img src="" alt="武汉app开发"> -->
+                            <!-- <img src="" alt="<?php WebsiteImportantWord ();?>"> -->
                         </li>
                     </ul>
                 </div>
                 <div class="box4">
-                    <img src="imgs/phone/bg3.jpg" alt="武汉app开发">
+                    <img src="<?php AssetsUrl ();?>/imgs/phone/bg3.jpg" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div class="box5">
-                    <img src="imgs/phone/bg4.jpg" alt="武汉app开发">
+                    <img src="<?php AssetsUrl ();?>/imgs/phone/bg4.jpg" alt="<?php WebsiteImportantWord ();?>">
                 </div>
 <?php require ("view/mobile/footer.php");?>
             </div>
@@ -125,7 +125,6 @@ $('#bbtn').on("tap","div",function(){
     var i = $(this).index();
     $('#contt>li').eq(i).addClass('active11');
     $(this).addClass('bg');
-    // console.log($(this).index())
 })
 </script>
 </body>

@@ -8,17 +8,17 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title><?php WebsiteTitle ();?>_关于我们</title>
-    <script src="js/mui.min.js"></script>
-    <script src="js/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/swiper.jquery.min.js"></script>
-    <script src="js/flexible.js"></script>
-    <script src="js/flexible_css.js"></script>
-    <script src="js/jweixin-1.2.0.js"></script>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link href="css/mui.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" type="text/css" href="css/flexible.css"/>
-    <link rel="stylesheet" type="text/css" href="css/main.css"/>
-    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <script src="<?php AssetsUrl ();?>/js/mui.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/jquery-3.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="<?php AssetsUrl ();?>/js/swiper.jquery.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/flexible.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/flexible_css.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/jweixin-1.2.0.js"></script>
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link href="<?php AssetsUrl ();?>/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/flexible.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/swiper.min.css"/>
     <style>
         html,body {
             background-color: #efeff4;
@@ -54,19 +54,19 @@
     </style>
 </head>
 <body>
-    <!--侧滑菜单容器-->
-    <div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
+<!--侧滑菜单容器-->
+<div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
 <?php require ("view/mobile/header.php");?>
     <div class="mui-inner-wrap">
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="imgs/wphone/logo.png" alt="<?php WebsiteImportantWord ();?>"/>
+                <img src="<?php AssetsUrl ();?>/imgs/wphone/logo.png" alt="<?php WebsiteImportantWord ();?>"/>
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
         <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
         <div class="mui-scroll">
-            <img src="imgs/wphone/about-bg.png" style="width: 100%;margin-bottom: 5%;" alt="<?php WebsiteImportantWord ();?>">
+            <img src="<?php AssetsUrl ();?>/imgs/wphone/about-bg.png" style="width: 100%;margin-bottom: 5%;" alt="<?php WebsiteImportantWord ();?>">
             <div class="about-box3">
                 <div class="title-box">
                     <p class="about-title1">我们是谁</p>
@@ -80,7 +80,7 @@
                 <p class="product-title2">懂您所需，做您所想</p>
                 <div class="about-content-box">
                     <div class="content-box-left">
-                    <img src="imgs/wphone/about1.png" alt="<?php WebsiteImportantWord ();?>"/>
+                    <img src="<?php AssetsUrl ();?>/imgs/wphone/about1.png" alt="<?php WebsiteImportantWord ();?>"/>
                 </div>
                 <div class="content-box-right">
                     <p class="content-p1">沃航特点</p>
@@ -93,12 +93,12 @@
                     <p class="content-p2">用最专业的技术，最良好的态度服务客户，用质量铸就品牌。</p>
                 </div>
                 <div class="content-box-left">
-                    <img src="imgs/wphone/about2.png" alt="<?php WebsiteImportantWord ();?>"/>
+                    <img src="<?php AssetsUrl ();?>/imgs/wphone/about2.png" alt="<?php WebsiteImportantWord ();?>"/>
                 </div>
             </div>
             <div class="about-content-box">
                 <div class="content-box-left">
-                    <img src="imgs/wphone/about3.png" alt="<?php WebsiteImportantWord ();?>"/>
+                    <img src="<?php AssetsUrl ();?>/imgs/wphone/about3.png" alt="<?php WebsiteImportantWord ();?>"/>
                 </div>
                 <div class="content-box-right">
                     <p class="content-p1">沃航使命</p>
@@ -111,12 +111,12 @@
                     <p class="content-p2">成为世界一流的技术解决方案服务提供商</p>
                 </div>
                 <div class="content-box-left">
-                    <img src="imgs/wphone/about4.png" alt="<?php WebsiteImportantWord ();?>"/>
+                    <img src="<?php AssetsUrl ();?>/imgs/wphone/about4.png" alt="<?php WebsiteImportantWord ();?>"/>
                 </div>
             </div>
             <div class="about-content-box">
                 <div class="content-box-left">
-                    <img src="imgs/wphone/about1.png" alt="<?php WebsiteImportantWord ();?>"/>
+                    <img src="<?php AssetsUrl ();?>/imgs/wphone/about1.png" alt="<?php WebsiteImportantWord ();?>"/>
                 </div>
                 <div class="content-box-right">
                     <p class="content-p1">沃航精神</p>
@@ -124,7 +124,7 @@
                 </div>
             </div>
             </div>
-<?php if (false) { ?>
+<!--
             <div class="box3">
                 <p class="product-title1">我们的团队</p>
                 <p class="product-title2">Our team</p>
@@ -133,7 +133,7 @@
                         <div class="swiper-slide">
                             <div class="slide-box">
                                 <div class="slide-top">
-                                    <img src="imgs/wphone/touxiang.png" alt="<?php WebsiteImportantWord ();?>"/>
+                                    <img src="<?php AssetsUrl ();?>/imgs/wphone/touxiang.png" alt="<?php WebsiteImportantWord ();?>"/>
                                 </div>
                                 <p class="slide-p1">技术</p>
                                 <div class="slide-bottom">
@@ -143,7 +143,7 @@
                             </div>
                             <div class="slide-box">
                                 <div class="slide-top">
-                                    <img src="imgs/wphone/touxiang.png" alt="<?php WebsiteImportantWord ();?>"/>
+                                    <img src="<?php AssetsUrl ();?>/imgs/wphone/touxiang.png" alt="<?php WebsiteImportantWord ();?>"/>
                                 </div>
                                 <p class="slide-p1">技术</p>
                                 <div class="slide-bottom">
@@ -153,7 +153,7 @@
                             </div>
                             <div class="slide-box">
                                 <div class="slide-top">
-                                    <img src="imgs/wphone/touxiang.png" alt="<?php WebsiteImportantWord ();?>"/>
+                                    <img src="<?php AssetsUrl ();?>/imgs/wphone/touxiang.png" alt="<?php WebsiteImportantWord ();?>"/>
                                 </div>
                                 <p class="slide-p1">技术</p>
                                 <div class="slide-bottom">
@@ -168,11 +168,11 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
-<?php } ?>
+-->
             <div class="box3">
                 <p class="product-title1">我们的客户</p>
                 <p class="product-title2">Our customers</p>
-                <img src="imgs/wphone/about6.png" style="width: 100%;" alt="<?php WebsiteImportantWord ();?>"/>
+                <img src="<?php AssetsUrl ();?>/imgs/wphone/about6.png" style="width: 100%;" alt="<?php WebsiteImportantWord ();?>"/>
             </div>
 <?php require("view/mobile/footer.php");?>
         </div>
@@ -182,34 +182,6 @@
     </div>
 </div>
 <script>
-function sendrequest() {
-    var checkres = $("#sendrequest_form")[0].reportValidity();
-    if (checkres == false) {
-        return;
-    }
-    $.ajax({
-        method: 'post',
-        url: 'sendrequest.html',
-        data: {
-            clientname: $("#clientname").val(),
-            clientemail: $("#clientemail").val(),
-            clientphone: $("#clientphone").val(),
-            clientsuggest: $("#suggest").val(),
-        },
-        success: function(data) {
-            if (data == "success") {
-                mui.alert('需求提交成功，请等待客服主动与您联系。', '恭喜');
-                $("#clientname").val("");
-                $("#clientemail").val("");
-                $("#clientphone").val("");
-                $("#suggest").val("");
-            } else {
-                console.log(data);
-                mui.alert('需求提交失败，请直接通过电话与客服联系。', '警告');
-            }
-        },
-    });
-}
 mui('.mui-scroll-wrapper').on('tap', 'a', function() {
     location.href = this.getAttribute('href')
 });

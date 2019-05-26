@@ -5,22 +5,22 @@
             <div class="title">官网导航</div>
             <ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted">
                 <li class="mui-table-view-cell">
-                    <a class="mui-navigate-right" href=".">首页</a>
+                    <a class="mui-navigate-right" href="<?php SiteUrl();?>">首页</a>
                 </li>
                 <li class="mui-table-view-cell">
-                    <a class="mui-navigate-right" href="mobilenews.html">新闻资讯</a>
+                    <a class="mui-navigate-right" href="<?php SiteUrl();?>/mobilenews.html">新闻资讯</a>
                 </li>
                 <li class="mui-table-view-cell">
-                    <a class="mui-navigate-right" href="mobileiot.html">物联网</a>
+                    <a class="mui-navigate-right" href="<?php SiteUrl();?>/mobileiot.html">物联网</a>
                 </li>
                 <li class="mui-table-view-cell">
-                    <a class="mui-navigate-right" href="mobileabout.html">关于我们</a>
+                    <a class="mui-navigate-right" href="<?php SiteUrl();?>/mobileabout.html">关于我们</a>
                 </li>
                 <li class="mui-table-view-cell">
-                    <a class="mui-navigate-right" href="mobilerecruit.html">人才合作</a>
+                    <a class="mui-navigate-right" href="<?php SiteUrl();?>/mobilerecruit.html">人才合作</a>
                 </li>
                 <li class="mui-table-view-cell">
-                    <a class="mui-navigate-right" href="mobilesolution.html">解决方案</a>
+                    <a class="mui-navigate-right" href="<?php SiteUrl();?>/mobilesolution.html">解决方案</a>
                 </li>
             </ul>
         </div>

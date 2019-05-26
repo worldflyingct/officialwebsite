@@ -22,48 +22,48 @@
 </script>
 <nav>
     <div class="nav-center">
-        <div class="logo"><img src="imgs/wlogo2.png" alt="<?php WebsiteImportantWord ();?>"></div>
+        <div class="logo"><img src="<?php AssetsUrl ();?>/imgs/wlogo2.png" alt="<?php WebsiteImportantWord ();?>"></div>
         <ul class="navbar">
             <li>
 <?php if ($do == "index") { ?>
                 <a href="#" style="color: #000" >首页</a>
 <?php } else { ?>
-                <a href="index.html"  >首页</a>
+                <a href="<?php SiteUrl ();?>/index.html"  >首页</a>
 <?php } ?>
             </li>
             <li>
 <?php if ($do == "iot") { ?>
                 <a href="#" style="color: #000" >物联网</a>
 <?php } else { ?>
-                <a href="iot.html"  >物联网</a>
+                <a href="<?php SiteUrl ();?>/iot.html"  >物联网</a>
 <?php } ?>
             </li>
             <li>
 <?php if ($do == "solution") { ?>
                 <a href="#" style="color: #000" >解决方案</a>
 <?php } else { ?>
-                <a href="solution.html"  >解决方案</a>
+                <a href="<?php SiteUrl ();?>/solution.html"  >解决方案</a>
 <?php } ?>
             </li>
             <li>
 <?php if ($do == "news") { ?>
                 <a href="#" style="color: #000" >新闻资讯</a>
 <?php } else { ?>
-                <a href="news.html"  >新闻资讯</a>
+                <a href="<?php SiteUrl ();?>/news.html"  >新闻资讯</a>
 <?php } ?>
             </li>
             <li>
 <?php if ($do == "about") { ?>
                 <a href="#" style="color: #000" >关于我们</a>
 <?php } else { ?>
-                <a href="about.html"  >关于我们</a>
+                <a href="<?php SiteUrl ();?>/about.html"  >关于我们</a>
 <?php } ?>
             </li>
             <li>
 <?php if ($do == "join") { ?>
                 <a href="#" style="color: #000" >人才合作</a>
 <?php } else { ?>
-                <a href="recruit.html"  >人才合作</a>
+                <a href="<?php SiteUrl ();?>/recruit.html"  >人才合作</a>
 <?php } ?>
             </li>
         </ul>

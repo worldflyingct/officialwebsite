@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS `wf_config` (
   `ckey` varchar(16) NOT NULL DEFAULT '',
   `cvalue` longtext NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 -- Dumping structure for table homepage.wf_news
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `wf_news` (
   `publishtime` datetime NOT NULL,
   `status` bit(1) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=204 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

@@ -1,6 +1,6 @@
 <div class="contact">
     <ul>
-        <li><span>在线咨询</span><img id="close" src="imgs/close.png"></li>
+        <li><span>在线咨询</span><img id="close" src="<?php AssetsUrl ();?>/imgs/close.png"></li>
         <li class="qqhao">
             <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=<?php WebsiteQQ ();?>&site=qq&menu=yes">
                 <i></i>
@@ -14,7 +14,7 @@
 </div>
 <div class="footer">
     <div class="top">
-        <img src="imgs/wcontact-bg.png" alt="<?php WebsiteImportantWord ();?>">
+        <img src="<?php AssetsUrl ();?>/imgs/wcontact-bg.png" alt="<?php WebsiteImportantWord ();?>">
     </div>
     <div class="bottom clearfix">
         <ul>
@@ -30,11 +30,11 @@
 
 <div class="dibu">
     <div class="erweima">
-        <img src="imgs/erweima.jpg">
+        <img src="<?php AssetsUrl ();?>/imgs/erweima.jpg">
     </div>
     <div class="clearfix">
         <p><?php WebsiteRecord ();?></p>
-        <i id="chuxian" style="background: url('imgs/phone123.png')no-repeat;background-size: 100%;"></i>
-        <i id="weixin" style="background: url(imgs/weixin123.png)no-repeat;background-size: 100%;"></i>
+        <i id="chuxian" style="background: url('<?php AssetsUrl ();?>/imgs/phone123.png')no-repeat;background-size: 100%;"></i>
+        <i id="weixin" style="background: url('<?php AssetsUrl ();?>/imgs/weixin123.png')no-repeat;background-size: 100%;"></i>
     </div>
 </div>

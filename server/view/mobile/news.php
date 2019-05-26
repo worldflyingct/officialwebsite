@@ -14,14 +14,14 @@ $newsList = GetNewsList ($page, 5, $type);
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title><?php WebsiteTitle ();?>_新闻资讯</title>
-    <script src="js/mui.min.js"></script>
-    <script src="js/flexible_css.js"></script>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link href="css/mui.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/phone_init.css">
-    <link rel="stylesheet" type="text/css" href="css/flexible.css"/>
-    <link rel="stylesheet" type="text/css" href="css/main.css"/>
-    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <script src="<?php AssetsUrl ();?>/js/mui.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/flexible_css.js"></script>
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link href="<?php AssetsUrl ();?>/css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/phone_init.css">
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/flexible.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/swiper.min.css"/>
     <style>
         .take-more {
             margin-bottom: 10px;
@@ -39,13 +39,13 @@ $newsList = GetNewsList ($page, 5, $type);
     <div class="mui-inner-wrap">
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="imgs/wlogo2.png" alt="武汉app开发"/>
+                <img src="<?php AssetsUrl ();?>/imgs/wlogo2.png" alt="武汉app开发"/>
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
         <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
             <div class="mui-scroll">
-                <img src="imgs/news-bg.png" style="width: 100%;" alt="武汉app开发">
+                <img src="<?php AssetsUrl ();?>/imgs/news-bg.png" style="width: 100%;" alt="武汉app开发">
                 <div class="box3">
                     <p class="product-title1">新闻动态</p>
                     <p class="product-title2">News information</p>
@@ -53,35 +53,35 @@ $newsList = GetNewsList ($page, 5, $type);
 <?php if ($type == 0) { ?>
                         <li class="mui-table-view-cell"><a class="mui-navigate-right active" href="#">ALL+</a></li>
 <?php } else { ?>
-                        <li class="mui-table-view-cell"><a class="mui-navigate-right" href="mobilenews.html">ALL+</a></li>
+                        <li class="mui-table-view-cell"><a class="mui-navigate-right" href="<?php SiteUrl ();?>/mobilenews.html">ALL+</a></li>
 <?php } ?>
 <?php if ($type == 1) { ?>
                         <li class="mui-table-view-cell"><a class="mui-navigate-right active" href="#">公司动态</a></li>
 <?php } else { ?>
-                        <li class="mui-table-view-cell"><a class="mui-navigate-right" href="mobilenews-type-1.html">公司动态</a></li>
+                        <li class="mui-table-view-cell"><a class="mui-navigate-right" href="<?php SiteUrl ();?>/mobilenews-type-1.html">公司动态</a></li>
 <?php } ?>
 <?php if ($type == 2) { ?>
                         <li class="mui-table-view-cell"><a class="mui-navigate-right active" href="#">媒体报道</a></li>
 <?php } else { ?>
-                        <li class="mui-table-view-cell"><a class="mui-navigate-right" href="mobilenews-type-2.html">媒体报道</a></li>
+                        <li class="mui-table-view-cell"><a class="mui-navigate-right" href="<?php SiteUrl ();?>/mobilenews-type-2.html">媒体报道</a></li>
 <?php } ?>
 <?php if ($type == 3) { ?>
                         <li class="mui-table-view-cell"><a class="mui-navigate-right active" href="#">行业资讯</a></li>
 <?php } else { ?>
-                        <li class="mui-table-view-cell"><a class="mui-navigate-right" href="mobilenews-type-3.html">行业资讯</a></li>
+                        <li class="mui-table-view-cell"><a class="mui-navigate-right" href="<?php SiteUrl ();?>/mobilenews-type-3.html">行业资讯</a></li>
 <?php } ?>
                     </ul>
                     <section class="news-change">
                         <ul style="opacity: 1;">
 <?php foreach ($newsList as $news) { ?>
                             <li>
-                                <a href="mobilearticle-id-<?php echo $news["ID"];?>.html">
+                                <a href="<?php SiteUrl ();?>/mobilearticle-id-<?php echo $news["ID"];?>.html">
                                 <div class="news-box-top">
                                     <div class="news-box-left">
                                         <p><?php echo $news["title"];?></p>
                                         <p><?php echo $news["publishtime"];?></p>
                                     </div>
-                                    <div class="news-box-right"><img src="imgs/jian.png" alt="武汉app开发"/></div>
+                                    <div class="news-box-right"><img src="<?php AssetsUrl ();?>/imgs/jian.png" alt="武汉app开发"/></div>
                                 </div>
                                 </a>
                                 <p class="news-content"><?php echo $news["desc"];?></p>
@@ -90,27 +90,27 @@ $newsList = GetNewsList ($page, 5, $type);
                         </ul>
                         <div class="take-more">
                             <div class="take-more1" >
-                                <a href="mobilenews<?php if ($type != 0) echo "-type-".$type;?>.html">
-                                    <img src="imgs/first.png" alt="武汉app开发">
+                                <a href="<?php SiteUrl ();?>/mobilenews<?php if ($type != 0) echo "-type-".$type;?>.html">
+                                    <img src="<?php AssetsUrl ();?>/imgs/first.png" alt="武汉app开发">
                                 </a>
 <?php if ($page == 1) { ?>
                                 <a href="#">
-                                    <img src="imgs/left.png" alt="武汉app开发">
+                                    <img src="<?php AssetsUrl ();?>/imgs/left.png" alt="武汉app开发">
                                 </a>
 <?php } else { ?>
-                                <a href="mobilenews-page-<?php echo $page-1;if ($type != 0) echo "-type-".$type;?>.html">
-                                    <img src="imgs/left.png" alt="武汉app开发">
+                                <a href="<?php SiteUrl ();?>/mobilenews-page-<?php echo $page-1;if ($type != 0) echo "-type-".$type;?>.html">
+                                    <img src="<?php AssetsUrl ();?>/imgs/left.png" alt="武汉app开发">
                                 </a>
 <?php } ?>
                             </div>
                             <span>第 <?php echo $page;?> 页</span>
                             <div class="take-more1" style="float: right;">
 <?php if ($page == $totalpage) { ?>
-                                <a href="#"><img src="imgs/right.png" alt="武汉app开发"></a>
+                                <a href="#"><img src="<?php AssetsUrl ();?>/imgs/right.png" alt="武汉app开发"></a>
 <?php } else { ?>
-                                <a href="mobilenews-page-<?php echo $page+1;if ($type != 0) echo "-type-".$type;?>.html"><img src="imgs/right.png" alt="武汉app开发"></a>
+                                <a href="<?php SiteUrl ();?>/mobilenews-page-<?php echo $page+1;if ($type != 0) echo "-type-".$type;?>.html"><img src="<?php AssetsUrl ();?>/imgs/right.png" alt="武汉app开发"></a>
 <?php } ?>
-                                <a href="mobilenews-page-<?php echo $totalpage;if ($type != 0) echo "-type-".$type;?>.html"><img src="imgs/last.png" alt="武汉app开发"></a>
+                                <a href="<?php SiteUrl ();?>/mobilenews-page-<?php echo $totalpage;if ($type != 0) echo "-type-".$type;?>.html"><img src="<?php AssetsUrl ();?>/imgs/last.png" alt="武汉app开发"></a>
                             </div>
                         </div>
                     </section>

@@ -5,16 +5,16 @@
     <meta name="keywords" content="<?php WebsiteKeyWords ();?>"/>
     <meta name="description" content="<?php WebsiteDescription ();?>"/>
     <meta name="viewpoint" content="width=device-width"/>
-    <link rel="shortcut icon" href="imgs/favicon.ico">
-    <link rel="stylesheet" href="css/winit.css">
-    <link rel="stylesheet" href="css/wwreset.css">
-    <link rel="stylesheet" href="css/wwhome.css">
-    <link rel="stylesheet" href="css/wwswiper.min.css">
-    <link rel="stylesheet" type="text/css" href="css/xinnav.css">
-    <link rel="stylesheet" href="css/xindedibu.css">
+    <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/winit.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wwreset.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wwhome.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wwswiper.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/xinnav.css">
+    <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/xindedibu.css">
     <title><?php WebsiteTitle ();?>_人才合作</title>
-    <script src="js/jquery-3.1.0.min.js"></script>
-    <script src="js/swiper.jquery.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/jquery-3.1.0.min.js"></script>
+    <script src="<?php AssetsUrl ();?>/js/swiper.jquery.min.js"></script>
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
 </head>
 <style>
@@ -61,15 +61,15 @@
 </style>
 <body>
 <?php require("header.php");?>
-<img src="imgs/pic/personnel-bg.png" style="width: 100%;margin-top: 67px" alt="<?php WebsiteImportantWord ();?>">
+<img src="<?php AssetsUrl ();?>/imgs/pic/personnel-bg.png" style="width: 100%;margin-top: 67px" alt="<?php WebsiteImportantWord ();?>">
 <h1 class="business-title1">职位招聘</h1>
 <h1 class="business-title2">Position recruitment</h1>
 <div class="idea-box">
     <div class="idea-box-img">
-        <img src="imgs/pic/personnel1.png" alt="<?php WebsiteImportantWord ();?>">
+        <img src="<?php AssetsUrl ();?>/imgs/pic/personnel1.png" alt="<?php WebsiteImportantWord ();?>">
     </div>
     <div class="idea-box-content">
-        <p class="idea-box-head"><img src="imgs/pic/personnel2.png" alt="<?php WebsiteImportantWord ();?>"><span>&lt;IDEA&gt;</span></p>
+        <p class="idea-box-head"><img src="<?php AssetsUrl ();?>/imgs/pic/personnel2.png" alt="<?php WebsiteImportantWord ();?>"><span>&lt;IDEA&gt;</span></p>
         <div class="idea-div">
             <p>和聪明的人一起共事</p>
             <p>崇尚创新、快速的互联网文化 正在寻找富有创意和想法的你</p>
@@ -78,21 +78,21 @@
 </div>
 <div class="idea-box">
     <div style="width: 14%;display: inline-block;">
-        <img src="imgs/pic/personnel3.png" alt="<?php WebsiteImportantWord ();?>">
+        <img src="<?php AssetsUrl ();?>/imgs/pic/personnel3.png" alt="<?php WebsiteImportantWord ();?>">
     </div>
     <div class="idea-box-content" style="width: 45%;">
-        <p class="idea-box-head"><img src="imgs/pic/personnel2.png" alt="<?php WebsiteImportantWord ();?>"><span>&lt;JOIN&gt;</span></p>
+        <p class="idea-box-head"><img src="<?php AssetsUrl ();?>/imgs/pic/personnel2.png" alt="<?php WebsiteImportantWord ();?>"><span>&lt;JOIN&gt;</span></p>
         <div class="idea-div">
             <p>做激动人心的产品</p>
             <p>让未来的你喜欢现在的自己  加入我们，在行动中收获梦想</p>
         </div>
     </div>
     <div class="idea-box-img">
-        <img src="imgs/pic/personnel4.png" alt="<?php WebsiteImportantWord ();?>">
+        <img src="<?php AssetsUrl ();?>/imgs/pic/personnel4.png" alt="<?php WebsiteImportantWord ();?>">
     </div>
 </div>
 <div class="work-diff">
-    <img style="width: 100%" src="imgs/pic/personnel5.png" alt="<?php WebsiteImportantWord ();?>">
+    <img style="width: 100%" src="<?php AssetsUrl ();?>/imgs/pic/personnel5.png" alt="<?php WebsiteImportantWord ();?>">
     <div class="work-diff-left">
         <p>工作大有不同</p>
         <br />
@@ -100,7 +100,7 @@
     </div>
     <div class="work-diff-right">
         <div></div>
-        <img src="imgs/pic/personnel6.png" alt="<?php WebsiteImportantWord ();?>"><span>&lt;EFORTS&gt;</span>
+        <img src="<?php AssetsUrl ();?>/imgs/pic/personnel6.png" alt="<?php WebsiteImportantWord ();?>"><span>&lt;EFORTS&gt;</span>
     </div>
 </div>
 <div class="recruit">
@@ -211,47 +211,46 @@
 </div>
 <?php require("footer.php");?>
 <script type="text/javascript">
- var map = new BMap.Map("container");
-    map.centerAndZoom(new BMap.Point(114.422636,30.506178),18);
-    map.enableScrollWheelZoom(true);
-    // 用经纬度设置地图中心点114.415836, 30.500568
-    function theLocation(){
-            map.clearOverlays();
-            var new_point = new BMap.Point(114.422636,30.506178);
-            var marker = new BMap.Marker(new_point);  // 创建标注
-            map.addOverlay(marker);              // 将标注添加到地图中
-            map.panTo(new_point);
+var map = new BMap.Map("container");
+map.centerAndZoom(new BMap.Point(114.422636,30.506178),18);
+map.enableScrollWheelZoom(true);
+// 用经纬度设置地图中心点114.415836, 30.500568
+function theLocation(){
+    map.clearOverlays();
+    var new_point = new BMap.Point(114.422636,30.506178);
+    var marker = new BMap.Marker(new_point);  // 创建标注
+    map.addOverlay(marker);              // 将标注添加到地图中
+    map.panTo(new_point);
+}
+theLocation();
+var i=0;
+$(".contact").mouseover(function(){
+    if(i==0){
+        $(this).animate({right:"0px"});
+        i=1;
+        console.log(i)
     }
-    theLocation();
 
-     var i=0;
-    $(".contact").mouseover(function(){
-        if(i==0){
-            $(this).animate({right:"0px"});
-            i=1;
-            console.log(i)
-        }
-
+})
+$("#close").click(function(){
+    $(".contact").animate({right:"-180px"},function(){
+        i=0;
     })
-    $("#close").click(function(){
-        $(".contact").animate({right:"-180px"},function(){
-            i=0;
-        })
+})
+$("#chuxian").click(function(){
+    $(".contact").animate({right:"0px"},function(){
+        i=1;
     })
-    $("#chuxian").click(function(){
-        $(".contact").animate({right:"0px"},function(){
-            i=1;
-        })
+})
+$('#weixin').mouseover(function(){
+    $('.erweima').css("display","block");
+})
+    $('#weixin').mouseout(function(){
+    $('.erweima').css("display","none");
     })
-    $('#weixin').mouseover(function(){
-        $('.erweima').css("display","block");
-    })
-     $('#weixin').mouseout(function(){
-        $('.erweima').css("display","none");
-     })
-    var mySwiper = new Swiper('.swiper-container',{
-        pagination : '.swiper-pagination',
-    });
+var mySwiper = new Swiper('.swiper-container',{
+    pagination : '.swiper-pagination',
+});
 </script>
 </body>
 </html>

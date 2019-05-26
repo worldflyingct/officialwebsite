@@ -24,9 +24,15 @@ switch ($do) {
     case "community":require("view/pc/solutions/community.php");break;
     case "cybercafe":require("view/pc/solutions/cybercafe.php");break;
     case "mobileiot":require("view/mobile/iot.php");break;
-    case "mobileabout":require("view/mobile/about.php");break;
-    case "mobilerecruit":require("view/mobile/recruit.php");break;
     case "mobilesolution":require("view/mobile/solution.php");break;
     case "mobilenews":require("view/mobile/news.php");break;
     case "mobilearticle":require("view/mobile/article.php");break;
+    case "mobileabout":require("view/mobile/about.php");break;
+    case "mobilerecruit":require("view/mobile/recruit.php");break;
+    case "mobilegym":require("view/mobile/solutions/gym.php");break;
+    case "mobileagriculture":require("view/mobile/solutions/agriculture.php");break;
+    case "mobilepowerful":require("view/mobile/solutions/powerful.php");break;
+    case "mobilecinema":require("view/mobile/solutions/cinema.php");break;
+    case "mobilecommunity":require("view/mobile/solutions/community.php");break;
+    case "mobilecybercafe":require("view/mobile/solutions/cybercafe.php");break;
 }

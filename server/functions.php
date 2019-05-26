@@ -2,7 +2,7 @@
 require_once("config.php");
 function ExecuteSql ($sql, $params=array()) {
     global $config;
-    $db = new PDO("mysql:host=".$config["dbhost"].";port=".$config["dbport"].";dbname=".$config["dbname"], $config["dbuser"], $config["dbpass"], array(PDO::ATTR_PERSISTENT => true));
+    $db = new PDO("mysql:host=".$config["dbhost"].";port=".$config["dbport"].";dbname=".$config["dbname"].";charset=utf8", $config["dbuser"], $config["dbpass"], array(PDO::ATTR_PERSISTENT => true));
     $stmt = $db->prepare($sql);
     $stmt->execute($params);
     return $stmt->fetchAll();
@@ -23,94 +23,67 @@ function IsMobile() {
     return $found_mobile;
 }
 
-function WebsiteTitle () {
-    static $title = null;
-    if ($title === null) {
-        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='title'");
-        $title = $res[0]["cvalue"];
+function WebsiteMsg () {
+    static $webmsg = null;
+    if ($webmsg === null) {
+        $webmsg = array();
+        $arr = ExecuteSql ("SELECT `ckey`,`cvalue` FROM `wf_config`");
+        $count = count ($arr);
+        for ($i = 0 ; $i < $count ; $i++) {
+            $webmsg[$arr[$i]["ckey"]] = $arr[$i]["cvalue"];
+        }
     }
-    echo $title;
+    return $webmsg;
+}
+
+function WebsiteTitle () {
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["title"];
 }
 
 function WebsiteKeyWords () {
-    static $keywords = null;
-    if ($keywords === null) {
-        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='keywords'");
-        $keywords = $res[0]["cvalue"];
-    }
-    echo $keywords;
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["keywords"];
 }
 
 function WebsiteDescription () {
-    static $description = null;
-    if ($description === null) {
-        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='description'");
-        $description = $res[0]["cvalue"];
-    }
-    echo $description;
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["description"];
 }
 
 function WebsiteAddress () {
-    static $address = null;
-    if ($address === null) {
-        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='address'");
-        $address = $res[0]["cvalue"];
-    }
-    echo $address;
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["address"];
 }
 
 function WebsiteQQ () {
-    static $QQ = null;
-    if ($QQ === null) {
-        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='QQ'");
-        $QQ = $res[0]["cvalue"];
-    }
-    echo $QQ;
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["QQ"];
 }
 
 function WebsiteTelephone () {
-    static $telephone = null;
-    if ($telephone === null) {
-        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='telephone'");
-        $telephone = $res[0]["cvalue"];
-    }
-    echo $telephone;
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["telephone"];
 }
 
 function WebsiteMobile () {
-    static $mobile = null;
-    if ($mobile === null) {
-        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='mobile'");
-        $mobile = $res[0]["cvalue"];
-    }
-    echo $mobile;
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["mobile"];
 }
 
 function WebsiteEmail () {
-    static $email = null;
-    if ($email === null) {
-        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='email'");
-        $email = $res[0]["cvalue"];
-    }
-    echo $email;
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["email"];
 }
 
 function WebsiteRecord () {
-    static $record = null;
-    if ($record === null) {
-        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='record'");
-        $record = $res[0]["cvalue"];
-    }
-    echo $record;
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["record"];
 }
 
 function WebsiteImportantWord () {
-    static $importantword = null;
-    if ($importantword === null) {
-        $res = ExecuteSql ("SELECT `cvalue` FROM `wf_config` WHERE `ckey`='importantword'");
-        $importantword = $res[0]["cvalue"];
-    }
-    echo $importantword;
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["importantword"];
 }
 
 function GetNewsList ($page = 1, $size = 5, $type = 0) {

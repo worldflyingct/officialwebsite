@@ -1,0 +1,154 @@
+.box1,.box2,.box3,.box4,.box5,footer{
+    background: #dddfe1; 
+}
+.box1>img,.box3>img,.box4>img{
+    width: 100%;
+}
+.box3{
+    background: #dddfe1; 
+}
+.box2{
+    background: #dddfe1; 
+}
+.box2>.top{
+    width:90%;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+.box2>.top>h3{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+.box2>.bottom{
+    margin-top: 20px;
+}
+.box2>.bottom>h3{
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-left: 5%;
+}
+.box2>.bottom>img{
+    width: 100%;
+    margin-top:30px; 
+}
+.box2>.top>p{
+    margin-top: 10px;
+    font-size: 10px;
+    color: #000000;
+}
+.box4>h3{
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 0 5%;
+    font-size: 1em;
+    line-height: 2em;
+    color: #717171;
+}
+.box4>ul{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.box4>ul>li{
+    margin-top: 20px;
+}
+.box4>ul>li>img{
+    width: 35%;
+}
+.box4>ul>li>div{
+    float: right;
+    width: 65%;
+}
+.box4>ul>li>div>img{
+    width: 100%;
+}
+/*.box4>ul>li>div>h4{
+    font-weight: bold;
+    padding-left: 10px;
+    color: #717171;
+}
+.box4>ul>li>div>h4:first-child{
+    padding-top: 10px;
+}
+.box4>ul>li>div>p{
+    font-size: 10px;
+    margin-top: 5px;
+    padding-left: 20px; 
+    line-height: 18px;
+}*/
+.box4>div>i{
+    display: block;
+    width: 20px;
+    height:20px;
+    background: url(../imgs/phone/biaoqian.png)no-repeat;
+    background-size:100%; 
+    margin: 0 auto;
+}
+.box4>div{
+    margin-top: 10px;
+    width: 31.5%;
+    height: 100px;
+    margin-left: 5%;
+}
+.box4>div>p{
+    font-size: 10px;
+}
+.box5>img{
+    width: 100%;
+}
+.box5>div{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.box5>div>img{
+    width: 100%;
+}
+.box5>div>h3{
+    font-size: 1.2em;
+    font-weight:  bold;
+    color: #717171;
+}
+.box5>div>p{
+    font-size: 10px;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.box5>div>i{
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../imgs/phone/biaoqian.png)no-repeat;
+    background-size: 100%;
+    margin: 0 auto;
+}
+.box5>div:last-child>p{
+    margin: 0;
+    text-align: center;
+}
+.box5{
+    padding-bottom: 50px;
+}
+
+footer {
+    padding: 5%;
+    background: #2f3137;
+}
+
+.phone {
+    width: 50%;
+    float: left;
+    height: 21px;
+}
+footer p {
+    text-indent: 0;
+    color: #d9d9d9;
+}
+.text-span {
+    vertical-align: middle;
+}
+.qq {
+    width: 50%;
+    float: right;
+    height: 21px;
+}

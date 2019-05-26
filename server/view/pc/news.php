@@ -7,22 +7,22 @@ $newsList = GetNewsList ($page, 5, $type);
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="keywords" content="<?php WebsiteKeyWords ();?>"/>
-        <meta name="description" content="<?php WebsiteDescription ();?>"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="shortcut icon" href="imgs/favicon.ico">
-        <link rel="stylesheet" href="css/winit.css">
-        <link rel="stylesheet" href="css/wbootstrap.css">
-        <link rel="stylesheet" href="css/wnews-list.css?74">
-        <link rel="stylesheet" type="text/css" href="css/xinnav.css">
-        <title><?php WebsiteTitle ();?>_新闻资讯</title>
-        <script src="js/wjquery-3.1.0.min.js"></script>
-        <script src="js/wbootstrap.min.js"></script>
-        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="<?php WebsiteKeyWords ();?>"/>
+    <meta name="description" content="<?php WebsiteDescription ();?>"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="imgs/favicon.ico">
+    <link rel="stylesheet" href="css/winit.css">
+    <link rel="stylesheet" href="css/wbootstrap.css">
+    <link rel="stylesheet" href="css/wnews-list.css?74">
+    <link rel="stylesheet" type="text/css" href="css/xinnav.css">
+    <title><?php WebsiteTitle ();?>_新闻资讯</title>
+    <script src="js/wjquery-3.1.0.min.js"></script>
+    <script src="js/wbootstrap.min.js"></script>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
+</head>
 <body>
 <?php require("header.php");?>
 <div class="top-bg">
@@ -84,7 +84,7 @@ if ($totalpage < 5) {
 <?php
         }
     }
-} else if ($totalpage - $page < 2) {
+} else if ($totalpage - $page <= 2) {
     for ($i = $totalpage-5 ; $i <= $totalpage ; $i++) {
         if ($i == $page) {
 ?>
@@ -98,7 +98,7 @@ if ($totalpage < 5) {
 <?php
         }
     }
-} else if ($page < 2) {
+} else if ($page <= 2) {
     for ($i = 1 ; $i <= 5 ; $i++) {
         if ($i == $page) {
 ?>
@@ -143,42 +143,42 @@ if ($page != $totalpage) {
         </div>
     </div>
 <?php require("footer.php");?>
-    <script>
-        var map = new BMap.Map("container");
-        map.centerAndZoom(new BMap.Point(114.422636,30.506178),18);
-        map.enableScrollWheelZoom(true);
-        // 用经纬度设置地图中心点114.415836, 30.500568
-        function theLocation(){
-                map.clearOverlays();
-                var new_point = new BMap.Point(114.422636,30.506178);
-                var marker = new BMap.Marker(new_point);  // 创建标注
-                map.addOverlay(marker);              // 将标注添加到地图中
-                map.panTo(new_point);
-        }
-        theLocation();
-        var i=0;
-        $(".contact").mouseover(function(){
-            if(i==0){
-                $(this).animate({right:"0px"});
-                i=1;
-            }
-        })
-        $("#close").click(function(){
-            $(".contact").animate({right:"-180px"},function(){
-                i=0;
-            })
-        })
-        $("#chuxian").click(function(){
-            $(".contact").animate({right:"0px"},function(){
-                i=1;
-            })
-        })
-        $('#weixin').mouseover(function(){
-            $('.erweima').css("display","block");
-        })
-         $('#weixin').mouseout(function(){
-            $('.erweima').css("display","none");
-         })
-    </script>
+<script>
+var map = new BMap.Map("container");
+map.centerAndZoom(new BMap.Point(114.422636,30.506178),18);
+map.enableScrollWheelZoom(true);
+// 用经纬度设置地图中心点114.415836, 30.500568
+function theLocation(){
+    map.clearOverlays();
+    var new_point = new BMap.Point(114.422636,30.506178);
+    var marker = new BMap.Marker(new_point);  // 创建标注
+    map.addOverlay(marker);              // 将标注添加到地图中
+    map.panTo(new_point);
+}
+theLocation();
+var i=0;
+$(".contact").mouseover(function(){
+    if(i==0){
+        $(this).animate({right:"0px"});
+        i=1;
+    }
+})
+$("#close").click(function(){
+    $(".contact").animate({right:"-180px"},function(){
+        i=0;
+    })
+})
+$("#chuxian").click(function(){
+    $(".contact").animate({right:"0px"},function(){
+        i=1;
+    })
+})
+$('#weixin').mouseover(function(){
+    $('.erweima').css("display","block");
+})
+$('#weixin').mouseout(function(){
+    $('.erweima').css("display","none");
+})
+</script>
 </body>
 </html>

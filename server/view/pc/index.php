@@ -74,7 +74,7 @@
                             </a>
                         </li>
                         <li class="center">
-                            <a href="">
+                            <a href="javascript:;">
                                 <div></div>
                                 <h3>根据客户需求量身制定解决方案</h3>
                             </a>

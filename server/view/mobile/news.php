@@ -39,13 +39,13 @@ $newsList = GetNewsList ($page, 5, $type);
     <div class="mui-inner-wrap">
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="<?php AssetsUrl ();?>/imgs/wlogo2.png" alt="武汉app开发"/>
+                <img src="<?php AssetsUrl ();?>/imgs/wlogo2.png" alt="<?php WebsiteImportantWord ();?>"/>
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
         <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
             <div class="mui-scroll">
-                <img src="<?php AssetsUrl ();?>/imgs/news-bg.png" style="width: 100%;" alt="武汉app开发">
+                <img src="<?php AssetsUrl ();?>/imgs/news-bg.png" style="width: 100%;" alt="<?php WebsiteImportantWord ();?>">
                 <div class="box3">
                     <p class="product-title1">新闻动态</p>
                     <p class="product-title2">News information</p>
@@ -81,7 +81,7 @@ $newsList = GetNewsList ($page, 5, $type);
                                         <p><?php echo $news["title"];?></p>
                                         <p><?php echo $news["publishtime"];?></p>
                                     </div>
-                                    <div class="news-box-right"><img src="<?php AssetsUrl ();?>/imgs/jian.png" alt="武汉app开发"/></div>
+                                    <div class="news-box-right"><img src="<?php AssetsUrl ();?>/imgs/jian.png" alt="<?php WebsiteImportantWord ();?>"/></div>
                                 </div>
                                 </a>
                                 <p class="news-content"><?php echo $news["desc"];?></p>
@@ -91,26 +91,26 @@ $newsList = GetNewsList ($page, 5, $type);
                         <div class="take-more">
                             <div class="take-more1" >
                                 <a href="<?php SiteUrl ();?>/mobilenews<?php if ($type != 0) echo "-type-".$type;?>.html">
-                                    <img src="<?php AssetsUrl ();?>/imgs/first.png" alt="武汉app开发">
+                                    <img src="<?php AssetsUrl ();?>/imgs/first.png" alt="<?php WebsiteImportantWord ();?>">
                                 </a>
 <?php if ($page == 1) { ?>
                                 <a href="#">
-                                    <img src="<?php AssetsUrl ();?>/imgs/left.png" alt="武汉app开发">
+                                    <img src="<?php AssetsUrl ();?>/imgs/left.png" alt="<?php WebsiteImportantWord ();?>">
                                 </a>
 <?php } else { ?>
                                 <a href="<?php SiteUrl ();?>/mobilenews-page-<?php echo $page-1;if ($type != 0) echo "-type-".$type;?>.html">
-                                    <img src="<?php AssetsUrl ();?>/imgs/left.png" alt="武汉app开发">
+                                    <img src="<?php AssetsUrl ();?>/imgs/left.png" alt="<?php WebsiteImportantWord ();?>">
                                 </a>
 <?php } ?>
                             </div>
                             <span>第 <?php echo $page;?> 页</span>
                             <div class="take-more1" style="float: right;">
 <?php if ($page == $totalpage) { ?>
-                                <a href="#"><img src="<?php AssetsUrl ();?>/imgs/right.png" alt="武汉app开发"></a>
+                                <a href="#"><img src="<?php AssetsUrl ();?>/imgs/right.png" alt="<?php WebsiteImportantWord ();?>"></a>
 <?php } else { ?>
-                                <a href="<?php SiteUrl ();?>/mobilenews-page-<?php echo $page+1;if ($type != 0) echo "-type-".$type;?>.html"><img src="<?php AssetsUrl ();?>/imgs/right.png" alt="武汉app开发"></a>
+                                <a href="<?php SiteUrl ();?>/mobilenews-page-<?php echo $page+1;if ($type != 0) echo "-type-".$type;?>.html"><img src="<?php AssetsUrl ();?>/imgs/right.png" alt="<?php WebsiteImportantWord ();?>"></a>
 <?php } ?>
-                                <a href="<?php SiteUrl ();?>/mobilenews-page-<?php echo $totalpage;if ($type != 0) echo "-type-".$type;?>.html"><img src="<?php AssetsUrl ();?>/imgs/last.png" alt="武汉app开发"></a>
+                                <a href="<?php SiteUrl ();?>/mobilenews-page-<?php echo $totalpage;if ($type != 0) echo "-type-".$type;?>.html"><img src="<?php AssetsUrl ();?>/imgs/last.png" alt="<?php WebsiteImportantWord ();?>"></a>
                             </div>
                         </div>
                     </section>

@@ -19,7 +19,7 @@
 <div class="contain">
     <div class="section1">
         <div class="inter-head">
-            <img src="<?php AssetsUrl ();?>/imgs/inter/inter2.png" alt="">
+            <img src="<?php AssetsUrl ();?>/imgs/inter/inter2.png" alt="<?php WebsiteImportantWord ();?>">
             <div class="background">
                 <div class="text1">
                     <h1>无人网吧房方案</h1>
@@ -34,7 +34,7 @@
                 <h2>实施目的</h2>
             </div>
             <div class="pic">
-                <img src="<?php AssetsUrl ();?>/imgs/inter/back.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/inter/back.png" alt="<?php WebsiteImportantWord ();?>">
                 <div class="text2">
                     <div class="t1">
                         <i>
@@ -73,7 +73,7 @@
     <div class="section3">
         <div class="intro" style="background: url('imgs/inter/picture1.png')no-repeat">
             <div class="back1">
-                <img src="<?php AssetsUrl ();?>/imgs/inter/back1.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/inter/back1.png" alt="<?php WebsiteImportantWord ();?>">
             </div>
             <div class="text3">
                 <div class="title">
@@ -101,7 +101,7 @@
                     </li>
                     <li style="border-bottom: none">
                         <p>5.整体框架</p>
-                        <img src="<?php AssetsUrl ();?>/imgs/inter/inter1.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/inter/inter1.png" alt="<?php WebsiteImportantWord ();?>">
                     </li>
                     <li style="border-bottom: none;border-right:none">
                     </li>
@@ -116,7 +116,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="<?php AssetsUrl ();?>/imgs/inter/chaxun.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/chaxun.png" alt="<?php WebsiteImportantWord ();?>">
                         </div>
                     </div>
                     <p>
@@ -126,7 +126,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                                <img src="<?php AssetsUrl ();?>/imgs/inter/chaxun1.png" alt="">
+                                <img src="<?php AssetsUrl ();?>/imgs/inter/chaxun1.png" alt="<?php WebsiteImportantWord ();?>">
                             </div>
                     </div>
                     <p>
@@ -136,7 +136,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="<?php AssetsUrl ();?>/imgs/inter/watch.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/watch.png" alt="<?php WebsiteImportantWord ();?>">
                         </div>
                     </div>
                     <p>
@@ -146,7 +146,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="<?php AssetsUrl ();?>/imgs/inter/right.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/right.png" alt="<?php WebsiteImportantWord ();?>">
                         </div>
                     </div>
                     <p>
@@ -156,7 +156,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="<?php AssetsUrl ();?>/imgs/inter/card.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/card.png" alt="<?php WebsiteImportantWord ();?>">
                         </div>
                     </div>
                     <p>
@@ -166,7 +166,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="<?php AssetsUrl ();?>/imgs/inter/log.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/log.png" alt="<?php WebsiteImportantWord ();?>">
                         </div>
                     </div>
                     <p>
@@ -176,7 +176,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="<?php AssetsUrl ();?>/imgs/inter/share.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/share.png" alt="<?php WebsiteImportantWord ();?>">
                         </div>
                     </div>
                     <p>
@@ -186,7 +186,7 @@
                 <li >
                     <div class="circle">
                         <div class="circle1">
-                            <img src="<?php AssetsUrl ();?>/imgs/inter/more.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/inter/more.png" alt="<?php WebsiteImportantWord ();?>">
                         </div>
                     </div>
                     <p>

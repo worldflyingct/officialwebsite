@@ -24,7 +24,7 @@
         <!-- 主页面标题 -->
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="<?php WebsiteImportantWord ();?>">
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
@@ -32,7 +32,7 @@
             <div class="mui-scroll">
                 <!-- 主界面具体展示内容 -->
                 <div class="box1">
-                    <img src="<?php AssetsUrl ();?>/imgs/phone/bg6.png" alt="武汉app开发">
+                    <img src="<?php AssetsUrl ();?>/imgs/phone/bg6.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div class="box2">
                     <div class="top">
@@ -47,11 +47,11 @@
                                 <i></i>
                                 <h3>功能介绍</h3>
                             </div>
-                            <img src="<?php AssetsUrl ();?>/imgs/phone/bg7.png" alt="武汉app开发">
+                            <img src="<?php AssetsUrl ();?>/imgs/phone/bg7.png" alt="<?php WebsiteImportantWord ();?>">
                     </div>
                 </div>
                 <div class="box3">
-                    <img src="<?php AssetsUrl ();?>/imgs/phone/bg8.png" alt="武汉app开发">
+                    <img src="<?php AssetsUrl ();?>/imgs/phone/bg8.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div class="box4">
                     <div>

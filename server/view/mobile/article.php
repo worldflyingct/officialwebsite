@@ -36,13 +36,13 @@ $nextArticleId = GetNextArticleId ();
 <div class="mui-inner-wrap">
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="<?php WebsiteImportantWord ();?>">
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
         <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
             <div class="mui-scroll">
-                <img src="<?php AssetsUrl ();?>/imgs/news-bg.png" style="width: 100%;" alt="武汉app开发">
+                <img src="<?php AssetsUrl ();?>/imgs/news-bg.png" style="width: 100%;" alt="<?php WebsiteImportantWord ();?>">
                 <div class="box3">
                     <p class="product-title1"><?php ArticleTitle ();?></p>
                     <p class="product-title2"><?php ArticlePublicTime ();?></p>

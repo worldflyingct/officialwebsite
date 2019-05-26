@@ -19,7 +19,7 @@
 <body>
 <?php require("view/pc/header.php");?>
 <div class="tower1">
-    <img src="<?php AssetsUrl ();?>/imgs/IoT/hgkjhk.png" alt="">
+    <img src="<?php AssetsUrl ();?>/imgs/IoT/hgkjhk.png" alt="<?php WebsiteImportantWord ();?>">
 </div>
 <div class="tower2">
     <h1>物联网模块</h1>
@@ -35,7 +35,7 @@
     </ul>
 </div>
 <div class="tower3">
-    <img src="<?php AssetsUrl ();?>/imgs/IoT/fdgdf.png" alt="">
+    <img src="<?php AssetsUrl ();?>/imgs/IoT/fdgdf.png" alt="<?php WebsiteImportantWord ();?>">
 </div>
 <div class="tower4">
     <h1>物联网解决方案</h1>

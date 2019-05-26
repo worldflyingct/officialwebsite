@@ -23,7 +23,7 @@ $nextArticleId = GetNextArticleId ();
 <body>
 <?php require("view/pc/header.php");?>
 <div class="top-bg">
-    <img src="<?php AssetsUrl ();?>/imgs/news/news-bg.png" alt="">
+    <img src="<?php AssetsUrl ();?>/imgs/news/news-bg.png" alt="<?php WebsiteImportantWord ();?>">
 </div>
 <div class="textt">
     <h1><?php ArticleTitle ();?></h1>

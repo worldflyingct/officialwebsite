@@ -60,22 +60,22 @@
     <div class="mui-inner-wrap">
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="<?php AssetsUrl ();?>/imgs/wphone/logo.png" alt="武汉app开发"/>
+                <img src="<?php AssetsUrl ();?>/imgs/wphone/logo.png" alt="<?php WebsiteImportantWord ();?>"/>
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
         <div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
             <div class="mui-scroll">
-                <img src="<?php AssetsUrl ();?>/imgs/wphone/cooperation-bg.png" style="width: 100%;" alt="武汉app开发">
+                <img src="<?php AssetsUrl ();?>/imgs/wphone/cooperation-bg.png" style="width: 100%;" alt="<?php WebsiteImportantWord ();?>">
                 <div class="box3">
                     <p class="product-title1">职位招聘</p>
                     <p class="product-title2">Position recruitment</p>
                     <div class="about-content-box">
                         <div class="content-box-left">
-                            <img src="<?php AssetsUrl ();?>/imgs/wphone/cooperation1.png" alt="武汉app开发"/>
+                            <img src="<?php AssetsUrl ();?>/imgs/wphone/cooperation1.png" alt="<?php WebsiteImportantWord ();?>"/>
                         </div>
                         <div class="content-box-right" style="margin-left: 4%;">
-                            <p class="cooperation-p1"><img src="<?php AssetsUrl ();?>/imgs/wphone/cooperation4.png" style="width:30px;" alt="武汉app开发"/><span>&lt;IDEA&gt;</span></p>
+                            <p class="cooperation-p1"><img src="<?php AssetsUrl ();?>/imgs/wphone/cooperation4.png" style="width:30px;" alt="<?php WebsiteImportantWord ();?>"/><span>&lt;IDEA&gt;</span></p>
                             <p class="cooperation-p2">
                                 <span>和聪明人一起做事</span>
                                 <span>崇尚创新、快速的互联网文化 正在寻找富有创意和想法的你</span>
@@ -84,19 +84,19 @@
                     </div>
                     <div class="about-content-box" style="padding-left: 5%;">
                         <div class="content-box-right" style="margin-left: 0;margin-right: 4%;">
-                            <p class="cooperation-p1"><img src="<?php AssetsUrl ();?>/imgs/wphone/cooperation4.png" style="width:30px;" alt="武汉app开发"/><span>&lt;JOIN&gt;</span></p>
+                            <p class="cooperation-p1"><img src="<?php AssetsUrl ();?>/imgs/wphone/cooperation4.png" style="width:30px;" alt="<?php WebsiteImportantWord ();?>"/><span>&lt;JOIN&gt;</span></p>
                             <p class="cooperation-p2">
                                 <span>做激动人心产品</span>
                                 <span>让未来的你喜欢现在的自己 加入我们，在行动中收获梦想</span>
                             </p>
                         </div>
                         <div class="content-box-left">
-                            <img src="<?php AssetsUrl ();?>/imgs/wphone/cooperation2.png" alt="武汉app开发"/>
+                            <img src="<?php AssetsUrl ();?>/imgs/wphone/cooperation2.png" alt="<?php WebsiteImportantWord ();?>"/>
                         </div>
                     </div>
                 </div>
                 <div class="box3">
-                    <img src="<?php AssetsUrl ();?>/imgs/wphone/cooperation3.png" style="width: 90%;margin: 0 5%;" alt="武汉app开发">
+                    <img src="<?php AssetsUrl ();?>/imgs/wphone/cooperation3.png" style="width: 90%;margin: 0 5%;" alt="<?php WebsiteImportantWord ();?>">
                     <p style="margin-top: 10px;font-size: 16px;color: #444;">工作大有不同</p>
                     <p style="font-size: 13px;">创业的氛围让每个人都为做出美好和事情而努力</p>
                 </div>

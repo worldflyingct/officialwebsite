@@ -115,7 +115,7 @@
                 <h3>用户端app以地图的方式对各个控制点进行控制以及查看各个传感器数据。地图可以自定义上传。</h3>
                 <ul>
                     <li style="margin-top: 30px;">
-                        <img src="<?php AssetsUrl ();?>/imgs/wmap.png" alt="武汉app开发">
+                        <img src="<?php AssetsUrl ();?>/imgs/wmap.png" alt="<?php WebsiteImportantWord ();?>">
                         <div>
                             <h5>1、查看实时环境数据</h5>
                             <p>可以实时查看棚内空气、土壤和水中的温度、湿度、二氧化碳浓度、光照、PH值等环境数据。也可以查询历史数据。便于对整体数据分析。</p>
@@ -130,14 +130,14 @@
                         </div>
                     </li>
                     <li style="margin-top: 50px;">
-                        <img src="<?php AssetsUrl ();?>/imgs/wgonglu.png" alt="武汉app开发">
+                        <img src="<?php AssetsUrl ();?>/imgs/wgonglu.png" alt="<?php WebsiteImportantWord ();?>">
                         <div>
                             <h5>1、摄像机显示 </h5>
                             <p>实时获取视频监控，随时查看棚内农作物情况，可以查询历史监控 </p>
                         </div>
                     </li>
                     <li>
-                        <img src="<?php AssetsUrl ();?>/imgs/wwendu.png" alt="武汉app开发">
+                        <img src="<?php AssetsUrl ();?>/imgs/wwendu.png" alt="<?php WebsiteImportantWord ();?>">
                         <div>
                             <h5>1、记录显示 </h5>
                             <p>显示记录采用轮播的方式，旧记录会显示在下方，新记录会显示在上方。</p>
@@ -160,7 +160,7 @@
             </div>
             <ul>
                 <li>
-                    <img src="<?php AssetsUrl ();?>/imgs/wnongye.png" alt="武汉app开发">
+                    <img src="<?php AssetsUrl ();?>/imgs/wnongye.png" alt="<?php WebsiteImportantWord ();?>">
                     <div>
                         <h5>1、权限管理 </h5>
                         <p>权限管理分为管理员管理、角色管理、管理员操作日志。可对管理员的权限进行编辑。记录管理员操作日志。</p>
@@ -175,7 +175,7 @@
                     </div>
                 </li>
                 <li>
-                    <img src="<?php AssetsUrl ();?>/imgs/wnongye2.png" alt="武汉app开发">
+                    <img src="<?php AssetsUrl ();?>/imgs/wnongye2.png" alt="<?php WebsiteImportantWord ();?>">
                     <div>
                         <h5>1、规则管理 </h5>
                         <p>可对控制器规则进行管理。</p>

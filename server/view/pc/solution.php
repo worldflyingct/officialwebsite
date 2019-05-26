@@ -20,7 +20,7 @@
 <div class="contain" >
     <div class="section1">
         <div class="shead">
-            <img src="<?php AssetsUrl ();?>/imgs/web/sback.png" alt="">
+            <img src="<?php AssetsUrl ();?>/imgs/web/sback.png" alt="<?php WebsiteImportantWord ();?>">
         </div>
     </div>
     <div class="section2">
@@ -30,7 +30,7 @@
                 <li class="text1">
                     <a class="clearfix" href="<?php SiteUrl ();?>/gym.html">
                         <div class="pic1">
-                            <img src="<?php AssetsUrl ();?>/imgs/web/save.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/web/save.png" alt="<?php WebsiteImportantWord ();?>">
                         </div>
                         <div class="save">
                             <h2>仓储管理系统</h2>
@@ -115,7 +115,7 @@
     </div>
     <div class="bottom3">
         <div class="tu">
-            <img src="<?php AssetsUrl ();?>/imgs/erweima.jpg" alt="" style="vertical-align: middle;">
+            <img src="<?php AssetsUrl ();?>/imgs/erweima.jpg" alt="<?php WebsiteImportantWord ();?>" style="vertical-align: middle;">
         </div>
         <div class="zi">
             <p>地点：<?php WebsiteAddress ();?></p>

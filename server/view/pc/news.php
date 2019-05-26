@@ -26,17 +26,17 @@ $newsList = GetNewsList ($page, 5, $type);
 <body>
 <?php require("header.php");?>
 <div class="top-bg">
-        <img src="<?php AssetsUrl ();?>/imgs/news/news-bg.png" alt="">
+        <img src="<?php AssetsUrl ();?>/imgs/news/news-bg.png" alt="<?php WebsiteImportantWord ();?>">
     </div>
     <div class="bottom-ul">
         <div class="new-top">
             <h3>新闻动态</h3>
             <h3>News information</h3>
             <ul class="clearfix">
-                <li><a href="<?php SiteUrl ();?>/news.html"<?php if (!isset($_GET["type"])) echo " class=\"active-a\"";?>>ALL+</a></li>
-                <li><a href="<?php SiteUrl ();?>/news-type-1.html"<?php if (isset($_GET["type"]) && $_GET["type"] == 1) echo " class=\"active-a\"";?>>公司动态</a></li>
-                <li><a href="<?php SiteUrl ();?>/news-type-2.html"<?php if (isset($_GET["type"]) && $_GET["type"] == 2) echo " class=\"active-a\"";?>>媒体报道</a></li>
-                <li><a href="<?php SiteUrl ();?>/news-type-3.html"<?php if (isset($_GET["type"]) && $_GET["type"] == 3) echo " class=\"active-a\"";?>>行业资讯</a></li>
+                <li><a href="<?php SiteUrl ();?>/news.html"<?php if ($type == 0) echo " class=\"active-a\"";?>>ALL+</a></li>
+                <li><a href="<?php SiteUrl ();?>/news-type-1.html"<?php if ($type == 1) echo " class=\"active-a\"";?>>公司动态</a></li>
+                <li><a href="<?php SiteUrl ();?>/news-type-2.html"<?php if ($type == 2) echo " class=\"active-a\"";?>>媒体报道</a></li>
+                <li><a href="<?php SiteUrl ();?>/news-type-3.html"<?php if ($type == 3) echo " class=\"active-a\"";?>>行业资讯</a></li>
             </ul>
         </div>
         <div class="new-list">
@@ -44,7 +44,7 @@ $newsList = GetNewsList ($page, 5, $type);
 <?php foreach ($newsList as $news) { ?>
                 <li>
                     <div class="new-left">
-                        <img src="<?php echo $news["thumbnail"];?>" alt="">
+                        <img src="<?php echo $news["thumbnail"];?>" alt="<?php WebsiteImportantWord ();?>">
                     </div>
                     <div class="new-right">
                         <p><?php echo $news["title"];?></p>
@@ -62,7 +62,7 @@ $newsList = GetNewsList ($page, 5, $type);
 if ($page > 1) {
 ?>
                 <li>
-                    <a href="<?php SiteUrl ();?>/news<?php if ($type != 0) echo "-type-".$_GET["type"];?>.html" class="bianse">首页</a>
+                    <a href="<?php SiteUrl ();?>/news<?php if ($type != 0) echo "-type-".$type;?>.html" class="bianse">首页</a>
                 </li>
 <?php
 }
@@ -75,11 +75,11 @@ if ($totalpage < 5) {
                 </li>
 <?php   } else if ($i == 1) { ?>
                 <li>
-                    <a href="<?php SiteUrl ();?>/news<?php if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
+                    <a href="<?php SiteUrl ();?>/news<?php if ($type != 0) echo "-type-".$type;?>.html"><?php echo $i;?></a>
                 </li>
 <?php   } else { ?>
                 <li>
-                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $i;if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
+                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $i;if ($type != 0) echo "-type-".$type;?>.html"><?php echo $i;?></a>
                 </li>
 <?php
         }
@@ -93,7 +93,7 @@ if ($totalpage < 5) {
                 </li>
 <?php   } else { ?>
                 <li>
-                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $i;if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
+                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $i;if ($type != 0) echo "-type-".$type;?>.html"><?php echo $i;?></a>
                 </li>
 <?php
         }
@@ -107,11 +107,11 @@ if ($totalpage < 5) {
                 </li>
 <?php   } else if ($i == 1) { ?>
                 <li>
-                    <a href="<?php SiteUrl ();?>/news<?php if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
+                    <a href="<?php SiteUrl ();?>/news<?php if ($type != 0) echo "-type-".$type;?>.html"><?php echo $i;?></a>
                 </li>
 <?php   } else { ?>
                 <li>
-                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $i;if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
+                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $i;if ($type != 0) echo "-type-".$type;?>.html"><?php echo $i;?></a>
                 </li>
 <?php
         }
@@ -125,7 +125,7 @@ if ($totalpage < 5) {
                 </li>
 <?php   } else { ?>
                 <li>
-                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $i;if ($type != 0) echo "-type-".$_GET["type"];?>.html"><?php echo $i;?></a>
+                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $i;if ($type != 0) echo "-type-".$type;?>.html"><?php echo $i;?></a>
                 </li>
 <?php
         }
@@ -134,7 +134,7 @@ if ($totalpage < 5) {
 if ($page != $totalpage) {
 ?>
                 <li>
-                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $totalpage;if ($type != 0) echo "-type-".$_GET["type"];?>.html" class="bianse">尾页</a>
+                    <a href="<?php SiteUrl ();?>/news-page-<?php echo $totalpage;if ($type != 0) echo "-type-".$type;?>.html" class="bianse">尾页</a>
                 </li>
 <?php
 }

@@ -32,7 +32,7 @@
     <div class="section2">
         <div class="power-one">
             <div class="picture1">
-                <img src="<?php AssetsUrl ();?>/imgs/spicture1.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/spicture1.png" alt="<?php WebsiteImportantWord ();?>">
             </div>
             <div class="text1">
                 <h2>方案简介</h2>
@@ -81,7 +81,7 @@
            </div>
             <div class="power1">
                 <div class="icon1">
-                    <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="<?php WebsiteImportantWord ();?>">
                     <h4>1.权限管理</h4>
                     <p>本权限管理系统是考虑到管理人员不可能只有一个人，有的人是管理这个片区，另一部分人是管理其他片区。有的人负责管理用户缴费，有的人负责用户报修以及设备的维护。</p>
                 </div>
@@ -89,41 +89,41 @@
                     <img src="<?php AssetsUrl ();?>/imgs/power/quanx.png" >
                 </div>
                 <div class="icon2">
-                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="<?php WebsiteImportantWord ();?>">
                         <h4>2.用户管理系统</h4>
                         <p>这里的用户指的并不是管理员，而是终端用户，如果针对的是智能电表，那这个终端用户指的就将是每一户的居民，每个用户可以绑定多个智能电表，但是每个智能电表智能绑定
                                 一个用户。</p>
                 </div>
                 <div class="pic2">
-                    <img src="<?php AssetsUrl ();?>/imgs/power/shuju2.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/power/shuju2.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div class="icon3">
-                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="<?php WebsiteImportantWord ();?>">
                         <h4>3.设备远程控制系统</h4>
                         <p>设备远程控制系统基于推送技术实现，利用目前先进的类似 mqtt 技术，利用目前已有的以太网为基础。</p>
                 </div>
                 <div class="icon4">
-                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="<?php WebsiteImportantWord ();?>">
                         <h4>4.新闻资讯系统</h4>
                         <p>设备远程控制系统基于推送技术实现，利用目前先进的类似 mqtt 技术，利用目前已有的以太网为基础。</p>
                 </div>
                 <div class="icon5">
-                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="<?php WebsiteImportantWord ();?>">
                         <h4>5.App 系统</h4>
                         <p>App 系统主要有两个端，一个是维修师傅的那一端，用于在故障现场查看设备参数的。另一个是用户端，用于支付费用，接收报警信息等。</p>
                 </div>
                 <div class="icon6">
-                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="<?php WebsiteImportantWord ();?>">
                         <h4>6. 数据存储</h4>
                         <p>设备本身有存储功能，用于保证当无网络的情况下运行数据能被记录下来。同时服务端也需要有数据记录，方便统计以及查阅。</p>
                 </div>
                 <div class="icon7">
-                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="">
+                        <img src="<?php AssetsUrl ();?>/imgs/power/sanjiao.png" alt="<?php WebsiteImportantWord ();?>">
                         <h4>7. 数据分析</h4>
                         <p>设备本身有存储功能，用于保证当无网络的情况下运行数据能被记录下来。同时服务端也需要有数据记录，方便统计以及查阅。</p>
                 </div>
                 <div class="pic3">
-                    <img src="<?php AssetsUrl ();?>/imgs/power/shuju.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/power/shuju.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
             </div>
         </div>

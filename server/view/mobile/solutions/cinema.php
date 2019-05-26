@@ -23,7 +23,7 @@
         <!-- 主页面标题 -->
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="<?php WebsiteImportantWord ();?>">
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
@@ -33,15 +33,15 @@
                 <div class="box">
                     <div class="pic1">
                         <a href="#">
-                            <img src="<?php AssetsUrl ();?>/imgs/mobile/sback1.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/mobile/sback1.png" alt="<?php WebsiteImportantWord ();?>">
                         </a>
                         <div class="back1">
                             <a href="#">
-                                <img src="<?php AssetsUrl ();?>/imgs/mobile/sback2.png" alt="">
+                                <img src="<?php AssetsUrl ();?>/imgs/mobile/sback2.png" alt="<?php WebsiteImportantWord ();?>">
                             </a>
                             <div class="back2">
                                 <a href="">
-                                    <img src="<?php AssetsUrl ();?>/imgs/mobile/sback3.png" alt="">
+                                    <img src="<?php AssetsUrl ();?>/imgs/mobile/sback3.png" alt="<?php WebsiteImportantWord ();?>">
                                 </a>
                                 <p class="p1">影院服务平台方案</p>
                                 <p>Theater service platform scheme</p>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="box1">
-                    <img src="<?php AssetsUrl ();?>/imgs/mobile/dog.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/mobile/dog.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div class="box2">
                     <div class="text1">
@@ -216,15 +216,15 @@
                     <div class="light clearfix">
                         <h2>方案亮点</h2>
                         <div class="pic1">
-                            <img src="<?php AssetsUrl ();?>/imgs/mobile/pic1.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/mobile/pic1.png" alt="<?php WebsiteImportantWord ();?>">
                             <p>1.无纸化验票</p>
                         </div>
                         <div class="pic1">
-                            <img src="<?php AssetsUrl ();?>/imgs/mobile/pic2.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/mobile/pic2.png" alt="<?php WebsiteImportantWord ();?>">
                             <p>2.在线选座</p>
                         </div>
                         <div class="pic1">
-                            <img src="<?php AssetsUrl ();?>/imgs/mobile/pic3.png" alt="">
+                            <img src="<?php AssetsUrl ();?>/imgs/mobile/pic3.png" alt="<?php WebsiteImportantWord ();?>">
                             <p>3.强大的数据分析能力</p>
                         </div>
                     </div>

@@ -23,7 +23,7 @@
         <!-- 主页面标题 -->
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="<?php WebsiteImportantWord ();?>">
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
@@ -106,7 +106,7 @@
                                 </li>
                                 <li style="border-bottom: none" class="pic3">
                                     <h4>5.整体框架</h4>
-                                    <img src="<?php AssetsUrl ();?>/imgs/mobile/power.png" alt="">
+                                    <img src="<?php AssetsUrl ();?>/imgs/mobile/power.png" alt="<?php WebsiteImportantWord ();?>">
                                 </li>
                                 <li style="border-bottom: none;border-right:none">
                                 </li>
@@ -121,7 +121,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sc.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sc.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                 </div>
                                 <p>
@@ -131,7 +131,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sz.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sz.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                 </div>
                                 <p>
@@ -141,7 +141,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/syu.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/syu.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                 </div>
                                 <p>
@@ -151,7 +151,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sw.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sw.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                 </div>
                                 <p>
@@ -161,7 +161,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sy.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sy.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                 </div>
                                 <p>
@@ -171,7 +171,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sj.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sj.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                 </div>
                                 <p>
@@ -181,7 +181,7 @@
                             <li >
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sf.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sf.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                 </div>
                                 <p>
@@ -191,7 +191,7 @@
                             <li>
                                 <div class="circle">
                                     <div class="circle1">
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sg.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sg.png" alt="<?php WebsiteImportantWord ();?>">
                                     </div>
                                 </div>
                                 <p>

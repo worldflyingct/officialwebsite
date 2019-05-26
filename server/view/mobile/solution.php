@@ -28,7 +28,7 @@ $totalpage = 2;
         <!-- 主页面标题 -->
         <header class="mui-bar mui-bar-nav">
             <div class="nav_logo">
-                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/phone/wlogo2.png" alt="<?php WebsiteImportantWord ();?>">
             </div>
             <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
         </header>
@@ -49,10 +49,10 @@ $totalpage = 2;
                         <ul class="xianshi" id="traking">
 <?php if ($page == 1) { ?>
                             <li>
-                                <a href="mobilegym.html">
+                                <a href="<?php SiteUrl ();?>/mobilegym.html">
                                     <div class="pic1">
                                         <p></p>
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/save.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/save.png" alt="<?php WebsiteImportantWord ();?>">
                                         <span></span>
                                     </div>
                                     <div class="text1">
@@ -62,10 +62,10 @@ $totalpage = 2;
                                 </a>
                             </li>
                             <li>
-                                <a href="mobileagriculture.html">
+                                <a href="<?php SiteUrl ();?>/mobileagriculture.html">
                                     <div class="pic1">
                                         <p></p>
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/smai.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/smai.png" alt="<?php WebsiteImportantWord ();?>">
                                         <span></span>
                                     </div>
                                     <div class="text1">
@@ -75,10 +75,10 @@ $totalpage = 2;
                                 </a>
                             </li>
                             <li>
-                                <a href="mobilepowerful.html">
+                                <a href="<?php SiteUrl ();?>/mobilepowerful.html">
                                     <div class="pic1">
                                         <p></p>
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/selec.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/selec.png" alt="<?php WebsiteImportantWord ();?>">
                                         <span></span>
                                     </div>
                                     <div class="text1">
@@ -89,10 +89,10 @@ $totalpage = 2;
                             </li>
 <?php } else if ($page == 2) { ?>
                             <li>
-                                <a href="mobilecinema.html">
+                                <a href="<?php SiteUrl ();?>/mobilecinema.html">
                                     <div class="pic1">
                                         <p></p>
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/smovie.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/smovie.png" alt="<?php WebsiteImportantWord ();?>">
                                         <span></span>
                                     </div>
                                     <div class="text1">
@@ -102,10 +102,10 @@ $totalpage = 2;
                                 </a>
                             </li>
                             <li>
-                                <a href="mobilecybercafe.html">
+                                <a href="<?php SiteUrl ();?>/mobilecybercafe.html">
                                     <div class="pic1">
                                         <p></p>
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sdian.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sdian.png" alt="<?php WebsiteImportantWord ();?>">
                                         <span></span>
                                     </div>
                                     <div class="text1">
@@ -115,10 +115,10 @@ $totalpage = 2;
                                 </a>
                             </li>
                             <li>
-                                <a href="mobilecommunity.html">
+                                <a href="<?php SiteUrl ();?>/mobilecommunity.html">
                                     <div class="pic1">
                                         <p></p>
-                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sdas.png" alt="">
+                                        <img src="<?php AssetsUrl ();?>/imgs/mobile/sdas.png" alt="<?php WebsiteImportantWord ();?>">
                                         <span></span>
                                     </div>
                                     <div class="text1">
@@ -136,15 +136,15 @@ $totalpage = 2;
 <?php if ($page == 1) { ?>
                         <a href="#" class="shang">上一页</a>
 <?php } else if ($page == 2) { ?>
-                        <a href="mobilesolution.html" class="shang">上一页</a>
+                        <a href="<?php SiteUrl ();?>/mobilesolution.html" class="shang">上一页</a>
 <?php } else { ?>
-                        <a href="mobilesolution-page-<?php echo $page-1;?>.html" class="shang">上一页</a>
+                        <a href="<?php SiteUrl ();?>/mobilesolution-page-<?php echo $page-1;?>.html" class="shang">上一页</a>
 <?php } ?>
                         <p><?php echo $page;?>/<?php echo $totalpage;?></p>
 <?php if ($page == $totalpage) { ?>
                         <a href="#" class="xia">下一页</a>
 <?php } else { ?>
-                        <a href="mobilesolution-page-<?php echo $page+1;?>.html" class="xia">下一页</a>
+                        <a href="<?php SiteUrl ();?>/mobilesolution-page-<?php echo $page+1;?>.html" class="xia">下一页</a>
 <?php } ?>
                     </div>
                 </div>

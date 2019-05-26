@@ -132,11 +132,11 @@
                     <p>本项目是一个政务类软硬件相结合的系统集成类项目，不动产自助打印终端是以现有窗口登记业务流程为依据，进行简化和优化，将业务流程电子化、自助化办理的创新成果，不仅能大大提升办事效率，减少排队；同时，该设备可实现社区化部署，市民任何时间均可就近自助办理，是落实“简政放权”的切实工作体现，节省时间、人员成本。<br/>
                         产品的主要功能有：电子表单、指纹采集、高清摄像、电子签名、身份验证、资料扫描、人脸识别。
                         这是国内首台不动产预受理系统，做到真正的全自助办理、无纸化绿色政务，身份证的的调档做到高效率，高准确性，并具有防破坏报警，社区化部署等特点。</p>
-                    <img src="<?php AssetsUrl ();?>/imgs/wserver.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/wserver.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div id="two" class="tab-pane fade ">
                     <p>MiNi共享KTV是一个由软件和硬件组成的综合性集成项目，包含了手机端的微信小程序，云端服务器，以及线下主机服务器，电子显示屏，等一系列连接控制。用户通过手机微信小程序来完成用户身份验证、充值押金、扫码开门、对唱歌机的控制、完成支付并查看自己的消费信息，以及在手机端的社交。</p>
-                    <img src="<?php AssetsUrl ();?>/imgs/ktv.jpg" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/ktv.jpg" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div id="three" class="tab-pane fade ">
                     <p>本项目产品是一款工业级应用设备，在各种物体表面上喷印上图案文字和数码，是集机电一体化的高科技产品。产品广泛应用于食品工业、化妆品工业、医药工业、汽车等零件加工行业、电线电缆行业、铝塑管行业、烟酒行业以及其它领域。可用于喷印生产日期、批号、条型码以及商标图案、防伪标记和中文字样，是贯彻卫生法和促进包装现代化强有力的设备。</p>
@@ -256,7 +256,7 @@
     </div>
     <div class="bottom3">
         <div class="tu">
-            <img src="<?php AssetsUrl ();?>/imgs/erweima.jpg" alt="">
+            <img src="<?php AssetsUrl ();?>/imgs/erweima.jpg" alt="<?php WebsiteImportantWord ();?>">
         </div>
         <div class="zi">
             <p>地址：<?php WebsiteAddress ();?></p>

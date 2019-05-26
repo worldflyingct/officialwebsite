@@ -18,9 +18,9 @@
 <div class="contain" style="overflow:hidden;">
     <div class="section1">
         <div class="movie-head">
-            <img style=" width:100%; height:100%;" src="<?php AssetsUrl ();?>/imgs/sback1.png" alt="">
+            <img style=" width:100%; height:100%;" src="<?php AssetsUrl ();?>/imgs/sback1.png" alt="<?php WebsiteImportantWord ();?>">
             <div class="back">
-                <img src="<?php AssetsUrl ();?>/imgs/sback5.png" alt="">
+                <img src="<?php AssetsUrl ();?>/imgs/sback5.png" alt="<?php WebsiteImportantWord ();?>">
                 <div class="text1">
                     <h2>影院服务平台方案</h2>
                     <h4>Theater service platform scheme</h4>
@@ -33,22 +33,22 @@
         <div class="movie-dog">
             <div class="picture">
                 <div class="pic1">
-                    <img src="<?php AssetsUrl ();?>/imgs/movie/m1.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/m1.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
                 <div class="pic2">
-                    <img src="<?php AssetsUrl ();?>/imgs/movie/m3.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/m3.png" alt="<?php WebsiteImportantWord ();?>">
                     <p></p>
                 </div>
                 <div class="pic3">
-                    <img src="<?php AssetsUrl ();?>/imgs/movie/m2.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/m2.png" alt="<?php WebsiteImportantWord ();?>">
 
                 </div>
                 <div class="pic4">
-                    <img src="<?php AssetsUrl ();?>/imgs/movie/m4.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/m4.png" alt="<?php WebsiteImportantWord ();?>">
 
                 </div>
                 <div class="pic5">
-                    <img src="<?php AssetsUrl ();?>/imgs/movie/dog.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/dog.png" alt="<?php WebsiteImportantWord ();?>">
                 </div>
             </div>
             <div class="text2">
@@ -160,15 +160,15 @@
             </div>
             <div class="pic">
                 <div class="pic1">
-                    <img src="<?php AssetsUrl ();?>/imgs/movie/bright1.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/bright1.png" alt="<?php WebsiteImportantWord ();?>">
                     <p>1.无纸化验票</p>
                 </div>
                 <div class="pic2">
-                    <img src="<?php AssetsUrl ();?>/imgs/movie/bright2.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/bright2.png" alt="<?php WebsiteImportantWord ();?>">
                     <p>2.在线选票</p>
                 </div>
                 <div class="pic3">
-                    <img src="<?php AssetsUrl ();?>/imgs/movie/bright3.png" alt="">
+                    <img src="<?php AssetsUrl ();?>/imgs/movie/bright3.png" alt="<?php WebsiteImportantWord ();?>">
                     <p>3.强大的数据分析能力</p>
                 </div>
             </div>

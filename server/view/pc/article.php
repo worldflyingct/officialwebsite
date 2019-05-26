@@ -1,3 +1,7 @@
+<?php
+$previousArticleId =GetPreviousArticleId ();
+$nextArticleId = GetNextArticleId ();
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
@@ -29,11 +33,62 @@
     </div>
     <div class="xia">
         <p>优秀解决方案推荐：<a href="agriculture.html">智慧农业解决方案</a></p>
-<?php if (CheckPreviousArticle ()) { ?>
-        <p>上一篇：<a href="article-id-<?php PreviousArticleId ();?>.html"><?php PreviousArticleTitle ();?></a></p>
+<?php if ($previousArticleId != 0) { ?>
+        <p>上一篇：<a href="article-id-<?php echo $previousArticleId;?>.html"><?php PreviousArticleTitle ();?></a></p>
 <?php } ?>
-<?php if (CheckNextArticle ()) { ?>
-        <p>下一篇：<a href="/index-news-news-id-<?php NextArticleId ();?>.html"><?php NextArticleTitle ();?></a></p>
+<?php if ($nextArticleId != 0) { ?>
+        <p>下一篇：<a href="article-id-<?php echo $nextArticleId;?>.html"><?php NextArticleTitle ();?></a></p>
 <?php } ?>
     </div>
 </div>
+<?php require("view/pc/footer.php");?>
+<script>
+var map = new BMap.Map("container");
+map.centerAndZoom(new BMap.Point(114.422636, 30.506178), 18);
+map.enableScrollWheelZoom(true);
+// 用经纬度设置地图中心点114.415836, 30.500568
+function theLocation() {
+    map.clearOverlays();
+    var new_point = new BMap.Point(114.422636, 30.506178);
+    var marker = new BMap.Marker(new_point); // 创建标注
+    map.addOverlay(marker); // 将标注添加到地图中
+    map.panTo(new_point);
+}
+theLocation();
+
+var i = 0;
+$(".contact").mouseover(function() {
+    if (i == 0) {
+        $(this).animate({
+            right: "0px"
+        });
+        i = 1;
+        console.log(i)
+    }
+
+})
+$("#close").click(function() {
+    $(".contact").animate({
+        right: "-180px"
+    },
+    function() {
+        i = 0;
+    })
+})
+$("#chuxian").click(function() {
+    $(".contact").animate({
+        right: "0px"
+    },
+    function() {
+        i = 1;
+    })
+})
+$('#weixin').mouseover(function() {
+    $('.erweima').css("display", "block");
+})
+$('#weixin').mouseout(function() {
+    $('.erweima').css("display", "none");
+})
+</script>
+</body>
+</html>

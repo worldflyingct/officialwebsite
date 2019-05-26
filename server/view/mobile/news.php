@@ -1,8 +1,8 @@
 <?php
 $page = isset($_GET["page"]) ? $_GET["page"] : 1;
-$totalpage = GetNewsTotalPage ();
 $type = isset($_GET["type"]) ? $_GET["type"] : 0;
-$newsList = GetNewsList ($page, $type);
+$totalpage = GetNewsTotalPage (5, $type);
+$newsList = GetNewsList ($page, 5, $type);
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -75,22 +75,22 @@ $newsList = GetNewsList ($page, $type);
                         <ul style="opacity: 1;">
 <?php foreach ($newsList as $news) { ?>
                             <li>
-                                <a href="mobilearticle-id-<?php echo $news.ID;?>.html">
+                                <a href="mobilearticle-id-<?php echo $news["ID"];?>.html">
                                 <div class="news-box-top">
                                     <div class="news-box-left">
-                                        <p><?php echo $news.title;?></p>
-                                        <p><?php echo $news.publishtime;?></p>
+                                        <p><?php echo $news["title"];?></p>
+                                        <p><?php echo $news["publishtime"];?></p>
                                     </div>
                                     <div class="news-box-right"><img src="imgs/jian.png" alt="武汉app开发"/></div>
                                 </div>
                                 </a>
-                                <p class="news-content"><?php echo $news.desc;?></p>
+                                <p class="news-content"><?php echo $news["desc"];?></p>
                             </li>
 <?php } ?>
                         </ul>
                         <div class="take-more">
                             <div class="take-more1" >
-                                <a href="mobilenews-type-{$page.type}.html">
+                                <a href="mobilenews<?php if ($type != 0) echo "-type-".$type;?>.html">
                                     <img src="imgs/first.png" alt="武汉app开发">
                                 </a>
 <?php if ($page == 1) { ?>
@@ -122,3 +122,14 @@ $newsList = GetNewsList ($page, $type);
         <div class="mui-off-canvas-backdrop"></div>
     </div>
 </div>
+<script>
+mui('.mui-scroll-wrapper').on('tap','a' ,function(){location.href = this.getAttribute('href')});
+mui.init({
+    swipeBack: false,
+});
+mui('.mui-scroll-wrapper').scroll({
+    deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+});
+</script>
+</body>
+</html>

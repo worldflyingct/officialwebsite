@@ -1,6 +1,5 @@
 <?php
 require_once("functions.php");
-
 $do = isset($_GET["do"]) ? $_GET["do"] : "index";
 
 switch ($do) {
@@ -15,6 +14,7 @@ switch ($do) {
     case "iot":require("view/pc/iot.php");break;
     case "solution":require("view/pc/solution.php");break;
     case "news":require("view/pc/news.php");break;
+    case "article":require("view/pc/article.php");break;
     case "about":require("view/pc/about.php");break;
     case "recruit":require("view/pc/recruit.php");break;
     case "gym":require("view/pc/solutions/gym.php");break;
@@ -28,4 +28,5 @@ switch ($do) {
     case "mobilerecruit":require("view/mobile/recruit.php");break;
     case "mobilesolution":require("view/mobile/solution.php");break;
     case "mobilenews":require("view/mobile/news.php");break;
+    case "mobilearticle":require("view/mobile/article.php");break;
 }

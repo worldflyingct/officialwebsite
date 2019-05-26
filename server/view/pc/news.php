@@ -1,9 +1,9 @@
 
 <?php
 $page = isset($_GET["page"]) ? $_GET["page"] : 1;
-$totalpage = GetNewsTotalPage ();
 $type = isset($_GET["type"]) ? $_GET["type"] : 0;
-$newsList = GetNewsList ($page, $type);
+$totalpage = GetNewsTotalPage (5, $type);
+$newsList = GetNewsList ($page, 5, $type);
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -44,13 +44,13 @@ $newsList = GetNewsList ($page, $type);
 <?php foreach ($newsList as $news) { ?>
                 <li>
                     <div class="new-left">
-                        <img src="<?php echo $news.thumbnail;?>" alt="">
+                        <img src="<?php echo $news["thumbnail"];?>" alt="">
                     </div>
                     <div class="new-right">
-                        <p><?php echo $news.articletitle;?></p>
-                        <p><?php echo $news.pagedescription;?></p>
-                        <p><?php echo $news.description;?></p>
-                        <p><a href="article-id-<?php echo $news.ID;?>.html">MORE</a></p>
+                        <p><?php echo $news["title"];?></p>
+                        <p><?php echo $news["publishtime"];?></p>
+                        <p><?php echo $news["desc"];?></p>
+                        <p><a href="article-id-<?php echo $news["ID"];?>.html">MORE</a></p>
                     </div>
                 </li>
 <?php } ?>
@@ -131,7 +131,7 @@ if ($totalpage < 5) {
         }
     }
 }
-if ($page == $totalpage) {
+if ($page != $totalpage) {
 ?>
                 <li>
                     <a href="news-page-<?php echo $totalpage;if ($type != 0) echo "-type-".$_GET["type"];?>.html" class="bianse">尾页</a>

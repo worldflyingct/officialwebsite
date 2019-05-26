@@ -113,17 +113,16 @@ function WebsiteImportantWord () {
     echo $importantword;
 }
 
-function GetNewsList ($page = 1, $type = 0) {
+function GetNewsList ($page = 1, $size = 5, $type = 0) {
     static $newsList = null;
-    global $_GET;
     if ($newsList === null) {
         $offset = $page-1;
         if ($type != 0) {
-            $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `articletype`=? AND `publishtime` < NOW() LIMIT 5 OFFSET ?";
-            $param = array ($type, $offset);
+            $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `articletype`=? AND `publishtime` < NOW() ORDER BY `publishtime` DESC LIMIT ".$offset.",".$size;
+            $param = array ($type);
         } else {
-            $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `publishtime` < NOW() LIMIT 5 OFFSET ?";
-            $param = array ($offset);
+            $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `publishtime` < NOW() ORDER BY `publishtime` DESC LIMIT ".$offset.",".$size;
+            $param = array ();
         }
         $res = ExecuteSql ($sql, $param);
         $newsList = $res;
@@ -131,20 +130,20 @@ function GetNewsList ($page = 1, $type = 0) {
     return $newsList;
 }
 
-function GetNewsTotalPage () {
+function GetNewsTotalPage ($size = 5, $type = 0) {
     static $totalpage = null;
     global $_GET;
     if ($totalpage === null) {
-        if (isset($_GET["type"])) {
+        if ($type != 0) {
             $sql = "SELECT COUNT(*) as count FROM `wf_news` WHERE `status`=1 AND `articletype`=? AND `publishtime` < NOW()";
-            $param = array ($_GET["type"]);
+            $param = array ($type);
         } else {
             $sql = "SELECT COUNT(*) as count FROM `wf_news` WHERE `status`=1 AND `publishtime` < NOW()";
             $param = array ();
         }
         $res = ExecuteSql ($sql, $param);
         $newscount = $res[0]["count"];
-        $totalpage = ceil($newscount / 5);
+        $totalpage = ceil($newscount / $size);
     }
     return $totalpage;
 }
@@ -194,7 +193,7 @@ function GetPreviousArticleInfo () {
     global $_GET;
     if ($info === null) {
         if (isset($_GET["id"])) {
-            $res = ExecuteSql ("SELECT `ID`,`title` FROM `wf_news` WHERE `Id`<? AND `publishtime` < NOW() AND `status`=1 LIMIT 1",
+            $res = ExecuteSql ("SELECT `ID`,`title` FROM `wf_news` WHERE `Id`<? AND `publishtime` < NOW() AND `status`=1 ORDER BY `publishtime` DESC LIMIT 1",
                     array ($_GET["id"]));
             if (count($res) != 0) {
                 $info = $res[0];
@@ -209,9 +208,9 @@ function GetPreviousArticleInfo () {
     return $info;
 }
 
-function PreviousArticleId () {
+function GetPreviousArticleId () {
     $info = GetPreviousArticleInfo ();
-    echo $info["ID"];
+    return $info["ID"];
 }
 
 function PreviousArticleTitle () {
@@ -219,17 +218,12 @@ function PreviousArticleTitle () {
     echo $info["title"];
 }
 
-function CheckPreviousArticle () {
-    $info = GetPreviousArticleInfo ();
-    return $info["ID"] === 0 ? false : true;
-}
-
 function GetNextArticleInfo () {
     static $info = null;
     global $_GET;
     if ($info === null) {
         if (isset($_GET["id"])) {
-            $res = ExecuteSql ("SELECT `ID`,`title` FROM `wf_news` WHERE `Id`>? AND `publishtime` < NOW() AND `status`=1 LIMIT 1",
+            $res = ExecuteSql ("SELECT `ID`,`title` FROM `wf_news` WHERE `Id`>? AND `publishtime` < NOW() AND `status`=1 ORDER BY `publishtime` ASC LIMIT 1",
                     array ($_GET["id"]));
             if (count($res) != 0) {
                 $info = $res[0];
@@ -244,17 +238,12 @@ function GetNextArticleInfo () {
     return $info;
 }
 
-function NextArticleId () {
+function GetNextArticleId () {
     $info = GetNextArticleInfo ();
-    echo $info["ID"];
+    return $info["ID"];
 }
 
 function NextArticleTitle () {
     $info = GetNextArticleInfo ();
     echo $info["title"];
-}
-
-function CheckNextArticle () {
-    $info = GetNextArticleInfo ();
-    return $info["ID"] === 0 ? false : true;
 }

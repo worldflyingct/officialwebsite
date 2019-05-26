@@ -2,7 +2,7 @@
 require_once("config.php");
 function ExecuteSql ($sql, $params=array()) {
     global $config;
-    $db = new PDO("mysql:host=".$config["dbhost"].";port=".$config["dbport"].";dbname=".$config["dbname"].";charset=utf8", $config["dbuser"], $config["dbpass"], array(PDO::ATTR_PERSISTENT => true));
+    $db = new PDO("mysql:host=".$config["dbhost"].";port=".$config["dbport"].";dbname=".$config["dbname"].";charset=utf8", $config["dbuser"], $config["dbpass"], array(PDO::ATTR_PERSISTENT => true, PDO::ATTR_EMULATE_PREPARES => false));
     $stmt = $db->prepare($sql);
     $stmt->execute($params);
     return $stmt->fetchAll();
@@ -101,11 +101,11 @@ function GetNewsList ($page = 1, $size = 5, $type = 0) {
     if ($newsList === null) {
         $offset = $page-1;
         if ($type != 0) {
-            $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `articletype`=? AND `publishtime` < NOW() ORDER BY `publishtime` DESC LIMIT ".$offset.",".$size;
-            $param = array ($type);
+            $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `articletype`=? AND `publishtime` < NOW() ORDER BY `publishtime` DESC LIMIT ?,?";
+            $param = array ($type, $offset, $size);
         } else {
-            $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `publishtime` < NOW() ORDER BY `publishtime` DESC LIMIT ".$offset.",".$size;
-            $param = array ();
+            $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `publishtime` < NOW() ORDER BY `publishtime` DESC LIMIT ?,?";
+            $param = array ($offset, $size);
         }
         $res = ExecuteSql ($sql, $param);
         $newsList = $res;

@@ -5,7 +5,7 @@ function ExecuteSql ($sql, $params=array()) {
     $db = new PDO("mysql:host=".$config["dbhost"].";port=".$config["dbport"].";dbname=".$config["dbname"].";charset=utf8", $config["dbuser"], $config["dbpass"], array(PDO::ATTR_PERSISTENT => true, PDO::ATTR_EMULATE_PREPARES => false));
     $stmt = $db->prepare($sql);
     $stmt->execute($params);
-    return $stmt->fetchAll();
+    return $stmt;
 }
 
 function IsMobile() {
@@ -27,7 +27,8 @@ function WebsiteMsg () {
     static $webmsg = null;
     if ($webmsg === null) {
         $webmsg = array();
-        $arr = ExecuteSql ("SELECT `ckey`,`cvalue` FROM `wf_config`");
+        $stmt = ExecuteSql ("SELECT `ckey`,`cvalue` FROM `wf_config`");
+        $arr = $stmt->fetchAll();
         $count = count ($arr);
         for ($i = 0 ; $i < $count ; $i++) {
             $webmsg[$arr[$i]["ckey"]] = $arr[$i]["cvalue"];
@@ -107,7 +108,8 @@ function GetNewsList ($page = 1, $size = 5, $type = 0) {
             $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `publishtime` < NOW() ORDER BY `publishtime` DESC LIMIT ?,?";
             $param = array ($offset, $size);
         }
-        $res = ExecuteSql ($sql, $param);
+        $stmt = ExecuteSql ($sql, $param);
+        $res = $stmt->fetchAll();
         $newsList = $res;
     }
     return $newsList;
@@ -124,7 +126,8 @@ function GetNewsTotalPage ($size = 5, $type = 0) {
             $sql = "SELECT COUNT(*) as count FROM `wf_news` WHERE `status`=1 AND `publishtime` < NOW()";
             $param = array ();
         }
-        $res = ExecuteSql ($sql, $param);
+        $stmt = ExecuteSql ($sql, $param);
+        $res = $stmt->fetchAll();
         $newscount = $res[0]["count"];
         $totalpage = ceil($newscount / $size);
     }
@@ -135,8 +138,9 @@ function GetArticleInfo () {
     static $info = null;
     global $_GET;
     if ($info === null) {
-        $res = ExecuteSql ("SELECT `title`,`desc`,`publishtime`,`context` FROM `wf_news` WHERE `Id`=? AND `publishtime` < NOW() AND `status`=1",
-                array ($_GET["id"]));
+        $stmt = ExecuteSql ("SELECT `title`,`desc`,`publishtime`,`context` FROM `wf_news` WHERE `Id`=? AND `publishtime` < NOW() AND `status`=1",
+                    array ($_GET["id"]));
+        $res = $stmt->fetchAll();
         if (count($res) != 0) {
             $info = $res[0];
         } else {
@@ -176,8 +180,9 @@ function GetPreviousArticleInfo () {
     global $_GET;
     if ($info === null) {
         if (isset($_GET["id"])) {
-            $res = ExecuteSql ("SELECT `ID`,`title` FROM `wf_news` WHERE `Id`<? AND `publishtime` < NOW() AND `status`=1 ORDER BY `publishtime` DESC LIMIT 1",
-                    array ($_GET["id"]));
+            $stmt = ExecuteSql ("SELECT `ID`,`title` FROM `wf_news` WHERE `Id`<? AND `publishtime` < NOW() AND `status`=1 ORDER BY `publishtime` DESC LIMIT 1",
+                        array ($_GET["id"]));
+            $res = $stmt->fetchAll();
             if (count($res) != 0) {
                 $info = $res[0];
                 return $info;
@@ -206,8 +211,9 @@ function GetNextArticleInfo () {
     global $_GET;
     if ($info === null) {
         if (isset($_GET["id"])) {
-            $res = ExecuteSql ("SELECT `ID`,`title` FROM `wf_news` WHERE `Id`>? AND `publishtime` < NOW() AND `status`=1 ORDER BY `publishtime` ASC LIMIT 1",
-                    array ($_GET["id"]));
+            $stmt = ExecuteSql ("SELECT `ID`,`title` FROM `wf_news` WHERE `Id`>? AND `publishtime` < NOW() AND `status`=1 ORDER BY `publishtime` ASC LIMIT 1",
+                        array ($_GET["id"]));
+            $res = $stmt->fetchAll();
             if (count($res) != 0) {
                 $info = $res[0];
                 return $info;
@@ -229,4 +235,38 @@ function GetNextArticleId () {
 function NextArticleTitle () {
     $info = GetNextArticleInfo ();
     echo $info["title"];
+}
+
+function RandStr ($length = 32) {
+    $chars='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    $len = strlen($chars);
+    $str = microtime(true)."-";
+    for ($i = 0 ; $i < $length ; $i++) {
+        $str .= $chars[mt_rand(0, $len-1)];
+    }
+    return $str;
+}
+
+function Login ($username, $password) {
+    $token = RandStr (32);
+    $stmt = ExecuteSql ("UPDATE `wf_admin` SET `token` = ?, `lastlogin` = NOW() WHERE `user` = ? AND `pass` = PASSWORD(?)", array($token, $username, $password));
+    if ($stmt->rowCount() == 0) {
+        return false;
+    } else {
+        return $token;
+    }
+}
+
+function GetUserInfo ($token) {
+    $stmt1 = ExecuteSql ("SELECT * FROM `wf_admin` WHERE `token` = ?", array($token));
+    $baseinfo = $stmt1->fetchAll();
+    if (count($baseinfo) === 0) {
+        return false;
+    }
+    $stmt2 = ExecuteSql ("SELECT * FROM `wf_group` WHERE `ID` = ?", array($baseinfo[0]["groupid"]));
+    $groupinfo = $stmt2->fetchAll();
+    return array (
+        "baseinfo" => $baseinfo[0],
+        "groupinfo" => $groupinfo[0]
+    );
 }

@@ -35,4 +35,5 @@ switch ($do) {
     case "mobilecinema":require("view/mobile/solutions/cinema.php");break;
     case "mobilecommunity":require("view/mobile/solutions/community.php");break;
     case "mobilecybercafe":require("view/mobile/solutions/cybercafe.php");break;
+    case "api":require("api/".$_GET["act"].".php");break;
 }

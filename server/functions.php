@@ -97,10 +97,10 @@ function AssetsUrl () {
     echo $webmsg["assetsurl"];
 }
 
-function GetNewsList ($context, $status, $type, $keyword, $order, $page, $size, $now) {
+function GetNewsList ($content, $status, $type, $keyword, $order, $page, $size, $now) {
     static $newsList = null;
     if ($newsList === null) {
-        $sql = "SELECT ".$context." FROM `wf_news`,`wf_user` WHERE `wf_news`.`userid` = `wf_user`.`userid`";
+        $sql = "SELECT ".$content." FROM `wf_news`,`wf_user` WHERE `wf_news`.`userid` = `wf_user`.`userid`";
         $params = array();
         if ($status !== null) {
             $sql .= " AND `articlestatus` = ?";
@@ -174,7 +174,7 @@ function GetNewsTotalCount ($status, $type, $keyword, $now) {
 function GetArticleInfo ($articleid) {
     static $info = null;
     if ($info === null) {
-        $stmt = ExecuteSql ("SELECT `title`,`desc`,`publishtime`,`context` FROM `wf_news` WHERE `articleid`=? AND `publishtime` < NOW() AND `articlestatus`=1",
+        $stmt = ExecuteSql ("SELECT `title`,`desc`,`publishtime`,`content` FROM `wf_news` WHERE `articleid`=? AND `publishtime` < NOW() AND `articlestatus`=1",
                     array ($articleid));
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (count($res) != 0) {
@@ -184,7 +184,7 @@ function GetArticleInfo ($articleid) {
                 "title" => "文章不存在",
                 "desc" => "文章不存在，请检查您的链接。",
                 "publishtime" => "0000-00-00 00:00:00",
-                "context" => "文章不存在，请检查您的链接。"
+                "content" => "文章不存在，请检查您的链接。"
             );
         }
     }
@@ -206,9 +206,9 @@ function ArticlePublicTime ($articleid) {
     echo $info["publishtime"];
 }
 
-function ArticleContext ($articleid) {
+function ArticleContent ($articleid) {
     $info = GetArticleInfo ($articleid);
-    echo $info["context"];
+    echo $info["content"];
 }
 
 function GetPreviousArticleInfo ($articleid) {
@@ -269,18 +269,13 @@ function NextArticleTitle ($articleid) {
     echo $info["title"];
 }
 
-function RandStr ($length = 32) {
+function Login ($username, $password) {
     $chars='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     $len = strlen($chars);
-    $str = microtime(true)."-";
-    for ($i = 0 ; $i < $length ; $i++) {
-        $str .= $chars[mt_rand(0, $len-1)];
+    $token = microtime(true)."-";
+    for ($i = 0 ; $i < 32 ; $i++) {
+        $token .= $chars[mt_rand(0, $len-1)];
     }
-    return $str;
-}
-
-function Login ($username, $password) {
-    $token = RandStr (32);
     $stmt = ExecuteSql ("UPDATE `wf_user` SET `token` = ?, `lastlogin` = NOW() WHERE `user` = ? AND `pass` = PASSWORD(?)", array($token, $username, $password));
     if ($stmt->rowCount() == 0) {
         return false;
@@ -298,8 +293,21 @@ function GetUserInfo ($token) {
     return $info[0];
 }
 
+function CreateArticle ($title, $desc, $content, $type, $userid, $publishtime, $status) {
+    $timestamp = time();
+    $path = "uploads/article/".date("Y/m/d", $timestamp);
+    if (!is_dir($path)) {
+        mkdir ($path, 0777, true);
+    }
+    $fullpath = $path."/".$timestamp.".png";
+    move_uploaded_file($_FILES["file"]["tmp_name"], $fullpath);
+    $stmt = ExecuteSql ("INSERT `wf_news` (`title`, `desc`, `content`, `thumbnail`, `articletype`, `userid`, `createtime`, `modifytime`, `publishtime`, `articlestatus`) VALUES (?,?,?,?,?,?,NOW(),NOW(),?,?) ",
+                array($title, $desc, $content, $fullpath, $type, $userid, $publishtime, $status));
+    return $stmt->rowCount();
+}
+
 function GetUserPermission ($token) {
-    $stmt1 = ExecuteSql ("SELECT `wf_group`.* FROM `wf_user`,`wf_group` WHERE `wf_user`.`token` = ?", array($token));
+    $stmt1 = ExecuteSql ("SELECT `wf_user`.`userid`,`wf_group`.* FROM `wf_user`,`wf_group` WHERE `wf_user`.`token` = ?", array($token));
     $res = $stmt1->fetchAll(PDO::FETCH_ASSOC);
     return $res;
 }

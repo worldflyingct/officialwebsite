@@ -30,7 +30,7 @@ $nextArticleId = GetNextArticleId ($articleid);
     <h1><?php ArticleTitle ($articleid);?></h1>
     <h3><?php ArticlePublicTime ($articleid);?></h3>
     <div class="top-content">
-        <?php ArticleContext ($articleid);?>
+        <?php ArticleContent ($articleid);?>
     </div>
     <div class="xia">
         <p>优秀解决方案推荐：<a href="<?php SiteUrl();?>/agriculture.html">智慧农业解决方案</a></p>

@@ -1,6 +1,7 @@
 <?php
-$previousArticleId =GetPreviousArticleId ();
-$nextArticleId = GetNextArticleId ();
+$articleid = $_GET["id"];
+$previousArticleId =GetPreviousArticleId ($articleid);
+$nextArticleId = GetNextArticleId ($articleid);
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -44,16 +45,16 @@ $nextArticleId = GetNextArticleId ();
             <div class="mui-scroll">
                 <img src="<?php AssetsUrl ();?>/imgs/news-bg.png" style="width: 100%;" alt="<?php WebsiteImportantWord ();?>">
                 <div class="box3">
-                    <p class="product-title1"><?php ArticleTitle ();?></p>
-                    <p class="product-title2"><?php ArticlePublicTime ();?></p>
-                    <div class="about-content-box"><?php ArticleContext ();?></div>
+                    <p class="product-title1"><?php ArticleTitle ($articleid);?></p>
+                    <p class="product-title2"><?php ArticlePublicTime ($articleid);?></p>
+                    <div class="about-content-box"><?php ArticleContext ($articleid);?></div>
                     <div class="article-link">
                         <p>优秀解决方案推荐：<a href="<?php SiteUrl ();?>/mobileagriculture.html">智慧农业解决方案</a></p>
 <?php if ($previousArticleId != 0) { ?>
-                        <p>上一篇：<a href="<?php SiteUrl ();?>/mobilearticle-id-<?php echo $previousArticleId;?>.html"><?php PreviousArticleTitle ();?></a></p>
+                        <p>上一篇：<a href="<?php SiteUrl ();?>/mobilearticle-id-<?php echo $previousArticleId;?>.html"><?php PreviousArticleTitle ($articleid);?></a></p>
 <?php } ?>
 <?php if ($nextArticleId != 0) { ?>
-                        <p>下一篇：<a href="<?php SiteUrl ();?>/mobilearticle-id-<?php echo $nextArticleId;?>.html"><?php NextArticleTitle ();?></a></p>
+                        <p>下一篇：<a href="<?php SiteUrl ();?>/mobilearticle-id-<?php echo $nextArticleId;?>.html"><?php NextArticleTitle ($articleid);?></a></p>
 <?php } ?>
                     </div>
                 </div>

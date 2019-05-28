@@ -251,7 +251,6 @@ $(".contact").mouseover(function() {
             right: "0px"
         });
         i = 1;
-        console.log(i)
     }
 })
 $("#close").click(function() {

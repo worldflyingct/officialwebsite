@@ -28,7 +28,7 @@ function WebsiteMsg () {
     if ($webmsg === null) {
         $webmsg = array();
         $stmt = ExecuteSql ("SELECT `ckey`,`cvalue` FROM `wf_config`");
-        $arr = $stmt->fetchAll();
+        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $count = count ($arr);
         for ($i = 0 ; $i < $count ; $i++) {
             $webmsg[$arr[$i]["ckey"]] = $arr[$i]["cvalue"];
@@ -97,50 +97,86 @@ function AssetsUrl () {
     echo $webmsg["assetsurl"];
 }
 
-function GetNewsList ($page = 1, $size = 5, $type = 0) {
+function GetNewsList ($context, $status, $type, $keyword, $order, $page, $size, $now) {
     static $newsList = null;
     if ($newsList === null) {
-        $offset = $page-1;
-        if ($type != 0) {
-            $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `articletype`=? AND `publishtime` < NOW() ORDER BY `publishtime` DESC LIMIT ?,?";
-            $param = array ($type, $offset, $size);
-        } else {
-            $sql = "SELECT * FROM `wf_news` WHERE `status`=1 AND `publishtime` < NOW() ORDER BY `publishtime` DESC LIMIT ?,?";
-            $param = array ($offset, $size);
+        $sql = "SELECT ".$context." FROM `wf_news`,`wf_user` WHERE `wf_news`.`userid` = `wf_user`.`userid`";
+        $params = array();
+        if ($status !== null) {
+            $sql .= " AND `articlestatus` = ?";
+            array_push ($params, $status);
         }
-        $stmt = ExecuteSql ($sql, $param);
-        $res = $stmt->fetchAll();
+        if ($type !== null) {
+            $sql .= " AND `articletype` = ?";
+            array_push ($params, $type);
+        }
+        if ($keyword !== null) {
+            $sql .= " AND `title` LIKE ?";
+            array_push ($params, "%".$keyword."%");
+        }
+        if ($now) {
+            $sql .= " AND `publishtime` < NOW()";
+        }
+        $offset = $size*($page-1);
+        if ($order) {
+            $sql .= " ORDER BY `articleid` DESC LIMIT ?,?";
+            array_push ($params, $offset, $size);
+        } else {
+            $sql .= " ORDER BY `publishtime` DESC LIMIT ?,?";
+            array_push ($params, $offset, $size);
+        }
+/*
+        print_r(array(
+            "sql" => $sql,
+            "params" => $params
+        ));
+*/
+        $stmt = ExecuteSql ($sql, $params);
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $newsList = $res;
     }
     return $newsList;
 }
 
-function GetNewsTotalPage ($size = 5, $type = 0) {
-    static $totalpage = null;
-    global $_GET;
-    if ($totalpage === null) {
-        if ($type != 0) {
-            $sql = "SELECT COUNT(*) as count FROM `wf_news` WHERE `status`=1 AND `articletype`=? AND `publishtime` < NOW()";
-            $param = array ($type);
-        } else {
-            $sql = "SELECT COUNT(*) as count FROM `wf_news` WHERE `status`=1 AND `publishtime` < NOW()";
-            $param = array ();
+function GetNewsTotalCount ($status, $type, $keyword, $now) {
+    static $totalcount = null;
+    if ($totalcount === null) {
+        $sql = "SELECT COUNT(*) as count FROM `wf_news` WHERE 1";
+        $params = array();
+        if ($status !== null) {
+            $sql .= " AND `articlestatus` = ?";
+            array_push ($params, $status);
         }
-        $stmt = ExecuteSql ($sql, $param);
-        $res = $stmt->fetchAll();
-        $newscount = $res[0]["count"];
-        $totalpage = ceil($newscount / $size);
+        if ($type !== null) {
+            $sql .= " AND `articletype` = ?";
+            array_push ($params, $type);
+        }
+        if ($keyword !== null) {
+            $sql .= " AND `title` LIKE ?";
+            array_push ($params, "%".$keyword."%");
+        }
+        if ($now) {
+            $sql .= " AND `publishtime` < NOW()";
+        }
+/*
+        print_r(array(
+            "sql" => $sql,
+            "params" => $params
+        ));
+*/
+        $stmt = ExecuteSql ($sql, $params);
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $totalcount = $res[0]["count"];
     }
-    return $totalpage;
+    return $totalcount;
 }
 
-function GetArticleInfo () {
+function GetArticleInfo ($articleid) {
     static $info = null;
-    global $_GET;
     if ($info === null) {
-        $stmt = ExecuteSql ("SELECT `title`,`desc`,`publishtime`,`context` FROM `wf_news` WHERE `Id`=? AND `publishtime` < NOW() AND `status`=1",
-                    array ($_GET["id"]));
-        $res = $stmt->fetchAll();
+        $stmt = ExecuteSql ("SELECT `title`,`desc`,`publishtime`,`context` FROM `wf_news` WHERE `articleid`=? AND `publishtime` < NOW() AND `articlestatus`=1",
+                    array ($articleid));
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (count($res) != 0) {
             $info = $res[0];
         } else {
@@ -155,85 +191,81 @@ function GetArticleInfo () {
     return $info;
 }
 
-function ArticleTitle () {
-    $info = GetArticleInfo ();
+function ArticleTitle ($articleid) {
+    $info = GetArticleInfo ($articleid);
     echo $info["title"];
 }
 
-function ArticleDesc () {
-    $info = GetArticleInfo ();
+function ArticleDesc ($articleid) {
+    $info = GetArticleInfo ($articleid);
     echo $info["desc"];
 }
 
-function ArticlePublicTime () {
-    $info = GetArticleInfo ();
+function ArticlePublicTime ($articleid) {
+    $info = GetArticleInfo ($articleid);
     echo $info["publishtime"];
 }
 
-function ArticleContext () {
-    $info = GetArticleInfo ();
+function ArticleContext ($articleid) {
+    $info = GetArticleInfo ($articleid);
     echo $info["context"];
 }
 
-function GetPreviousArticleInfo () {
+function GetPreviousArticleInfo ($articleid) {
     static $info = null;
-    global $_GET;
     if ($info === null) {
-        if (isset($_GET["id"])) {
-            $stmt = ExecuteSql ("SELECT `ID`,`title` FROM `wf_news` WHERE `Id`<? AND `publishtime` < NOW() AND `status`=1 ORDER BY `publishtime` DESC LIMIT 1",
-                        array ($_GET["id"]));
-            $res = $stmt->fetchAll();
-            if (count($res) != 0) {
-                $info = $res[0];
-                return $info;
-            }
+        $articleinfo = GetArticleInfo ($articleid);
+        $stmt = ExecuteSql ("SELECT `articleid`,`title` FROM `wf_news` WHERE `publishtime`<? AND `publishtime` < NOW() AND `articlestatus`=1 ORDER BY `publishtime` DESC LIMIT 1",
+                    array ($articleinfo["publishtime"]));
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (count($res) != 0) {
+            $info = $res[0];
+        } else {
+            $info = array (
+                "ID" => 0,
+                "title" => "文章不存在"
+            );
         }
-        $info = array (
-            "ID" => 0,
-            "title" => "文章不存在"
-        );
     }
     return $info;
 }
 
-function GetPreviousArticleId () {
-    $info = GetPreviousArticleInfo ();
-    return $info["ID"];
+function GetPreviousArticleId ($articleid) {
+    $info = GetPreviousArticleInfo ($articleid);
+    return $info["articleid"];
 }
 
-function PreviousArticleTitle () {
-    $info = GetPreviousArticleInfo ();
+function PreviousArticleTitle ($articleid) {
+    $info = GetPreviousArticleInfo ($articleid);
     echo $info["title"];
 }
 
-function GetNextArticleInfo () {
+function GetNextArticleInfo ($articleid) {
     static $info = null;
-    global $_GET;
     if ($info === null) {
-        if (isset($_GET["id"])) {
-            $stmt = ExecuteSql ("SELECT `ID`,`title` FROM `wf_news` WHERE `Id`>? AND `publishtime` < NOW() AND `status`=1 ORDER BY `publishtime` ASC LIMIT 1",
-                        array ($_GET["id"]));
-            $res = $stmt->fetchAll();
-            if (count($res) != 0) {
-                $info = $res[0];
-                return $info;
-            }
+        $articleinfo = GetArticleInfo ($articleid);
+        $stmt = ExecuteSql ("SELECT `articleid`,`title` FROM `wf_news` WHERE `publishtime`>? AND `publishtime` < NOW() AND `articlestatus`=1 ORDER BY `publishtime` ASC LIMIT 1",
+                    array ($articleinfo["publishtime"]));
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (count($res) != 0) {
+            $info = $res[0];
+        } else {
+            $info = array (
+                "ID" => 0,
+                "title" => "文章不存在"
+            );
         }
-        $info = array (
-            "ID" => 0,
-            "title" => "文章不存在"
-        );
     }
     return $info;
 }
 
-function GetNextArticleId () {
-    $info = GetNextArticleInfo ();
-    return $info["ID"];
+function GetNextArticleId ($articleid) {
+    $info = GetNextArticleInfo ($articleid);
+    return $info["articleid"];
 }
 
-function NextArticleTitle () {
-    $info = GetNextArticleInfo ();
+function NextArticleTitle ($articleid) {
+    $info = GetNextArticleInfo ($articleid);
     echo $info["title"];
 }
 
@@ -249,7 +281,7 @@ function RandStr ($length = 32) {
 
 function Login ($username, $password) {
     $token = RandStr (32);
-    $stmt = ExecuteSql ("UPDATE `wf_admin` SET `token` = ?, `lastlogin` = NOW() WHERE `user` = ? AND `pass` = PASSWORD(?)", array($token, $username, $password));
+    $stmt = ExecuteSql ("UPDATE `wf_user` SET `token` = ?, `lastlogin` = NOW() WHERE `user` = ? AND `pass` = PASSWORD(?)", array($token, $username, $password));
     if ($stmt->rowCount() == 0) {
         return false;
     } else {
@@ -258,15 +290,16 @@ function Login ($username, $password) {
 }
 
 function GetUserInfo ($token) {
-    $stmt1 = ExecuteSql ("SELECT * FROM `wf_admin` WHERE `token` = ?", array($token));
-    $baseinfo = $stmt1->fetchAll();
-    if (count($baseinfo) === 0) {
+    $stmt1 = ExecuteSql ("SELECT `u`.`userid`, `u`.`nickname`, `u`.`lastlogin`, `g`.* FROM `wf_user` as u,`wf_group` as g WHERE `u`.`token` = ? AND `u`.`groupid` = `g`.`groupid`", array($token));
+    $info = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+    if (count($info) === 0) {
         return false;
     }
-    $stmt2 = ExecuteSql ("SELECT * FROM `wf_group` WHERE `ID` = ?", array($baseinfo[0]["groupid"]));
-    $groupinfo = $stmt2->fetchAll();
-    return array (
-        "baseinfo" => $baseinfo[0],
-        "groupinfo" => $groupinfo[0]
-    );
+    return $info[0];
+}
+
+function GetUserPermission ($token) {
+    $stmt1 = ExecuteSql ("SELECT `wf_group`.* FROM `wf_user`,`wf_group` WHERE `wf_user`.`token` = ?", array($token));
+    $res = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+    return $res;
 }

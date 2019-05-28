@@ -5,7 +5,7 @@ $obj = json_decode($body, true);
 $res = GetUserInfo ($obj["token"]);
 if ($res === false) {
     $ret = array(
-        "errcode" => -99,
+        "errcode" => 2000,
         "errmsg" => "您的账号已在其他设备登录，您已下线"
     );
 } else {

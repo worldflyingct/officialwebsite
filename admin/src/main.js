@@ -33,7 +33,7 @@ router.beforeEach((to, from, next) => {
         next()
     } else {
         let userinfoobj = JSON.parse(userinfo)
-        if (to.path !== '/' && userinfoobj.groupinfo[to.path] === false) {
+        if (to.path !== '/' && userinfoobj[to.path] === false) {
             next('/403');
         } else {
             next();

@@ -1,9 +1,9 @@
 
 <?php
 $page = isset($_GET["page"]) ? $_GET["page"] : 1;
-$type = isset($_GET["type"]) ? $_GET["type"] : 0;
-$totalpage = GetNewsTotalPage (5, $type);
-$newsList = GetNewsList ($page, 5, $type);
+$type = isset($_GET["type"]) ? $_GET["type"] : null;
+$totalpage = ceil (GetNewsTotalCount (1, $type, null, true) / 5);
+$newsList = GetNewsList ("`articleid`,`title`,`thumbnail`,`desc`,`publishtime`", 1, $type, null, 1, $page, 5, true);
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -33,7 +33,7 @@ $newsList = GetNewsList ($page, 5, $type);
             <h3>新闻动态</h3>
             <h3>News information</h3>
             <ul class="clearfix">
-                <li><a href="<?php SiteUrl ();?>/news.html"<?php if ($type == 0) echo " class=\"active-a\"";?>>ALL+</a></li>
+                <li><a href="<?php SiteUrl ();?>/news.html"<?php if ($type == null) echo " class=\"active-a\"";?>>ALL+</a></li>
                 <li><a href="<?php SiteUrl ();?>/news-type-1.html"<?php if ($type == 1) echo " class=\"active-a\"";?>>公司动态</a></li>
                 <li><a href="<?php SiteUrl ();?>/news-type-2.html"<?php if ($type == 2) echo " class=\"active-a\"";?>>媒体报道</a></li>
                 <li><a href="<?php SiteUrl ();?>/news-type-3.html"<?php if ($type == 3) echo " class=\"active-a\"";?>>行业资讯</a></li>
@@ -50,7 +50,7 @@ $newsList = GetNewsList ($page, 5, $type);
                         <p><?php echo $news["title"];?></p>
                         <p><?php echo $news["publishtime"];?></p>
                         <p><?php echo $news["desc"];?></p>
-                        <p><a href="<?php SiteUrl ();?>/article-id-<?php echo $news["ID"];?>.html">MORE</a></p>
+                        <p><a href="<?php SiteUrl ();?>/article-id-<?php echo $news["articleid"];?>.html">MORE</a></p>
                     </div>
                 </li>
 <?php } ?>

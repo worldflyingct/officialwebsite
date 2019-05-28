@@ -1,8 +1,8 @@
 <?php
 $page = isset($_GET["page"]) ? $_GET["page"] : 1;
-$type = isset($_GET["type"]) ? $_GET["type"] : 0;
-$totalpage = GetNewsTotalPage (5, $type);
-$newsList = GetNewsList ($page, 5, $type);
+$type = isset($_GET["type"]) ? $_GET["type"] : null;
+$totalpage = ceil (GetNewsTotalCount (1, $type, null, true) / 5);
+$newsList = GetNewsList ("`title`,`thumbnail`,`desc`,`publishtime`", 1, $type, null, 1, $page, 5, true);
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">

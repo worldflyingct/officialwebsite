@@ -42,6 +42,11 @@
                         icon: 'el-icon-lx-home',
                         index: 'dashboard',
                         title: '系统首页'
+                    },
+                    {
+                        icon: 'el-icon-lx-calendar',
+                        index: 'news',
+                        title: '新闻管理'
                     }
                 ]
             }

@@ -26,9 +26,10 @@ export default {
             if (obj.errcode === 0) {
                 _this.$root.userinfo = obj.userinfo
                 sessionStorage.setItem('userinfo', JSON.stringify(obj.userinfo))
-            } else if (obj.errcode === 99) {
+            } else if (obj.errcode === 2000) {
                 _this.$message.error(obj.errmsg)
-                _this.$router.push('/')
+                sessionStorage.clear()
+                _this.$router.push('/login')
             } else {
                 _this.$message.error(obj.errmsg)
             }

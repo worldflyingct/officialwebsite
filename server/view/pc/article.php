@@ -1,6 +1,7 @@
 <?php
-$previousArticleId =GetPreviousArticleId ();
-$nextArticleId = GetNextArticleId ();
+$articleid = $_GET["id"];
+$previousArticleId =GetPreviousArticleId ($articleid);
+$nextArticleId = GetNextArticleId ($articleid);
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -15,7 +16,7 @@ $nextArticleId = GetNextArticleId ();
     <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wbootstrap.css">
     <link rel="stylesheet" href="<?php AssetsUrl ();?>/css/wnews.css">
     <link rel="stylesheet" type="text/css" href="<?php AssetsUrl ();?>/css/xinnav.css">
-    <title><?php ArticleTitle ();?>_<?php WebsiteImportantWord ();?>_沃航科技</title>
+    <title><?php ArticleTitle ($articleid);?>_<?php WebsiteImportantWord ();?>_沃航科技</title>
     <script src="<?php AssetsUrl ();?>/js/wjquery-3.1.0.min.js"></script>
     <script src="<?php AssetsUrl ();?>/js/wbootstrap.min.js"></script>
     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=8L5Ultg8kSYTkM3zc75pVvIAp7Z5VV1c"></script>
@@ -26,18 +27,18 @@ $nextArticleId = GetNextArticleId ();
     <img src="<?php AssetsUrl ();?>/imgs/news/news-bg.png" alt="<?php WebsiteImportantWord ();?>">
 </div>
 <div class="textt">
-    <h1><?php ArticleTitle ();?></h1>
-    <h3><?php ArticlePublicTime ();?></h3>
+    <h1><?php ArticleTitle ($articleid);?></h1>
+    <h3><?php ArticlePublicTime ($articleid);?></h3>
     <div class="top-content">
-        <?php ArticleContext ();?>
+        <?php ArticleContext ($articleid);?>
     </div>
     <div class="xia">
         <p>优秀解决方案推荐：<a href="<?php SiteUrl();?>/agriculture.html">智慧农业解决方案</a></p>
 <?php if ($previousArticleId != 0) { ?>
-        <p>上一篇：<a href="<?php SiteUrl();?>/article-id-<?php echo $previousArticleId;?>.html"><?php PreviousArticleTitle ();?></a></p>
+        <p>上一篇：<a href="<?php SiteUrl();?>/article-id-<?php echo $previousArticleId;?>.html"><?php PreviousArticleTitle ($articleid);?></a></p>
 <?php } ?>
 <?php if ($nextArticleId != 0) { ?>
-        <p>下一篇：<a href="<?php SiteUrl();?>/article-id-<?php echo $nextArticleId;?>.html"><?php NextArticleTitle ();?></a></p>
+        <p>下一篇：<a href="<?php SiteUrl();?>/article-id-<?php echo $nextArticleId;?>.html"><?php NextArticleTitle ($articleid);?></a></p>
 <?php } ?>
     </div>
 </div>
@@ -63,7 +64,6 @@ $(".contact").mouseover(function() {
             right: "0px"
         });
         i = 1;
-        console.log(i)
     }
 
 })

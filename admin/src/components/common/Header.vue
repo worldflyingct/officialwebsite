@@ -40,8 +40,7 @@
             }
         },
         created () {
-            console.log (this.$root.userinfo.baseinfo)
-            this.username = this.$root.userinfo.baseinfo.nickname
+            this.username = this.$root.userinfo.nickname
         },
         methods:{
             // 用户名下拉菜单选择事件

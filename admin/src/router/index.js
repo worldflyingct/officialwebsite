@@ -18,6 +18,11 @@ export default new Router({
                     path: '/dashboard',
                     component: resolve => require(['../components/page/Dashboard.vue'], resolve),
                     meta: { title: '系统首页' }
+                },
+                {
+                    path: '/news',
+                    component: resolve => require(['../components/page/News.vue'], resolve),
+                    meta: { title: '新闻管理' }
                 }
             ]
         },

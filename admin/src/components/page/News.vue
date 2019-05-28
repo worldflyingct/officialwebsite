@@ -26,7 +26,7 @@
                 <el-option key="0" label="生成时间" :value="0"></el-option>
                 <el-option key="1" label="发布时间" :value="1"></el-option>
             </el-select>
-            <el-button type="success" icon="search" style="float: right;">新增</el-button>
+            <el-button type="success" icon="search" style="float: right;" @click="CreateArticle">新增</el-button>
         </div>
         <el-table :data="articlelist" border class="table" ref="multipleTable">
             <el-table-column prop="articleid" label="ID" width="65">
@@ -102,6 +102,10 @@ export default {
         _this.GetArticleList ()
     },
     methods: {
+        async CreateArticle () {
+            let _this = this
+            _this.$router.push('/EditArticle')
+        },
         async GetArticleList () {
             let _this = this
             let option = {

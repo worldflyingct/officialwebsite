@@ -23,6 +23,11 @@ export default new Router({
                     path: '/news',
                     component: resolve => require(['../components/page/News.vue'], resolve),
                     meta: { title: '新闻管理' }
+                },
+                {
+                    path: '/editarticle',
+                    component: resolve => require(['../components/page/EditArticle.vue'], resolve),
+                    meta: { title: '新闻编辑' }
                 }
             ]
         },

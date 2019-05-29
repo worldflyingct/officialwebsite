@@ -23,7 +23,7 @@
                     </el-form-item>
                     <el-form-item label="发布时间">
                         <el-col :span="11">
-                            <el-date-picker type="datetime" placeholder="选择发布时间" v-model="form.publishtime" style="width: 100%;"></el-date-picker>
+                            <el-date-picker type="datetime" placeholder="选择发布时间" v-model="form.publishtime" style="width: 100%;" :clearable="false"></el-date-picker>
                         </el-col>
                     </el-form-item>
                     <el-form-item label="是否发布">
@@ -33,7 +33,7 @@
                         <img :src="cronImg" class="pre-img" @click="SelectImg">
                     </el-form-item>
                     <el-form-item label="文章内容">
-                        <textarea id="editor" style="width: 1100px; height: 300px"></textarea>
+                        <textarea :id="textareaid" style="width: 1100px; height: 300px"></textarea>
                     </el-form-item>
                     <el-form-item>
                         <el-button type="primary" @click="OnSubmit">表单提交</el-button>
@@ -53,23 +53,27 @@
 </template>
 
 <script>
-let defaultImg = require('@/assets/img/defaultImg.png')
 import VueCropper  from 'vue-cropperjs'
 import func from '@/components/common/functions'
 export default {
     name: 'baseform',
-    data: function(){
+    data: function() {
+        let defaultImg = require('@/assets/img/defaultImg.png')
+        let now = new Date()
         return {
             form: {
                 articleid: 0,
                 title: '',
                 desc: '',
-                publishtime: null,
+                publishtime: now,
                 status: true,
                 type: 1,
                 file: null
             },
+            textareaid: 'tid-' + now.getTime(),
             dialogVisible: false,
+            oldthumbnail: '',
+            defaultImg: defaultImg,
             cronsrc: defaultImg,
             cronImg: defaultImg,
             ue: null
@@ -78,22 +82,47 @@ export default {
     components: {
         VueCropper
     },
-    created () {
+    async mounted () {
         let _this = this
+        _this.ue = UE.getEditor(_this.textareaid)
         if (_this.$route.query.hasOwnProperty('articleid')) {
-            _this.form.articleid = _this.$route.query.articleid
+            let articleid = parseInt(_this.$route.query.articleid)
+            let res = await func.ajax(APIADDR + '/index.php?do=api&act=getarticledesc', JSON.stringify({
+                token: _this.$root.token,
+                articleid: articleid
+            }))
+            let obj = JSON.parse(res)
+            if (obj.errcode == 0) {
+                _this.form = {
+                    articleid: articleid,
+                    title: obj.article.title,
+                    desc: obj.article.desc,
+                    publishtime: new Date(obj.article.publishtime),
+                    status: obj.article.articlestatus == 1 ? true : false,
+                    type: obj.article.articletype,
+                    file: null
+                }
+                _this.oldthumbnail = obj.article.thumbnail
+                _this.defaultImg = APIADDR + obj.article.thumbnail
+                _this.cronImg = _this.defaultImg
+                setTimeout(() => {
+                    _this.ue.setContent(obj.article.content)
+                }, 500)
+            } else if (obj.errcode === 2000) {
+                _this.$message.error(obj.errmsg)
+                sessionStorage.clear()
+                _this.$router.push('/login')
+            } else {
+                _this.$message.error(obj.errmsg)
+            }
         }
-    },
-    mounted () {
-        let _this = this
-        _this.ue = UE.getEditor('editor')
     },
     methods: {
         async cropImage () {
             let _this = this
             _this.$refs.cropper.getCroppedCanvas({width: 300, height: 170}).toBlob(function (blob) {
-                _this.form.file = new Blob([blob], {"type": "image/png"})
-                if (_this.cronImg != defaultImg) {
+                _this.form.file = blob
+                if (_this.cronImg != _this.defaultImg) {
                     URL.revokeObjectURL(_this.cronImg)
                 }
                 _this.cronImg = URL.createObjectURL(blob)
@@ -108,7 +137,7 @@ export default {
             input.onchange = function () {
                 let file = input.files[0]
                 _this.dialogVisible = true
-                if (_this.cronsrc != defaultImg) {
+                if (_this.cronsrc != _this.defaultImg) {
                     URL.revokeObjectURL(_this.cronsrc)
                 }
                 _this.cronsrc = URL.createObjectURL(file)
@@ -122,13 +151,38 @@ export default {
             let formdata = new FormData()
             formdata.append ('token', _this.$root.token)
             formdata.append ('articleid', _this.form.articleid)
+            if (_this.form.title == '') {
+                _this.$message.error('文章标题不能为空')
+                return
+            }
             formdata.append ('title', _this.form.title)
+            if (_this.form.desc == '') {
+                _this.$message.error('文章简介不能为空')
+                return
+            }
             formdata.append ('desc', _this.form.desc)
-            formdata.append ('publishtime', _this.form.publishtime)
-            formdata.append ('status', _this.form.status)
+            formdata.append ('publishtime', func.parsedatetime(_this.form.publishtime))
+            formdata.append ('status', _this.form.status == true ? 1 : 0)
             formdata.append ('type', _this.form.type)
+            if (_this.form.publishtime == '') {
+                _this.$message.error('文章简介不能为空')
+                return
+            }
+            if (_this.ue.hasContents() == false) {
+                _this.$message.error('文章内容不能为空')
+                return
+            }
             formdata.append ('content', _this.ue.getContent())
-            formdata.append ('file', _this.form.file)
+            if (_this.form.articleid === 0 && _this.form.file === null) {
+                _this.$message.error('文章缩略图不能为空')
+                return
+            }
+            if (_this.form.file != null) {
+                formdata.append ('file', _this.form.file)
+            }
+            if (_this.oldthumbnail != '') {
+                formdata.append ('oldthumbnail', _this.oldthumbnail)
+            }
             let res = await func.ajax(APIADDR + '/index.php?do=api&act=editarticle', formdata)
             let obj = JSON.parse(res)
             if (obj.errcode == 0) {
@@ -145,13 +199,13 @@ export default {
     },
     beforeDestroy() {
         let _this = this
-        if (_this.cronsrc != defaultImg) {
+        _this.ue.destroy()
+        if (_this.cronsrc != _this.defaultImg) {
             URL.revokeObjectURL(_this.cronsrc)
         }
-        if (_this.cronImg != defaultImg) {
+        if (_this.cronImg != _this.defaultImg) {
             URL.revokeObjectURL(_this.cronImg)
         }
-        _this.ue.destroy()
     }
 }
 </script>

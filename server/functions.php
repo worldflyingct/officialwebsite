@@ -97,10 +97,10 @@ function AssetsUrl () {
     echo $webmsg["assetsurl"];
 }
 
-function GetNewsList ($content, $status, $type, $keyword, $order, $page, $size, $now) {
+function GetNewsList ($column, $status, $type, $keyword, $order, $page, $size, $now) {
     static $newsList = null;
     if ($newsList === null) {
-        $sql = "SELECT ".$content." FROM `wf_news`,`wf_user` WHERE `wf_news`.`userid` = `wf_user`.`userid`";
+        $sql = "SELECT ".$column." FROM `wf_news`,`wf_user` WHERE `wf_news`.`userid` = `wf_user`.`userid`";
         $params = array();
         if ($status !== null) {
             $sql .= " AND `articlestatus` = ?";
@@ -119,10 +119,10 @@ function GetNewsList ($content, $status, $type, $keyword, $order, $page, $size, 
         }
         $offset = $size*($page-1);
         if ($order) {
-            $sql .= " ORDER BY `articleid` DESC LIMIT ?,?";
+            $sql .= " ORDER BY `publishtime` DESC LIMIT ?,?";
             array_push ($params, $offset, $size);
         } else {
-            $sql .= " ORDER BY `publishtime` DESC LIMIT ?,?";
+            $sql .= " ORDER BY `articleid` DESC LIMIT ?,?";
             array_push ($params, $offset, $size);
         }
 /*
@@ -168,13 +168,17 @@ function GetNewsTotalCount ($status, $type, $keyword, $now) {
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $totalcount = $res[0]["count"];
     }
-    return $totalcount;
+    return (int) $totalcount;
 }
 
-function GetArticleInfo ($articleid) {
+function GetArticleInfo ($articleid, $opt) {
     static $info = null;
     if ($info === null) {
-        $stmt = ExecuteSql ("SELECT `title`,`desc`,`publishtime`,`content` FROM `wf_news` WHERE `articleid`=? AND `publishtime` < NOW() AND `articlestatus`=1",
+        $sql = "SELECT `title`,`desc`,`publishtime`,`content`,`thumbnail`,`articletype`,`articlestatus` FROM `wf_news` WHERE `articleid`=?";
+        if ($opt) {
+            $sql .=  " AND `publishtime` < NOW() AND `articlestatus`=1";
+        }
+        $stmt = ExecuteSql ($sql,
                     array ($articleid));
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (count($res) != 0) {
@@ -191,38 +195,17 @@ function GetArticleInfo ($articleid) {
     return $info;
 }
 
-function ArticleTitle ($articleid) {
-    $info = GetArticleInfo ($articleid);
-    echo $info["title"];
-}
-
-function ArticleDesc ($articleid) {
-    $info = GetArticleInfo ($articleid);
-    echo $info["desc"];
-}
-
-function ArticlePublicTime ($articleid) {
-    $info = GetArticleInfo ($articleid);
-    echo $info["publishtime"];
-}
-
-function ArticleContent ($articleid) {
-    $info = GetArticleInfo ($articleid);
-    echo $info["content"];
-}
-
-function GetPreviousArticleInfo ($articleid) {
+function GetPreviousArticleInfo ($publishtime) {
     static $info = null;
     if ($info === null) {
-        $articleinfo = GetArticleInfo ($articleid);
         $stmt = ExecuteSql ("SELECT `articleid`,`title` FROM `wf_news` WHERE `publishtime`<? AND `publishtime` < NOW() AND `articlestatus`=1 ORDER BY `publishtime` DESC LIMIT 1",
-                    array ($articleinfo["publishtime"]));
+                    array ($publishtime));
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (count($res) != 0) {
             $info = $res[0];
         } else {
             $info = array (
-                "ID" => 0,
+                "articleid" => 0,
                 "title" => "文章不存在"
             );
         }
@@ -230,43 +213,22 @@ function GetPreviousArticleInfo ($articleid) {
     return $info;
 }
 
-function GetPreviousArticleId ($articleid) {
-    $info = GetPreviousArticleInfo ($articleid);
-    return $info["articleid"];
-}
-
-function PreviousArticleTitle ($articleid) {
-    $info = GetPreviousArticleInfo ($articleid);
-    echo $info["title"];
-}
-
-function GetNextArticleInfo ($articleid) {
+function GetNextArticleInfo ($publishtime) {
     static $info = null;
     if ($info === null) {
-        $articleinfo = GetArticleInfo ($articleid);
         $stmt = ExecuteSql ("SELECT `articleid`,`title` FROM `wf_news` WHERE `publishtime`>? AND `publishtime` < NOW() AND `articlestatus`=1 ORDER BY `publishtime` ASC LIMIT 1",
-                    array ($articleinfo["publishtime"]));
+                    array ($publishtime));
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (count($res) != 0) {
             $info = $res[0];
         } else {
             $info = array (
-                "ID" => 0,
+                "articleid" => 0,
                 "title" => "文章不存在"
             );
         }
     }
     return $info;
-}
-
-function GetNextArticleId ($articleid) {
-    $info = GetNextArticleInfo ($articleid);
-    return $info["articleid"];
-}
-
-function NextArticleTitle ($articleid) {
-    $info = GetNextArticleInfo ($articleid);
-    echo $info["title"];
 }
 
 function Login ($username, $password) {
@@ -276,7 +238,7 @@ function Login ($username, $password) {
     for ($i = 0 ; $i < 32 ; $i++) {
         $token .= $chars[mt_rand(0, $len-1)];
     }
-    $stmt = ExecuteSql ("UPDATE `wf_user` SET `token` = ?, `lastlogin` = NOW() WHERE `user` = ? AND `pass` = PASSWORD(?)", array($token, $username, $password));
+    $stmt = ExecuteSql ("UPDATE `wf_user` SET `token` = ?, `lastlogin` = NOW() WHERE `user` = ? AND `pass` = MD5(?)", array($token, $username, $password));
     if ($stmt->rowCount() == 0) {
         return false;
     } else {
@@ -293,21 +255,49 @@ function GetUserInfo ($token) {
     return $info[0];
 }
 
-function CreateArticle ($title, $desc, $content, $type, $userid, $publishtime, $status) {
+function CreateArticle ($title, $desc, $content, $type, $userid, $publishtime, $status, $file) {
     $timestamp = time();
-    $path = "uploads/article/".date("Y/m/d", $timestamp);
-    if (!is_dir($path)) {
-        mkdir ($path, 0777, true);
+    $path = "/uploads/article/".date("Y/m/d", $timestamp);
+    $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $len = strlen($chars);
+    $filepath = $path."/".$timestamp;
+    for ($i = 0 ; $i < 4 ; $i++) {
+        $filepath .= $chars[mt_rand(0, $len-1)];
     }
-    $fullpath = $path."/".$timestamp.".png";
-    move_uploaded_file($_FILES["file"]["tmp_name"], $fullpath);
+    $filepath .= ".png";
+    if (!is_dir($path)) {
+        mkdir (getcwd().$path, 0777, true);
+    }
+    move_uploaded_file($file["tmp_name"], getcwd().$filepath);
     $stmt = ExecuteSql ("INSERT `wf_news` (`title`, `desc`, `content`, `thumbnail`, `articletype`, `userid`, `createtime`, `modifytime`, `publishtime`, `articlestatus`) VALUES (?,?,?,?,?,?,NOW(),NOW(),?,?) ",
-                array($title, $desc, $content, $fullpath, $type, $userid, $publishtime, $status));
+                array($title, $desc, $content, $filepath, $type, $userid, $publishtime, $status));
     return $stmt->rowCount();
 }
 
-function GetUserPermission ($token) {
-    $stmt1 = ExecuteSql ("SELECT `wf_user`.`userid`,`wf_group`.* FROM `wf_user`,`wf_group` WHERE `wf_user`.`token` = ?", array($token));
-    $res = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-    return $res;
+function EditArticle ($articleid, $title, $desc, $content, $type, $userid, $publishtime, $status, $oldthumbnail, $file) {
+    if ($file) {
+        $oldfilepath = getcwd().$oldthumbnail;
+        if (is_file($oldfilepath)) {
+            unlink ($oldfilepath);
+        }
+        $timestamp = time();
+        $path = "/uploads/article/".date("Y/m/d", $timestamp);
+        $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $len = strlen($chars);
+        $filepath = $path."/".$timestamp;
+        for ($i = 0 ; $i < 4 ; $i++) {
+            $filepath .= $chars[mt_rand(0, $len-1)];
+        }
+        $filepath .= ".png";
+        if (!is_dir(getcwd().$path)) {
+            mkdir (getcwd().$path, 0777, true);
+        }
+        move_uploaded_file($file["tmp_name"], getcwd().$filepath);
+        $stmt = ExecuteSql ("UPDATE `wf_news` SET `title` = ?, `desc` = ?, `content` = ?, `thumbnail` = ?, `articletype` = ?, `userid` = ?, `modifytime` = NOW(), `publishtime` = ?, `articlestatus` = ? WHERE `articleid` = ?",
+                    array($title, $desc, $content, $filepath, $type, $userid, $publishtime, $status, $articleid));
+    } else {
+        $stmt = ExecuteSql ("UPDATE `wf_news` SET `title` = ?, `desc` = ?, `content` = ?, `articletype` = ?, `userid` = ?, `modifytime` = NOW(), `publishtime` = ?, `articlestatus` = ? WHERE `articleid` = ?",
+                    array($title, $desc, $content, $type, $userid, $publishtime, $status, $articleid));
+    }
+    return $stmt->rowCount();
 }

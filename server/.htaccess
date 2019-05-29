@@ -1,4 +1,5 @@
 RewriteEngine On
+
 RewriteRule ^(\w+).html$ index.php?do=$1
 RewriteRule ^(\w+)-(\w+)-([^\-\#\%\?\&]*).html$ index.php?do=$1&$2=$3
 RewriteRule ^(\w+)-(\w+)-([^\-\#\%\?\&]*)-(\w+)-([^\-\#\%\?\&]*).html$ index.php?do=$1&$2=$3&$4=$5

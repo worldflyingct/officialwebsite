@@ -51,14 +51,14 @@
             </el-table-column>
             <el-table-column label="文章状态" width="80" :formatter="function (row) {
                 switch (row.articlestatus) {
-                    case 0:return '禁止';break;
-                    case 1:return '激活';break;
+                    case 0:return '未发布';break;
+                    case 1:return '发布';break;
                 }
             }">
             </el-table-column>
             <el-table-column label="操作" align="center">
                 <template slot-scope="scope">
-                    <el-button type="text" icon="el-icon-edit" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                    <el-button type="text" icon="el-icon-edit" @click="handleEdit(scope.row)">编辑</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -104,7 +104,7 @@ export default {
     methods: {
         async CreateArticle () {
             let _this = this
-            _this.$router.push('/EditArticle')
+            _this.$router.push('/editarticle')
         },
         async GetArticleList () {
             let _this = this
@@ -123,7 +123,6 @@ export default {
             if (_this.keyword != '') {
                 option.keyword = _this.keyword
             }
-            console.log (option)
             let res = await func.ajax(APIADDR + '/index.php?do=api&act=getarticlelist', JSON.stringify(option));
             let obj = JSON.parse(res)
             if (obj.errcode == 0) {
@@ -137,8 +136,9 @@ export default {
                 _this.$message.error(obj.errmsg)
             }
         },
-        async handleEdit () {
-
+        async handleEdit (scope) {
+            let _this = this
+            _this.$router.push({path: '/editarticle', query: {articleid: scope.articleid}})
         }
     }
 }

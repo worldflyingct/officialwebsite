@@ -1,18 +1,19 @@
 <?php
 $articleid = $_GET["id"];
-$previousArticleId =GetPreviousArticleId ($articleid);
-$nextArticleId = GetNextArticleId ($articleid);
+$articleinfo = GetArticleInfo ($articleid, false);
+$previousArticleInfo = GetPreviousArticleInfo ($articleinfo["publishtime"]);
+$nextArticleInfo = GetNextArticleInfo ($articleinfo["publishtime"]);
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="<?php WebsiteKeyWords ();?>"/>
-    <meta name="description" content="<?php WebsiteDescription ();?>"/>
+    <meta name="description" content="<?php echo $articleinfo["desc"];?>"/>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title><?php ArticleTitle ();?>_<?php WebsiteImportantWord ();?>_沃航科技</title>
+    <title><?php echo $articleinfo["title"];?>_<?php WebsiteImportantWord ();?>_沃航科技</title>
     <script src="<?php AssetsUrl ();?>/js/mui.min.js"></script>
     <script src="<?php AssetsUrl ();?>/js/flexible_css.js"></script>
     <link rel="shortcut icon" href="<?php AssetsUrl ();?>/imgs/favicon.ico">
@@ -45,16 +46,16 @@ $nextArticleId = GetNextArticleId ($articleid);
             <div class="mui-scroll">
                 <img src="<?php AssetsUrl ();?>/imgs/news-bg.png" style="width: 100%;" alt="<?php WebsiteImportantWord ();?>">
                 <div class="box3">
-                    <p class="product-title1"><?php ArticleTitle ($articleid);?></p>
-                    <p class="product-title2"><?php ArticlePublicTime ($articleid);?></p>
-                    <div class="about-content-box"><?php ArticleContent ($articleid);?></div>
+                    <p class="product-title1"><?php echo $articleinfo["title"];?></p>
+                    <p class="product-title2"><?php echo $articleinfo["publishtime"];?></p>
+                    <div class="about-content-box"><?php echo $articleinfo["content"];?></div>
                     <div class="article-link">
                         <p>优秀解决方案推荐：<a href="<?php SiteUrl ();?>/mobileagriculture.html">智慧农业解决方案</a></p>
-<?php if ($previousArticleId != 0) { ?>
-                        <p>上一篇：<a href="<?php SiteUrl ();?>/mobilearticle-id-<?php echo $previousArticleId;?>.html"><?php PreviousArticleTitle ($articleid);?></a></p>
+<?php if ($previousArticleInfo["articleid"] != 0) { ?>
+                        <p>上一篇：<a href="<?php SiteUrl ();?>/mobilearticle-id-<?php echo $previousArticleInfo["articleid"];?>.html"><?php echo $previousArticleInfo["title"];?></a></p>
 <?php } ?>
-<?php if ($nextArticleId != 0) { ?>
-                        <p>下一篇：<a href="<?php SiteUrl ();?>/mobilearticle-id-<?php echo $nextArticleId;?>.html"><?php NextArticleTitle ($articleid);?></a></p>
+<?php if ($nextArticleInfo["articleid"] != 0) { ?>
+                        <p>下一篇：<a href="<?php SiteUrl ();?>/mobilearticle-id-<?php echo $nextArticleInfo["articleid"];?>.html"><?php echo $nextArticleInfo["title"];?></a></p>
 <?php } ?>
                     </div>
                 </div>

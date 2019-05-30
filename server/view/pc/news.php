@@ -1,4 +1,3 @@
-
 <?php
 $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 $type = isset($_GET["type"]) ? $_GET["type"] : null;

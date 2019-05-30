@@ -2,7 +2,7 @@
 $page = isset($_GET["page"]) ? $_GET["page"] : 1;
 $type = isset($_GET["type"]) ? $_GET["type"] : null;
 $totalpage = ceil (GetNewsTotalCount (1, $type, null, true) / 5);
-$newsList = GetNewsList ("`title`,`thumbnail`,`desc`,`publishtime`", 1, $type, null, 1, $page, 5, true);
+$newsList = GetNewsList ("`articleid`,`title`,`thumbnail`,`desc`,`publishtime`", 1, $type, null, 1, $page, 5, true);
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -75,7 +75,7 @@ $newsList = GetNewsList ("`title`,`thumbnail`,`desc`,`publishtime`", 1, $type, n
                         <ul style="opacity: 1;">
 <?php foreach ($newsList as $news) { ?>
                             <li>
-                                <a href="<?php SiteUrl ();?>/mobilearticle-id-<?php echo $news["ID"];?>.html">
+                                <a href="<?php SiteUrl ();?>/mobilearticle-id-<?php echo $news["articleid"];?>.html">
                                 <div class="news-box-top">
                                     <div class="news-box-left">
                                         <p><?php echo $news["title"];?></p>

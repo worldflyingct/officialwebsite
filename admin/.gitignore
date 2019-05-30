@@ -6,6 +6,7 @@ favicon.ico
 # local env files
 .env.local
 .env.*.local
+*admin
 
 # Log files
 npm-debug.log*

@@ -117,12 +117,14 @@ function GetNewsList ($column, $status, $type, $keyword, $order, $page, $size, $
         if ($now) {
             $sql .= " AND `publishtime` < NOW()";
         }
-        $offset = $size*($page-1);
         if ($order) {
-            $sql .= " ORDER BY `publishtime` DESC LIMIT ?,?";
-            array_push ($params, $offset, $size);
+            $sql .= " ORDER BY `publishtime` DESC";
         } else {
-            $sql .= " ORDER BY `articleid` DESC LIMIT ?,?";
+            $sql .= " ORDER BY `articleid` DESC";
+        }
+        if ($page !== null && $size !== null) {
+            $offset = $size*($page-1);
+            $sql .= " LIMIT ?,?";
             array_push ($params, $offset, $size);
         }
 /*

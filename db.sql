@@ -12,28 +12,54 @@
 
 -- Dumping structure for table homepage.wf_config
 CREATE TABLE IF NOT EXISTS `wf_config` (
-  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `configid` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `ckey` varchar(16) NOT NULL DEFAULT '',
   `cvalue` longtext NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`configid`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+
+-- Data exporting was unselected.
+-- Dumping structure for table homepage.wf_group
+CREATE TABLE IF NOT EXISTS `wf_group` (
+  `groupid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `groupname` varchar(50) NOT NULL DEFAULT '',
+  `groupdesc` text NOT NULL,
+  `getnewslist` tinyint(1) NOT NULL DEFAULT '0',
+  `editarticle` tinyint(1) NOT NULL DEFAULT '0',
+  `getarticledesc` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`groupid`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 -- Dumping structure for table homepage.wf_news
 CREATE TABLE IF NOT EXISTS `wf_news` (
-  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `articleid` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
   `desc` varchar(100) NOT NULL,
-  `context` text NOT NULL,
+  `content` text NOT NULL,
   `thumbnail` varchar(50) NOT NULL,
   `articletype` tinyint(4) NOT NULL,
-  `author` bigint(20) NOT NULL,
+  `userid` bigint(20) NOT NULL,
   `createtime` datetime NOT NULL,
   `modifytime` datetime NOT NULL,
   `publishtime` datetime NOT NULL,
-  `status` bit(1) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+  `articlestatus` tinyint(1) NOT NULL,
+  PRIMARY KEY (`articleid`)
+) ENGINE=MyISAM AUTO_INCREMENT=207 DEFAULT CHARSET=utf8;
+
+-- Data exporting was unselected.
+-- Dumping structure for table homepage.wf_user
+CREATE TABLE IF NOT EXISTS `wf_user` (
+  `userid` bigint(20) NOT NULL AUTO_INCREMENT,
+  `user` varchar(50) DEFAULT '',
+  `pass` varchar(50) DEFAULT '',
+  `nickname` varchar(50) DEFAULT '',
+  `groupid` bigint(20) DEFAULT '0',
+  `token` varchar(50) DEFAULT '',
+  `lastlogin` datetime DEFAULT '1970-01-01 00:00:00',
+  `userstatus` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`userid`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

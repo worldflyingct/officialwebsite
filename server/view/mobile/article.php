@@ -50,7 +50,7 @@ $nextArticleInfo = GetNextArticleInfo ($articleinfo["publishtime"]);
                     <p class="product-title2"><?php echo $articleinfo["publishtime"];?></p>
                     <div class="about-content-box"><?php echo $articleinfo["content"];?></div>
                     <div class="article-link">
-                        <p>优秀解决方案推荐：<a href="<?php SiteUrl ();?>/mobileagriculture.html">智慧农业解决方案</a></p>
+                        <p>优秀解决方案推荐：<a href="<?php SiteUrl ();?><?php RecommendMobileUrl ();?>"><?php RecommendName ();?></a></p>
 <?php if ($previousArticleInfo["articleid"] != 0) { ?>
                         <p>上一篇：<a href="<?php SiteUrl ();?>/mobilearticle-id-<?php echo $previousArticleInfo["articleid"];?>.html"><?php echo $previousArticleInfo["title"];?></a></p>
 <?php } ?>

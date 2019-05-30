@@ -34,7 +34,7 @@ $nextArticleInfo = GetNextArticleInfo ($articleinfo["publishtime"]);
         <?php echo $articleinfo["content"];?>
     </div>
     <div class="xia">
-        <p>优秀解决方案推荐：<a href="<?php SiteUrl();?>/agriculture.html">智慧农业解决方案</a></p>
+        <p>优秀解决方案推荐：<a href="<?php SiteUrl();?><?php RecommendPcUrl ();?>"><?php RecommendName ();?></a></p>
 <?php if ($previousArticleInfo != 0) { ?>
         <p>上一篇：<a href="<?php SiteUrl();?>/article-id-<?php echo $previousArticleInfo["articleid"];?>.html"><?php echo $previousArticleInfo["title"];?></a></p>
 <?php } ?>

@@ -97,6 +97,21 @@ function AssetsUrl () {
     echo $webmsg["assetsurl"];
 }
 
+function RecommendName () {
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["recommendname"];
+}
+
+function RecommendPcUrl () {
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["recommendpcurl"];
+}
+
+function RecommendMobileUrl () {
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["recommendmobileurl"];
+}
+
 function GetNewsList ($column, $status, $type, $keyword, $order, $page, $size, $now) {
     static $newsList = null;
     if ($newsList === null) {

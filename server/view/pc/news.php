@@ -43,7 +43,7 @@ $newsList = GetNewsList ("`articleid`,`title`,`thumbnail`,`desc`,`publishtime`",
 <?php foreach ($newsList as $news) { ?>
                 <li>
                     <div class="new-left">
-                        <img src="<?php SiteUrl ();echo "/".$news["thumbnail"];?>" alt="<?php WebsiteImportantWord ();?>">
+                        <img src="<?php SiteUrl ();echo $news["thumbnail"];?>" alt="<?php WebsiteImportantWord ();?>">
                     </div>
                     <div class="new-right">
                         <p><?php echo $news["title"];?></p>

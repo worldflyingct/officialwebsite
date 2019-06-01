@@ -35,10 +35,10 @@ $nextArticleInfo = GetNextArticleInfo ($articleinfo["publishtime"]);
     </div>
     <div class="xia">
         <p>优秀解决方案推荐：<a href="<?php SiteUrl();?><?php RecommendPcUrl ();?>"><?php RecommendName ();?></a></p>
-<?php if ($previousArticleInfo != 0) { ?>
+<?php if ($previousArticleInfo["articleid"] != 0) { ?>
         <p>上一篇：<a href="<?php SiteUrl();?>/article-id-<?php echo $previousArticleInfo["articleid"];?>.html"><?php echo $previousArticleInfo["title"];?></a></p>
 <?php } ?>
-<?php if ($nextArticleInfo != 0) { ?>
+<?php if ($nextArticleInfo["articleid"] != 0) { ?>
         <p>下一篇：<a href="<?php SiteUrl();?>/article-id-<?php echo $nextArticleInfo["articleid"];?>.html"><?php echo $nextArticleInfo["title"];?></a></p>
 <?php } ?>
     </div>

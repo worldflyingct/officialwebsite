@@ -28,6 +28,11 @@ export default new Router({
                     path: '/editarticle',
                     component: resolve => require(['../components/page/EditArticle.vue'], resolve),
                     meta: { title: '新闻编辑' }
+                },
+                {
+                    path: '/spiderlist',
+                    component: resolve => require(['../components/page/SpiderLog.vue'], resolve),
+                    meta: { title: '蜘蛛记录' }
                 }
             ]
         },

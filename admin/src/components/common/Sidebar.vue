@@ -47,6 +47,11 @@
                         icon: 'el-icon-lx-calendar',
                         index: 'news',
                         title: '新闻管理'
+                    },
+                    {
+                        icon: 'el-icon-date',
+                        index: 'spiderlist',
+                        title: '蜘蛛记录'
                     }
                 ]
             }

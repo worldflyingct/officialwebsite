@@ -318,3 +318,68 @@ function EditArticle ($articleid, $title, $desc, $content, $type, $userid, $publ
     }
     return $stmt->rowCount();
 }
+
+function GetSpiderList ($spidertype, $page, $size) {
+    static $list = null;
+    if ($list === null) {
+        $sql = "SELECT * FROM `wf_spiderlog` WHERE 1";
+        $params = array ();
+        if ($spidertype != null) {
+            $sql .= " AND `name` = ?";
+            array_push($params, $spidertype);
+        }
+        $offset = $size*($page-1);
+        $sql .= " LIMIT ?,?";
+        array_push($params, $offset, $size);
+/*
+        print_r(array(
+            "sql" => $sql,
+            "params" => $params
+        ));
+*/
+        $stmt = ExecuteSql ($sql, $params);
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $list = $res;
+    }
+    return $list;
+}
+
+function GetSpiderTotalCount ($spidertype) {
+    static $list = null;
+    if ($list === null) {
+        $sql = "SELECT COUNT(*) as count FROM `wf_spiderlog` WHERE 1";
+        $params = array ();
+        if ($spidertype != null) {
+            $sql .= " AND `name` = ?";
+            array_push($params, $spidertype);
+        }
+        $stmt = ExecuteSql ($sql, $params);
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $totalcount = $res[0]["count"];
+    }
+    return (int) $totalcount;
+}
+
+function SpiderLog() {
+    $bots = array (
+        'Googlebot' => '谷歌搜索',
+        'Baiduspider' => '百度搜索',
+        '360Spider' => '360搜索',
+        'HaoSouSpider' => '360搜索',
+        'Sogou web spider' => '搜狗搜索',
+        'Sogou inst spider' => '搜狗搜索',
+        'Sogou spider2' => '搜狗搜索',
+        'Sogou blog' => '搜狗搜索',
+        'Sogou News Spider' => '搜狗搜索',
+        'Sogou Orion spider' => '搜狗搜索',
+        'Sosospider' => '搜搜搜索'
+    );
+    $useragent = $_SERVER['HTTP_USER_AGENT'];
+    foreach ($bots as $k => $v) {
+        if(stristr($useragent, $k) != null) {
+            ExecuteSql ("INSERT `wf_spiderlog` (`name`, `target`, `IP`, `time`) VALUES (?,?,?,NOW())",
+                array($v, $_SERVER["REQUEST_URI"], $_SERVER["REMOTE_ADDR"]));
+            break;
+        }
+    }
+}

@@ -38,3 +38,5 @@ switch ($do) {
     case "api":require("api/".$_GET["act"].".php");break;
     case "sitemap":require("view/sitemap.php");break;
 }
+
+SpiderLog();

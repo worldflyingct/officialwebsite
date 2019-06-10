@@ -22,7 +22,10 @@
             </el-table-column>
             <el-table-column prop="name" label="蜘蛛">
             </el-table-column>
-            <el-table-column prop="target" label="访问地址">
+            <el-table-column label="访问地址">
+                <template slot-scope="scope">
+                    <a :href="scope.row.target" target="_blank">{{scope.row.target}}</a>
+                </template>
             </el-table-column>
             <el-table-column prop="time" label="访问时间">
             </el-table-column>

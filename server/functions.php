@@ -87,9 +87,13 @@ function WebsiteImportantWord () {
     echo $webmsg["importantword"];
 }
 
-function SiteUrl () {
+function GetSiteUrl () {
     $webmsg = WebsiteMsg ();
-    echo $webmsg["siteurl"];
+    return $webmsg["siteurl"];
+}
+
+function SiteUrl () {
+    echo GetSiteUrl ();
 }
 
 function AssetsUrl () {
@@ -110,6 +114,11 @@ function RecommendPcUrl () {
 function RecommendMobileUrl () {
     $webmsg = WebsiteMsg ();
     echo $webmsg["recommendmobileurl"];
+}
+
+function GetBaiduPushToken () {
+    $webmsg = WebsiteMsg ();
+    return $webmsg["baidupushtoken"];
 }
 
 function GetNewsList ($column, $status, $type, $keyword, $order, $page, $size, $now) {

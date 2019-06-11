@@ -27,8 +27,13 @@
                 <el-option key="1" label="发布时间" :value="1"></el-option>
             </el-select>
             <el-button type="success" icon="search" style="float: right;" @click="CreateArticle">新增</el-button>
+            <el-button type="warning" icon="search" style="float: right;" @click="pushbaidu">提交百度</el-button>
         </div>
-        <el-table :data="articlelist" border class="table" ref="multipleTable">
+        <el-table :data="articlelist" border class="table" ref="multipleTable" @selection-change="function (val) {
+                multipleSelection = val
+            }">
+            <el-table-column type="selection" width="55">
+            </el-table-column>
             <el-table-column prop="articleid" label="ID" width="65">
             </el-table-column>
             <el-table-column prop="title" label="文章标题" width="210">
@@ -94,7 +99,8 @@ export default {
             totalcount: 0,
             pagesize: 10,
             currentpage: 1,
-            articlelist: []
+            articlelist: [],
+            multipleSelection: []
         }
     },
     async created () {
@@ -102,6 +108,28 @@ export default {
         _this.GetArticleList ()
     },
     methods: {
+        async pushbaidu () {
+            let _this = this
+            let ids = []
+            for (let i = 0, len = _this.multipleSelection.length ; i < len ; i++) {
+                ids.push(_this.multipleSelection[i].articleid);
+            }
+            let option = {
+                token: _this.$root.token,
+                ids: ids
+            }
+            let res = await func.ajax(APIADDR + '/index.php?do=api&act=pushbaidu', JSON.stringify(option));
+            let obj = JSON.parse(res)
+            if (obj.errcode == 0) {
+                _this.$alert(obj.msg, '返回信息');
+            } else if (obj.errcode === 2000) {
+                _this.$message.error(obj.errmsg)
+                sessionStorage.clear()
+                _this.$router.push('/login')
+            } else {
+                _this.$message.error(obj.errmsg)
+            }
+        },
         async CreateArticle () {
             let _this = this
             _this.$router.push('/editarticle')

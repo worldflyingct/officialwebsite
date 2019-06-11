@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS `wf_group` (
   `editarticle` tinyint(1) NOT NULL DEFAULT '0',
   `getarticledesc` tinyint(1) NOT NULL DEFAULT '0',
   `getspiderlist` tinyint(1) NOT NULL DEFAULT '0',
+  `pushbaidu` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`groupid`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
@@ -46,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `wf_news` (
   `publishtime` datetime NOT NULL,
   `articlestatus` tinyint(1) NOT NULL,
   PRIMARY KEY (`articleid`)
-) ENGINE=MyISAM AUTO_INCREMENT=227 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=228 DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 -- Dumping structure for table homepage.wf_spiderlog
@@ -57,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `wf_spiderlog` (
   `IP` varchar(50) NOT NULL DEFAULT '',
   `time` datetime NOT NULL DEFAULT '1970-01-01 00:00:00',
   PRIMARY KEY (`spiderlogId`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
 
 -- Data exporting was unselected.
 -- Dumping structure for table homepage.wf_user

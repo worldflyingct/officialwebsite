@@ -329,7 +329,7 @@ function GetSpiderList ($spidertype, $page, $size) {
             array_push($params, $spidertype);
         }
         $offset = $size*($page-1);
-        $sql .= " LIMIT ?,?";
+        $sql .= " ORDER BY `spiderlogId` DESC LIMIT ?,?";
         array_push($params, $offset, $size);
 /*
         print_r(array(

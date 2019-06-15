@@ -107,10 +107,11 @@ $newsList = GetNewsList ("`articleid`,`title`,`thumbnail`,`desc`,`publishtime`",
                             <div class="take-more1" style="float: right;">
 <?php if ($page == $totalpage) { ?>
                                 <a href="#"><img src="<?php AssetsUrl ();?>/imgs/right.png" alt="<?php WebsiteImportantWord ();?>"></a>
+                                <a href="#"><img src="<?php AssetsUrl ();?>/imgs/last.png" alt="<?php WebsiteImportantWord ();?>"></a>
 <?php } else { ?>
                                 <a href="<?php SiteUrl ();?>/mobilenews-page-<?php echo $page+1;if ($type != 0) echo "-type-".$type;?>.html"><img src="<?php AssetsUrl ();?>/imgs/right.png" alt="<?php WebsiteImportantWord ();?>"></a>
-<?php } ?>
                                 <a href="<?php SiteUrl ();?>/mobilenews-page-<?php echo $totalpage;if ($type != 0) echo "-type-".$type;?>.html"><img src="<?php AssetsUrl ();?>/imgs/last.png" alt="<?php WebsiteImportantWord ();?>"></a>
+<?php } ?>
                             </div>
                         </div>
                     </section>

@@ -35,7 +35,19 @@ switch ($do) {
         break;
     case "iot":require("view/pc/iot.php");break;
     case "solution":require("view/pc/solution.php");break;
-    case "news":require("view/pc/news.php");break;
+    case "news":
+        if (isset($_GET["catid"])) {
+            header('HTTP/1.1 301 Moved Permanently');
+            $url = "Location: https://www.worldflying.cn/news-type-".$_GET["catid"];
+            if (isset($_GET["page"])) {
+                $url .= "-page-".$_GET["page"];
+            }
+            $url .= ".html";
+            header($url);
+            exit;
+        }
+        require("view/pc/news.php");
+        break;
     case "article":require("view/pc/article.php");break;
     case "about":require("view/pc/about.php");break;
     case "recruit":require("view/pc/recruit.php");break;

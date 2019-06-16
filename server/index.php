@@ -34,7 +34,23 @@ switch ($do) {
         }
         break;
     case "iot":require("view/pc/iot.php");break;
-    case "solution":require("view/pc/solution.php");break;
+    case "solution":
+        if (isset($_GET["id"])) {
+            header('HTTP/1.1 301 Moved Permanently');
+            $url = "Location: https://www.worldflying.cn/";
+            switch ($_GET["id"]) {
+                case 1:$url .= "cybercafe.html";break;
+                case 2:$url .= "gym.html";break;
+                case 3:$url .= "agriculture.html";break;
+                case 4:$url .= "powerful.html";break;
+                case 5:$url .= "cinema.html";break;
+                case 6:$url .= "community.html";break;
+            }
+            header($url);
+            exit;
+        }
+        require("view/pc/solution.php");
+        break;
     case "news":
         if (isset($_GET["catid"])) {
             header('HTTP/1.1 301 Moved Permanently');

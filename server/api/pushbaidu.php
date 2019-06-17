@@ -17,6 +17,8 @@ if ($info == false) {
     $count = count($obj["ids"]);
     $siteurl = GetSiteUrl ();
     $baidupushtoken = GetBaiduPushToken ();
+    $baiduappid = GetBaiduAppId ();
+    $baiduapptoken = GetBaiduAppToken ();
     for ($i = 0 ; $i < $count ; $i++) {
         array_push($urls,
             $siteurl."/article-id-".$obj["ids"][$i].".html",
@@ -33,10 +35,21 @@ if ($info == false) {
         CURLOPT_HTTPHEADER => array('Content-Type: text/plain'),
     );
     curl_setopt_array($ch, $options);
-    $result = curl_exec($ch);
+    $res1 = curl_exec($ch);
+    $api = "http://data.zz.baidu.com/urls?appid=".$baiduappid."&token=".$baiduapptoken."&type=batch";
+    $ch = curl_init();
+    $options =  array(
+        CURLOPT_URL => $api,
+        CURLOPT_POST => true,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POSTFIELDS => implode("\n", $urls),
+        CURLOPT_HTTPHEADER => array('Content-Type: text/plain'),
+    );
+    curl_setopt_array($ch, $options);
+    $res2 = curl_exec($ch);
     $ret = array(
         "errcode" => 0,
-        "msg" => $result
+        "msg" => $res1." ".$res2
     );
 }
 header('Access-Control-Allow-Origin:*');

@@ -121,6 +121,16 @@ function GetBaiduPushToken () {
     return $webmsg["baidupushtoken"];
 }
 
+function GetBaiduAppId () {
+    $webmsg = WebsiteMsg ();
+    return $webmsg["baiduappid"];
+}
+
+function GetBaiduAppToken () {
+    $webmsg = WebsiteMsg ();
+    return $webmsg["baiduapptoken"];
+}
+
 function GetNewsList ($column, $status, $type, $keyword, $order, $page, $size, $now) {
     static $newsList = null;
     if ($newsList === null) {

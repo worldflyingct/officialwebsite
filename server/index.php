@@ -5,28 +5,6 @@ $do = isset($_GET["do"]) ? $_GET["do"] : "index";
 switch ($do) {
     // 页面展示部分的路由
     case "index":
-        if (isset($_GET["news"])) {
-            if ($_GET["news"] == "newslist") {
-                header('HTTP/1.1 301 Moved Permanently');
-                $url = "Location: https://www.worldflying.cn/mobilenews";
-                if (isset($_GET["page"])) {
-                    $url .= "-page-".$_GET["page"];
-                }
-                if (isset($_GET["type"]) && $_GET["type"] != 0) {
-                    $url .= "-type-".$_GET["type"];
-                }
-                $url .= ".html";
-                header($url);
-            } else if ($_GET["news"] == "news") {
-                header('HTTP/1.1 301 Moved Permanently');
-                header("Location: https://www.worldflying.cn/mobilearticle-id-".$_GET["id"].".html");
-            }
-            exit;
-        } else if (isset($_GET["solution"])) {
-            header('HTTP/1.1 301 Moved Permanently');
-            header("Location: https://www.worldflying.cn/solution.html");
-            exit;
-        }
         if (IsMobile()) {
             require("view/mobile/index.php");
         } else {
@@ -34,36 +12,8 @@ switch ($do) {
         }
         break;
     case "iot":require("view/pc/iot.php");break;
-    case "solution":
-        if (isset($_GET["id"])) {
-            header('HTTP/1.1 301 Moved Permanently');
-            $url = "Location: https://www.worldflying.cn/";
-            switch ($_GET["id"]) {
-                case 1:$url .= "cybercafe.html";break;
-                case 2:$url .= "gym.html";break;
-                case 3:$url .= "agriculture.html";break;
-                case 4:$url .= "powerful.html";break;
-                case 5:$url .= "cinema.html";break;
-                case 6:$url .= "community.html";break;
-            }
-            header($url);
-            exit;
-        }
-        require("view/pc/solution.php");
-        break;
-    case "news":
-        if (isset($_GET["catid"])) {
-            header('HTTP/1.1 301 Moved Permanently');
-            $url = "Location: https://www.worldflying.cn/news-type-".$_GET["catid"];
-            if (isset($_GET["page"])) {
-                $url .= "-page-".$_GET["page"];
-            }
-            $url .= ".html";
-            header($url);
-            exit;
-        }
-        require("view/pc/news.php");
-        break;
+    case "solution":require("view/pc/solution.php");break;
+    case "news":require("view/pc/news.php");break;
     case "article":require("view/pc/article.php");break;
     case "about":require("view/pc/about.php");break;
     case "recruit":require("view/pc/recruit.php");break;
@@ -85,32 +35,8 @@ switch ($do) {
     case "mobilecinema":require("view/mobile/solutions/cinema.php");break;
     case "mobilecommunity":require("view/mobile/solutions/community.php");break;
     case "mobilecybercafe":require("view/mobile/solutions/cybercafe.php");break;
-    case "api":require("api/".$_GET["act"].".php");break;
+    case "api":require("api.php");break;
     case "sitemap":require("view/sitemap.php");break;
-    // 为了兼容老网站所写的301跳转规则，如果是独立的新网站，不需要下面的部分。
-    case "mobile":
-        if (isset($_GET["mo"]) && $_GET["mo"] == "article") {
-            header('HTTP/1.1 301 Moved Permanently');
-            header("Location: https://www.worldflying.cn/mobilearticle-id-".$_GET["id"].".html");
-            exit;
-        } else if (isset($_GET["news"])) {
-            if ($_GET["news"] == "newslist") {
-                header('HTTP/1.1 301 Moved Permanently');
-                $url = "Location: https://www.worldflying.cn/mobilenews";
-                if (isset($_GET["page"])) {
-                    $url .= "-page-".$_GET["page"];
-                }
-                if (isset($_GET["type"]) && $_GET["type"] != 0) {
-                    $url .= "-type-".$_GET["type"];
-                }
-                $url .= ".html";
-                header($url);
-            } else if ($_GET["news"] == "news") {
-                header('HTTP/1.1 301 Moved Permanently');
-                header("Location: https://www.worldflying.cn/mobilearticle-id-".$_GET["id"].".html");
-            }
-            exit;
-        }
     default:
         echo "This is a 404 page.";
         break;

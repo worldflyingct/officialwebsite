@@ -1,0 +1,56 @@
+<view style="background-color: #efeff4;">
+    <view class="box1">
+        <image mode="widthFix" src="https://www.worldflying.cn/imgs/phone/bg1.png"></image>
+    </view>
+
+    <view class="box2">
+        <view class="title1">解决方案</view>
+        <view class="title2">solution</view>
+    </view>
+
+    <view class="box3">
+        <view class="clearfix">
+            <view class="tu"><image mode="widthFix" src="https://www.worldflying.cn/imgs/mobile/smovie.png"></image></view>
+            <view class="zi">
+                <view class="title1">影院服务平台</view>
+                <view class="title2">影院服务平台方案包含线上用户端小程序与影院后台两个部分，线下无纸化检票系统。</view>
+            </view>
+        </view>
+        <view class="clearfix">
+            <view class="tu"><image mode="widthFix" src="https://www.worldflying.cn/imgs/mobile/sdian.png"></image></view>
+            <view class="zi">
+                <view class="title1">影院服务平台</view>
+                <view class="title2">影院服务平台方案包含线上用户端小程序与影院后台两个部分，线下无纸化检票系统。</view>
+            </view>
+        </view>
+        <view class="clearfix">
+            <view class="tu"><image mode="widthFix" src="https://www.worldflying.cn/imgs/mobile/sdas.png"></image></view>
+            <view class="zi">
+                <view class="title1">影院服务平台</view>
+                <view class="title2">影院服务平台方案包含线上用户端小程序与影院后台两个部分，线下无纸化检票系统。</view>
+            </view>
+        </view>
+        <view class="clearfix">
+            <view class="tu"><image mode="widthFix" src="https://www.worldflying.cn/imgs/mobile/save.png"></image></view>
+            <view class="zi">
+                <view class="title1">影院服务平台</view>
+                <view class="title2">影院服务平台方案包含线上用户端小程序与影院后台两个部分，线下无纸化检票系统。</view>
+            </view>
+        </view>
+        <view class="clearfix">
+            <view class="tu"><image mode="widthFix" src="https://www.worldflying.cn/imgs/mobile/smai.png"></image></view>
+            <view class="zi">
+                <view class="title1">影院服务平台</view>
+                <view class="title2">影院服务平台方案包含线上用户端小程序与影院后台两个部分，线下无纸化检票系统。</view>
+            </view>
+        </view>
+        <view class="clearfix">
+            <view class="tu"><image mode="widthFix" src="https://www.worldflying.cn/imgs/mobile/selec.png"></image></view>
+            <view class="zi">
+                <view class="title1">影院服务平台</view>
+                <view class="title2">影院服务平台方案包含线上用户端小程序与影院后台两个部分，线下无纸化检票系统。</view>
+            </view>
+        </view>
+    </view>
+    <foot></foot>
+</view>

@@ -1,0 +1,8 @@
+<view class="footer-p1">
+    <view class="clearfix">
+        <text class="phone">手机：{{mobile}}</text>
+        <text class="qq">QQ：{{QQ}}</text>
+    </view>
+    <view>邮箱：{{email}}</view>
+    <view>地点：{{address}}</view>
+</view>

@@ -1,6 +1,5 @@
 {
     "pages": [
-        "pages/waitinit/waitinit",
         "pages/index/index",
         "pages/new/new",
         "pages/personal/personal",

@@ -1,3 +1,6 @@
+const app = getApp()
+const event = require('../../utils/event.js')
+
 Page({
     data: {
 
@@ -10,6 +13,14 @@ Page({
     },
     onShow: function() {
         // 监听页面显示的生命周期函数
+        let _this = this
+        if (_this.initData ()) {
+            // 如果globalData还没被初始化，就监听初始化完成事件
+            event.on('globalDataChanged', function initData () {
+                event.on('globalDataChanged', initData)
+                _this.initData ()
+            })
+        }
     },
     onHide: function() {
         // 监听页面隐藏的生命周期函数
@@ -25,5 +36,20 @@ Page({
     },
     onShareAppMessage: function () {
         // 用户点击右上角转发
+    },
+    initData () {
+        let basedata = app.globalData.basedata
+        if (basedata == null) {
+            return true
+        }
+        let option = {
+            title: basedata.title + '_新闻资讯',
+            keywords: basedata.title,
+            description: basedata.description,
+            releaseDate: '2019-06-22 12:00:00',
+            image: 'https://www.worldflying.cn/imgs/phone/bg1.png'
+        }
+        swan.setPageInfo (option)
+        return false
     }
 });

@@ -7,6 +7,20 @@ Page({
     },
     onLoad: function () {
         // 监听页面加载的生命周期函数
+        swan.request({
+            url: app.globalData.apiserver + '/index.php?do=apigetarticlelist',
+            data: {
+                page: 1,
+                size: 5
+            },
+            method: 'POST',
+            header: {
+                'content-type': 'application/json'
+            },
+            success: function (res) {
+                console.log (res.data)              
+            }
+        });
     },
     onReady: function() {
         // 监听页面初次渲染完成的生命周期函数

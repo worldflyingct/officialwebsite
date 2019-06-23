@@ -5,7 +5,7 @@
 
 /* globals swan */
 
-const event = require('utils/event.js')
+const event = require('./utils/event.js')
 
 App({
     globalData: {
@@ -15,7 +15,7 @@ App({
     onLaunch(options) {
         let _this = this
         swan.request({
-            url: _this.globalData.apiserver + '/index.php?do=apigetbasedata', // 仅为示例，并非真实的接口地址
+            url: _this.globalData.apiserver + '/index.php?do=apigetbasedata',
             method: 'GET',
             success: function (res) {
                 _this.globalData.basedata = res.data;

@@ -35,7 +35,14 @@ switch ($do) {
     case "mobilecinema":require("view/mobile/solutions/cinema.php");break;
     case "mobilecommunity":require("view/mobile/solutions/community.php");break;
     case "mobilecybercafe":require("view/mobile/solutions/cybercafe.php");break;
-    case "api":require("api.php");break;
+    case "apieditarticle": require("api/editarticle.php");break;
+    case "apigetarticledesc": require("api/getarticledesc.php");break;
+    case "apigetarticlelist": require("api/getarticlelist.php");break;
+    case "apigetbasedata": require("api/getbasedata.php");break;
+    case "apigetspiderlist": require("api/getspiderlist.php");break;
+    case "apigetuserinfo": require("api/getuserinfo.php");break;
+    case "apilogin": require("api/login.php");break;
+    case "apipushbaidu": require("api/pushbaidu.php");break;
     case "sitemap":require("view/sitemap.php");break;
     default:
         echo "This is a 404 page.";

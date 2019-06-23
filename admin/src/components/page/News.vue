@@ -118,7 +118,7 @@ export default {
                 token: _this.$root.token,
                 ids: ids
             }
-            let res = await func.ajax(APIADDR + '/index.php?do=api&act=pushbaidu', JSON.stringify(option));
+            let res = await func.ajax(APIADDR + '/index.php?do=apipushbaidu', JSON.stringify(option));
             let obj = JSON.parse(res)
             if (obj.errcode == 0) {
                 _this.$alert(obj.msg, '返回信息');
@@ -151,7 +151,7 @@ export default {
             if (_this.keyword != '') {
                 option.keyword = _this.keyword
             }
-            let res = await func.ajax(APIADDR + '/index.php?do=api&act=getarticlelist', JSON.stringify(option));
+            let res = await func.ajax(APIADDR + '/index.php?do=apigetarticlelist', JSON.stringify(option));
             let obj = JSON.parse(res)
             if (obj.errcode == 0) {
                 _this.articlelist = obj.articlelist

@@ -87,7 +87,7 @@ export default {
         _this.ue = UE.getEditor(_this.textareaid)
         if (_this.$route.query.hasOwnProperty('articleid')) {
             let articleid = parseInt(_this.$route.query.articleid)
-            let res = await func.ajax(APIADDR + '/index.php?do=api&act=getarticledesc', JSON.stringify({
+            let res = await func.ajax(APIADDR + '/index.php?do=apigetarticledesc', JSON.stringify({
                 token: _this.$root.token,
                 articleid: articleid
             }))
@@ -183,7 +183,7 @@ export default {
             if (_this.oldthumbnail != '') {
                 formdata.append ('oldthumbnail', _this.oldthumbnail)
             }
-            let res = await func.ajax(APIADDR + '/index.php?do=api&act=editarticle', formdata)
+            let res = await func.ajax(APIADDR + '/index.php?do=apieditarticle', formdata)
             let obj = JSON.parse(res)
             if (obj.errcode == 0) {
                 _this.$message.success('新建文章成功')

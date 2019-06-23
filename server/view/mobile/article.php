@@ -1,8 +1,9 @@
 <?php
 $articleid = $_GET["id"];
-$articleinfo = GetArticleInfo ($articleid, false);
-$previousArticleInfo = GetPreviousArticleInfo ($articleinfo["publishtime"]);
-$nextArticleInfo = GetNextArticleInfo ($articleinfo["publishtime"]);
+$info = GetArticleInfo ($articleid, true);
+$articleinfo = $info["articleinfo"];
+$previousArticleInfo = $info["previousArticleInfo"];
+$nextArticleInfo = $info["nextArticleInfo"];
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">

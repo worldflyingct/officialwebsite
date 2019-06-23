@@ -207,30 +207,6 @@ function GetNewsTotalCount ($status, $type, $keyword, $now) {
     return (int) $totalcount;
 }
 
-function GetArticleInfo ($articleid, $opt) {
-    static $info = null;
-    if ($info === null) {
-        $sql = "SELECT `title`,`desc`,`publishtime`,`content`,`thumbnail`,`articletype`,`articlestatus` FROM `wf_news` WHERE `articleid`=?";
-        if ($opt) {
-            $sql .=  " AND `publishtime` < NOW() AND `articlestatus`=1";
-        }
-        $stmt = ExecuteSql ($sql,
-                    array ($articleid));
-        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        if (count($res) != 0) {
-            $info = $res[0];
-        } else {
-            $info = array (
-                "title" => "文章不存在",
-                "desc" => "文章不存在，请检查您的链接。",
-                "publishtime" => "0000-00-00 00:00:00",
-                "content" => "文章不存在，请检查您的链接。"
-            );
-        }
-    }
-    return $info;
-}
-
 function GetPreviousArticleInfo ($publishtime) {
     static $info = null;
     if ($info === null) {
@@ -263,6 +239,39 @@ function GetNextArticleInfo ($publishtime) {
                 "title" => "文章不存在"
             );
         }
+    }
+    return $info;
+}
+
+function GetArticleInfo ($articleid, $opt) {
+    static $info = null;
+    if ($info === null) {
+        $sql = "SELECT `title`,`desc`,`publishtime`,`content`,`thumbnail`,`articletype`,`articlestatus` FROM `wf_news` WHERE `articleid`=?";
+        if ($opt) {
+            $sql .=  " AND `publishtime` < NOW() AND `articlestatus`=1";
+        }
+        $stmt = ExecuteSql ($sql,
+                    array ($articleid));
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (count($res) != 0) {
+            $articleinfo = $res[0];
+            $previousArticleInfo = GetPreviousArticleInfo ($articleinfo["publishtime"]);
+            $nextArticleInfo = GetNextArticleInfo ($articleinfo["publishtime"]);
+        } else {
+            $articleinfo = array (
+                "title" => "文章不存在",
+                "desc" => "文章不存在，请检查您的链接。",
+                "publishtime" => "0000-00-00 00:00:00",
+                "content" => "文章不存在，请检查您的链接。"
+            );
+            $previousArticleInfo = GetPreviousArticleInfo ($articleinfo["publishtime"]);
+            $nextArticleInfo = GetNextArticleInfo ($articleinfo["publishtime"]);
+        }
+        $info = array (
+            "articleinfo" => $articleinfo,
+            "previousArticleInfo" => $previousArticleInfo,
+            "nextArticleInfo" => $nextArticleInfo
+        );
     }
     return $info;
 }

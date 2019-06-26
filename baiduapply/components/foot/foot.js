@@ -1,6 +1,5 @@
 const app = getApp()
 const event = require('../../utils/event.js')
-
 Component({
     properties: {
         foot: { // 属性名
@@ -11,17 +10,15 @@ Component({
             }
         }
     },
-
     data: {
-        mobile: '',
-        QQ: '',
-        email: '',
-        address: ''
+        resdata:null
     }, // 私有数据，可用于模版渲染
-
     // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
-    created: function () {
-        let _this = this
+    created:function(){
+        
+    },
+    attached: function () {
+        var _this = this
         _this.initData ()
         if (_this.initData ()) {
             // 如果globalData还没被初始化，就监听初始化完成事件
@@ -37,13 +34,20 @@ Component({
             return true
         }
         this.setData({
-            mobile: basedata.mobile,
-            QQ: basedata.QQ,
-            email: basedata.email,
-            address: basedata.address
+            resdata:basedata
         })
         return false
     },
-    attached: function () {},
-    detached: function () {}
+    ready:function(){
+        
+    },
+    detached: function () {},
+
+    methods: {
+        onTap: function () {
+            this.setData({
+                // 更新属性和数据的方法与更新页面数据的方法类似
+            });
+        }
+    }
 });

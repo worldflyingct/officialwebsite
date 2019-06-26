@@ -2,6 +2,12 @@ Page({
     data: {
 
     },
+    tiao(e){
+        console.log(e)
+        swan.navigateTo({
+            url: e.currentTarget.dataset.url
+        });
+    },
     onLoad: function () {
         // 监听页面加载的生命周期函数
     },

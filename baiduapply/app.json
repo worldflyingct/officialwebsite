@@ -9,7 +9,10 @@
         "pages/recruit/recruit",
         "pages/wms/wms",
         "pages/agriculture/agriculture",
-        "pages/power/power"
+        "pages/power/power",
+        "pages/cybercafe/cybercafe",
+        "pages/community/community",
+        "pages/cinema/cinema"
     ],
     "window": {
         "navigationBarBackgroundColor": "#ffffff",

@@ -12,9 +12,9 @@
                 <view bindtap="tiao" data-url="/pages/wms/wms" style="top: 25%;left: 0;"></view>
                 <view bindtap="tiao" data-url="/pages/agriculture/agriculture" style="top: 25%;left: 40%;"></view>
                 <view bindtap="tiao" data-url="/pages/power/power" style="top: 25%;left: 80%;"></view>
-                <view style="top: 70%;left: 0;"></view>
-                <view style="top: 70%;left: 40%;"></view>
-                <view style="top: 70%;left: 80%;"></view>
+                <view bindtap="tiao" data-url="/pages/cybercafe/cybercafe" style="top: 70%;left: 0;"></view>
+                <view bindtap="tiao" data-url="/pages/community/community" style="top: 70%;left: 40%;"></view>
+                <view bindtap="tiao" data-url="/pages/cinema/cinema" style="top: 70%;left: 80%;"></view>
             </view>
         </view>
     </view>

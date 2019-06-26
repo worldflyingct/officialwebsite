@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "新闻",
+    "navigationBarTitleText": "无人网吧",
     "usingComponents": {
         "foot": "/components/foot/foot"
     }

@@ -1,5 +1,5 @@
 {
-    "navigationBarTitleText": "新闻",
+    "navigationBarTitleText": "智慧小区",
     "usingComponents": {
         "foot": "/components/foot/foot"
     }

@@ -1,0 +1,23 @@
+.clearfix:after{content: "";height:0;line-height: 0;display:block;visibility: hidden;clear:both;}
+image{
+    width: 100%;
+}
+.box2>.h3{
+    font-size: 1.2rem;
+    text-align: center;
+}
+.box2>.p{
+    font-size: 0.9rem;
+    text-align: center;
+    color: #8f8f94;
+}
+.box3{
+    width: 90%;
+    margin: 0 auto;
+}
+.box3>button{
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-right: 2.5%;
+    margin-bottom: 3%;
+}

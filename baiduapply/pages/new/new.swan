@@ -1,4 +1,17 @@
-<view class="container">
-    <!--to do-->
-    新闻
+<view>
+
+    <view class="box1"><image mode="widthFix" src="https://www.worldflying.cn/imgs/news-bg.png"></image></view>
+
+    <view class="box2">
+        <view class="h3">新闻动态</view>
+        <view class="p">News information</view>
+    </view>
+
+    <view class="box3">
+        <button size="mini">ALL+</button>
+        <button size="mini">公司动态</button>
+        <button size="mini">媒体报道</button>
+        <button size="mini">行业资讯</button>
+    </view>
+    <foot></foot>
 </view>

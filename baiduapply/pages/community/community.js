@@ -1,9 +1,12 @@
 Page({
     data: {
-
+        active:1
     },
-    getData(){
-        
+    huang(e){
+        console.log(e.currentTarget.dataset.index)
+        this.setData({
+            active:e.currentTarget.dataset.index
+        })
     },
     onLoad: function () {
         // 监听页面加载的生命周期函数

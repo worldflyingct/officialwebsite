@@ -12,7 +12,8 @@
         "pages/power/power",
         "pages/cybercafe/cybercafe",
         "pages/community/community",
-        "pages/cinema/cinema"
+        "pages/cinema/cinema",
+        "pages/newdet/newdet"
     ],
     "window": {
         "navigationBarBackgroundColor": "#ffffff",

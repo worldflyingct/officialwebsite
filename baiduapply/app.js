@@ -27,7 +27,7 @@ App({
             });
         }
         swan.request({
-            url:"https://www.worldflying.cn/index.php?do=apigetbasedata",
+            url:_this.globalData.apiserver+"/index.php?do=apigetbasedata",
             method:'POST',
             dataType:'json',
             success: function (res) {

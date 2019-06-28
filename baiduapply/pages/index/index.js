@@ -20,8 +20,9 @@ Page({
         })
     },
     tiao(e){
+        console.log(e)
         swan.navigateTo({
-            url: e.target.dataset.url
+            url: e.currentTarget.dataset.url
         });
     },
     getUserInfo(e) {

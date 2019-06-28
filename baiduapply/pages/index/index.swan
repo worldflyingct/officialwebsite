@@ -4,7 +4,6 @@
     <view class="box1">
         <image mode="widthFix" src="https://www.worldflying.cn/imgs/phone/bg1.png"></image>
     </view>
-
     <view class="box2">
         <view>
             <image mode="widthFix" src="https://www.worldflying.cn/imgs/phone/bg2.png"></image>
@@ -18,7 +17,7 @@
             </view>
         </view>
     </view>
-
+    
     <view class="box3">
         <view class="h3">案例</view>
         <view class="p">case</view>

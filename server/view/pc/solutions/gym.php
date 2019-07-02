@@ -147,12 +147,12 @@
 <?php require("view/pc/footer.php");?>
 <script>
 var map = new BMap.Map("container");
-map.centerAndZoom(new BMap.Point(114.422636,30.506178),18);
+map.centerAndZoom(new BMap.Point(<?php BaiduMapX ();?>, <?php BaiduMapY ();?>), <?php BaiduMapZoom ();?>);
 map.enableScrollWheelZoom(true);
 // 用经纬度设置地图中心点114.415836, 30.500568
 function theLocation(){
     map.clearOverlays();
-    var new_point = new BMap.Point(114.422636,30.506178);
+    var new_point = new BMap.Point(<?php BaiduMapX ();?>, <?php BaiduMapY ();?>);
     var marker = new BMap.Marker(new_point);  // 创建标注
     map.addOverlay(marker);              // 将标注添加到地图中
     map.panTo(new_point);

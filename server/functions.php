@@ -131,6 +131,21 @@ function GetBaiduAppToken () {
     return $webmsg["baiduapptoken"];
 }
 
+function BaiduMapX () {
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["baidumapx"];
+}
+
+function BaiduMapY () {
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["baidumapy"];
+}
+
+function BaiduMapZoom () {
+    $webmsg = WebsiteMsg ();
+    echo $webmsg["baidumapzoom"];
+}
+
 function GetNewsList ($column, $status, $type, $keyword, $order, $page, $size, $now) {
     static $newsList = null;
     if ($newsList === null) {

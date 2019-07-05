@@ -172,6 +172,13 @@ function SetWxToken ($accesstoken, $time) {
     ExecuteSql ($sql, $params);
 }
 
+function SetWxUser ($json) {
+	$obj = json_decode($json, true);
+    $sql = "INSERT INTO `wf_wxuser` (`openid`, `usermsg`) VALUES (?, ?) ON DUPLICATE KEY UPDATE `usermsg` = VALUES(`usermsg`)";
+    $params = array($obj["openid"], $json);
+	ExecuteSql ($sql, $params);
+}
+
 function GetNewsList ($column, $status, $type, $keyword, $order, $page, $size, $now) {
     static $newsList = null;
     if ($newsList === null) {

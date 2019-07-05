@@ -116,6 +116,16 @@ function RecommendMobileUrl () {
     echo $webmsg["recommendmobileurl"];
 }
 
+function GetWxAppId () {
+    $webmsg = WebsiteMsg ();
+    return $webmsg["wxappid"];
+}
+
+function GetWxAppSecret () {
+    $webmsg = WebsiteMsg ();
+    return $webmsg["wxappsecret"];
+}
+
 function GetBaiduPushToken () {
     $webmsg = WebsiteMsg ();
     return $webmsg["baidupushtoken"];
@@ -144,6 +154,22 @@ function BaiduMapY () {
 function BaiduMapZoom () {
     $webmsg = WebsiteMsg ();
     echo $webmsg["baidumapzoom"];
+}
+
+function GetWxToken () {
+    $webmsg = WebsiteMsg ();
+    return array(
+        "wxaccesstoken" => $webmsg["wxaccesstoken"],
+        "wxtokentime" => $webmsg["wxtokentime"]
+    );
+}
+
+function SetWxToken ($accesstoken, $time) {
+    $sql = "UPDATE `wf_config` SET `cvalue` = ? WHERE `ckey` = ?";
+    $params = array($accesstoken, "wxaccesstoken");
+    ExecuteSql ($sql, $params);
+    $params = array($time, "wxtokentime");
+    ExecuteSql ($sql, $params);
 }
 
 function GetNewsList ($column, $status, $type, $keyword, $order, $page, $size, $now) {

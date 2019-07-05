@@ -43,6 +43,7 @@ switch ($do) {
     case "apigetuserinfo": require("api/getuserinfo.php");break;
     case "apilogin": require("api/login.php");break;
     case "apipushbaidu": require("api/pushbaidu.php");break;
+    case "apigetwxtoken":require("api/getwxtoken.php");break;
     case "sitemap":require("view/sitemap.php");break;
     default:
         echo "This is a 404 page.";

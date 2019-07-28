@@ -324,13 +324,24 @@ function GetArticleInfo ($articleid, $opt) {
     return $info;
 }
 
-function Login ($username, $password) {
-    $chars='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+function RandomStr ($num) {
+    $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $len = strlen($chars);
-    $token = microtime(true)."-";
-    for ($i = 0 ; $i < 32 ; $i++) {
-        $token .= $chars[mt_rand(0, $len-1)];
+    $str = "";
+    for ($i = 0 ; $i < $num ; $i++) {
+        $str .= $chars[mt_rand(0, $len-1)];
     }
+    return $str;
+}
+
+function ImgUse ($filepath) {
+    $stmt = ExecuteSql ("SELECT COUNT(*) as `count` FROM `wf_news` WHERE `thumbnail` = ? OR `content` LIKE ?", array("/".$filepath, "%/".$filepath."%"));
+    $info = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $info[0]["count"];
+}
+
+function Login ($username, $password) {
+    $token = microtime(true)."-".RandomStr (32);
     $stmt = ExecuteSql ("UPDATE `wf_user` SET `token` = ?, `lastlogin` = NOW() WHERE `user` = ? AND `pass` = MD5(?)", array($token, $username, $password));
     if ($stmt->rowCount() == 0) {
         return false;
@@ -351,13 +362,7 @@ function GetUserInfo ($token) {
 function CreateArticle ($title, $desc, $content, $type, $userid, $publishtime, $status, $file) {
     $timestamp = time();
     $path = "/uploads/article/".date("Y/m/d", $timestamp);
-    $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $len = strlen($chars);
-    $filepath = $path."/".$timestamp;
-    for ($i = 0 ; $i < 4 ; $i++) {
-        $filepath .= $chars[mt_rand(0, $len-1)];
-    }
-    $filepath .= ".png";
+    $filepath = $path."/".$timestamp.RandomStr (4).".png";
     if (!is_dir($path)) {
         mkdir (getcwd().$path, 0777, true);
     }
@@ -375,13 +380,7 @@ function EditArticle ($articleid, $title, $desc, $content, $type, $userid, $publ
         }
         $timestamp = time();
         $path = "/uploads/article/".date("Y/m/d", $timestamp);
-        $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $len = strlen($chars);
-        $filepath = $path."/".$timestamp;
-        for ($i = 0 ; $i < 4 ; $i++) {
-            $filepath .= $chars[mt_rand(0, $len-1)];
-        }
-        $filepath .= ".png";
+        $filepath = $path."/".$timestamp.RandomStr (4).".png";
         if (!is_dir(getcwd().$path)) {
             mkdir (getcwd().$path, 0777, true);
         }

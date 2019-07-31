@@ -24,10 +24,11 @@ function IsMobile() {
 }
 
 function WebsiteMsg () {
+    global $config;
     static $webmsg = null;
     if ($webmsg === null) {
         $webmsg = array();
-        $stmt = ExecuteSql ("SELECT `ckey`,`cvalue` FROM `wf_config`");
+        $stmt = ExecuteSql ("SELECT `ckey`,`cvalue` FROM `".$config["prefix"]."config`");
         $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $count = count ($arr);
         for ($i = 0 ; $i < $count ; $i++) {
@@ -197,8 +198,9 @@ function BaiduMapZoom () {
 }
 
 function SetConfig ($arr) {
+    global $config;
     foreach ($arr as $k => $v) {
-        $sql = "UPDATE `wf_config` SET `cvalue` = ? WHERE `ckey` = ?";
+        $sql = "UPDATE `".$config["prefix"]."config` SET `cvalue` = ? WHERE `ckey` = ?";
         $params = array($v, $k);
         ExecuteSql ($sql, $params);
     }
@@ -213,7 +215,8 @@ function GetWxToken () {
 }
 
 function SetWxToken ($accesstoken, $time) {
-    $sql = "UPDATE `wf_config` SET `cvalue` = ? WHERE `ckey` = ?";
+    global $config;
+    $sql = "UPDATE `".$config["prefix"]."config` SET `cvalue` = ? WHERE `ckey` = ?";
     $params = array($accesstoken, "wxaccesstoken");
     ExecuteSql ($sql, $params);
     $params = array($time, "wxtokentime");
@@ -221,16 +224,18 @@ function SetWxToken ($accesstoken, $time) {
 }
 
 function SetWxUser ($json) {
-	$obj = json_decode($json, true);
-    $sql = "INSERT INTO `wf_wxuser` (`openid`, `usermsg`) VALUES (?, ?) ON DUPLICATE KEY UPDATE `usermsg` = VALUES(`usermsg`)";
+    global $config;
+    $obj = json_decode($json, true);
+    $sql = "INSERT INTO `".$config["prefix"]."wxuser` (`openid`, `usermsg`) VALUES (?, ?) ON DUPLICATE KEY UPDATE `usermsg` = VALUES(`usermsg`)";
     $params = array($obj["openid"], $json);
 	ExecuteSql ($sql, $params);
 }
 
 function GetNewsList ($column, $status, $type, $keyword, $order, $page, $size, $now) {
+    global $config;
     static $newsList = null;
     if ($newsList === null) {
-        $sql = "SELECT ".$column." FROM `wf_news`,`wf_user` WHERE `wf_news`.`userid` = `wf_user`.`userid`";
+        $sql = "SELECT ".$column." FROM `".$config["prefix"]."news`,`".$config["prefix"]."user` WHERE `".$config["prefix"]."news`.`userid` = `".$config["prefix"]."user`.`userid`";
         $params = array();
         if ($status !== null) {
             $sql .= " AND `articlestatus` = ?";
@@ -271,9 +276,10 @@ function GetNewsList ($column, $status, $type, $keyword, $order, $page, $size, $
 }
 
 function GetNewsTotalCount ($status, $type, $keyword, $now) {
+    global $config;
     static $totalcount = null;
     if ($totalcount === null) {
-        $sql = "SELECT COUNT(*) as count FROM `wf_news` WHERE 1";
+        $sql = "SELECT COUNT(*) as count FROM `".$config["prefix"]."news` WHERE 1";
         $params = array();
         if ($status !== null) {
             $sql .= " AND `articlestatus` = ?";
@@ -304,9 +310,10 @@ function GetNewsTotalCount ($status, $type, $keyword, $now) {
 }
 
 function GetPreviousArticleInfo ($publishtime) {
+    global $config;
     static $info = null;
     if ($info === null) {
-        $stmt = ExecuteSql ("SELECT `articleid`,`title` FROM `wf_news` WHERE `publishtime`<? AND `publishtime` < NOW() AND `articlestatus`=1 ORDER BY `publishtime` DESC LIMIT 1",
+        $stmt = ExecuteSql ("SELECT `articleid`,`title` FROM `".$config["prefix"]."news` WHERE `publishtime`<? AND `publishtime` < NOW() AND `articlestatus`=1 ORDER BY `publishtime` DESC LIMIT 1",
                     array ($publishtime));
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (count($res) != 0) {
@@ -322,9 +329,10 @@ function GetPreviousArticleInfo ($publishtime) {
 }
 
 function GetNextArticleInfo ($publishtime) {
+    global $config;
     static $info = null;
     if ($info === null) {
-        $stmt = ExecuteSql ("SELECT `articleid`,`title` FROM `wf_news` WHERE `publishtime`>? AND `publishtime` < NOW() AND `articlestatus`=1 ORDER BY `publishtime` ASC LIMIT 1",
+        $stmt = ExecuteSql ("SELECT `articleid`,`title` FROM `".$config["prefix"]."news` WHERE `publishtime`>? AND `publishtime` < NOW() AND `articlestatus`=1 ORDER BY `publishtime` ASC LIMIT 1",
                     array ($publishtime));
         $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (count($res) != 0) {
@@ -340,9 +348,10 @@ function GetNextArticleInfo ($publishtime) {
 }
 
 function GetArticleInfo ($articleid, $opt) {
+    global $config;
     static $info = null;
     if ($info === null) {
-        $sql = "SELECT `title`,`desc`,`publishtime`,`content`,`thumbnail`,`articletype`,`articlestatus` FROM `wf_news` WHERE `articleid`=?";
+        $sql = "SELECT `title`,`desc`,`publishtime`,`content`,`thumbnail`,`articletype`,`articlestatus` FROM `".$config["prefix"]."news` WHERE `articleid`=?";
         if ($opt) {
             $sql .=  " AND `publishtime` < NOW() AND `articlestatus`=1";
         }
@@ -383,14 +392,16 @@ function RandomStr ($num) {
 }
 
 function ImgUse ($filepath) {
-    $stmt = ExecuteSql ("SELECT COUNT(*) as `count` FROM `wf_news` WHERE `thumbnail` = ? OR `content` LIKE ?", array("/".$filepath, "%/".$filepath."%"));
+    global $config;
+    $stmt = ExecuteSql ("SELECT COUNT(*) as `count` FROM `".$config["prefix"]."news` WHERE `thumbnail` = ? OR `content` LIKE ?", array("/".$filepath, "%/".$filepath."%"));
     $info = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $info[0]["count"];
 }
 
 function Login ($username, $password) {
+    global $config;
     $token = microtime(true)."-".RandomStr (32);
-    $stmt = ExecuteSql ("UPDATE `wf_user` SET `token` = ?, `lastlogin` = NOW() WHERE `user` = ? AND `pass` = MD5(?)", array($token, $username, $password));
+    $stmt = ExecuteSql ("UPDATE `".$config["prefix"]."user` SET `token` = ?, `lastlogin` = NOW() WHERE `user` = ? AND `pass` = MD5(?)", array($token, $username, $password));
     if ($stmt->rowCount() == 0) {
         return false;
     } else {
@@ -399,7 +410,8 @@ function Login ($username, $password) {
 }
 
 function GetUserInfo ($token) {
-    $stmt1 = ExecuteSql ("SELECT `u`.`userid`, `u`.`nickname`, `u`.`lastlogin`, `g`.* FROM `wf_user` as u,`wf_group` as g WHERE `u`.`token` = ? AND `u`.`groupid` = `g`.`groupid`", array($token));
+    global $config;
+    $stmt1 = ExecuteSql ("SELECT `u`.`userid`, `u`.`nickname`, `u`.`lastlogin`, `g`.* FROM `".$config["prefix"]."user` as u,`".$config["prefix"]."group` as g WHERE `u`.`token` = ? AND `u`.`groupid` = `g`.`groupid`", array($token));
     $info = $stmt1->fetchAll(PDO::FETCH_ASSOC);
     if (count($info) === 0) {
         return false;
@@ -408,6 +420,7 @@ function GetUserInfo ($token) {
 }
 
 function CreateArticle ($title, $desc, $content, $type, $userid, $publishtime, $status, $file) {
+    global $config;
     $timestamp = time();
     $path = "/uploads/article/".date("Y/m/d", $timestamp);
     $filepath = $path."/".$timestamp.RandomStr (4).".png";
@@ -415,12 +428,13 @@ function CreateArticle ($title, $desc, $content, $type, $userid, $publishtime, $
         mkdir (getcwd().$path, 0777, true);
     }
     move_uploaded_file($file["tmp_name"], getcwd().$filepath);
-    $stmt = ExecuteSql ("INSERT `wf_news` (`title`, `desc`, `content`, `thumbnail`, `articletype`, `userid`, `createtime`, `modifytime`, `publishtime`, `articlestatus`) VALUES (?,?,?,?,?,?,NOW(),NOW(),?,?) ",
+    $stmt = ExecuteSql ("INSERT `".$config["prefix"]."news` (`title`, `desc`, `content`, `thumbnail`, `articletype`, `userid`, `createtime`, `modifytime`, `publishtime`, `articlestatus`) VALUES (?,?,?,?,?,?,NOW(),NOW(),?,?) ",
                 array($title, $desc, $content, $filepath, $type, $userid, $publishtime, $status));
     return $stmt->rowCount();
 }
 
 function EditArticle ($articleid, $title, $desc, $content, $type, $userid, $publishtime, $status, $oldthumbnail, $file) {
+    global $config;
     if ($file) {
         $oldfilepath = getcwd().$oldthumbnail;
         if (is_file($oldfilepath)) {
@@ -433,10 +447,10 @@ function EditArticle ($articleid, $title, $desc, $content, $type, $userid, $publ
             mkdir (getcwd().$path, 0777, true);
         }
         move_uploaded_file($file["tmp_name"], getcwd().$filepath);
-        $stmt = ExecuteSql ("UPDATE `wf_news` SET `title` = ?, `desc` = ?, `content` = ?, `thumbnail` = ?, `articletype` = ?, `userid` = ?, `modifytime` = NOW(), `publishtime` = ?, `articlestatus` = ? WHERE `articleid` = ?",
+        $stmt = ExecuteSql ("UPDATE `".$config["prefix"]."news` SET `title` = ?, `desc` = ?, `content` = ?, `thumbnail` = ?, `articletype` = ?, `userid` = ?, `modifytime` = NOW(), `publishtime` = ?, `articlestatus` = ? WHERE `articleid` = ?",
                     array($title, $desc, $content, $filepath, $type, $userid, $publishtime, $status, $articleid));
     } else {
-        $stmt = ExecuteSql ("UPDATE `wf_news` SET `title` = ?, `desc` = ?, `content` = ?, `articletype` = ?, `userid` = ?, `modifytime` = NOW(), `publishtime` = ?, `articlestatus` = ? WHERE `articleid` = ?",
+        $stmt = ExecuteSql ("UPDATE `".$config["prefix"]."news` SET `title` = ?, `desc` = ?, `content` = ?, `articletype` = ?, `userid` = ?, `modifytime` = NOW(), `publishtime` = ?, `articlestatus` = ? WHERE `articleid` = ?",
                     array($title, $desc, $content, $type, $userid, $publishtime, $status, $articleid));
     }
     return $stmt->rowCount();
@@ -444,8 +458,9 @@ function EditArticle ($articleid, $title, $desc, $content, $type, $userid, $publ
 
 function GetSpiderList ($spidertype, $page, $size) {
     static $list = null;
+    global $config;
     if ($list === null) {
-        $sql = "SELECT * FROM `wf_spiderlog` WHERE 1";
+        $sql = "SELECT * FROM `".$config["prefix"]."spiderlog` WHERE 1";
         $params = array ();
         if ($spidertype != null) {
             $sql .= " AND `name` = ?";
@@ -468,9 +483,10 @@ function GetSpiderList ($spidertype, $page, $size) {
 }
 
 function GetSpiderTotalCount ($spidertype) {
+    global $config;
     static $list = null;
     if ($list === null) {
-        $sql = "SELECT COUNT(*) as count FROM `wf_spiderlog` WHERE 1";
+        $sql = "SELECT COUNT(*) as count FROM `".$config["prefix"]."spiderlog` WHERE 1";
         $params = array ();
         if ($spidertype != null) {
             $sql .= " AND `name` = ?";
@@ -484,6 +500,7 @@ function GetSpiderTotalCount ($spidertype) {
 }
 
 function SpiderLog() {
+    global $config;
     $bots = array (
         'Googlebot' => '谷歌搜索',
         'Baiduspider' => '百度搜索',
@@ -500,7 +517,7 @@ function SpiderLog() {
     $useragent = $_SERVER['HTTP_USER_AGENT'];
     foreach ($bots as $k => $v) {
         if(stristr($useragent, $k) != null) {
-            ExecuteSql ("INSERT `wf_spiderlog` (`name`, `target`, `IP`, `time`) VALUES (?,?,?,NOW())",
+            ExecuteSql ("INSERT `".$config["prefix"]."spiderlog` (`name`, `target`, `IP`, `time`) VALUES (?,?,?,NOW())",
                 array($v, $_SERVER["REQUEST_URI"], $_SERVER["REMOTE_ADDR"]));
             break;
         }

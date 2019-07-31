@@ -33,6 +33,11 @@ export default new Router({
                     path: '/spiderlist',
                     component: resolve => require(['../components/page/SpiderLog.vue'], resolve),
                     meta: { title: '蜘蛛记录' }
+                },
+                {
+                    path: '/config',
+                    component: resolve => require(['../components/page/Config.vue'], resolve),
+                    meta: { title: '系统配置' }
                 }
             ]
         },

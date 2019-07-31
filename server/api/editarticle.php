@@ -5,7 +5,7 @@ if ($info == false) {
         "errcode" => 2000,
         "errmsg" => "您的账号已在其他设备登录，您已下线"
     );
-} else if ($info["editarticle"] == 0) {
+} else if ($info["editarticle"] != 1) {
     $ret = array(
         "errcode" => -1,
         "errmsg" => "权限不足"

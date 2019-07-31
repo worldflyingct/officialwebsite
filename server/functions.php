@@ -37,54 +37,94 @@ function WebsiteMsg () {
     return $webmsg;
 }
 
-function WebsiteTitle () {
+function GetWebsiteTitle () {
     $webmsg = WebsiteMsg ();
-    echo $webmsg["title"];
+    return $webmsg["title"];
+}
+
+function WebsiteTitle () {
+    echo GetWebsiteTitle ();
+}
+
+function GetWebsiteKeyWords () {
+    $webmsg = WebsiteMsg ();
+    return $webmsg["keywords"];
 }
 
 function WebsiteKeyWords () {
+    echo GetWebsiteKeyWords ();
+}
+
+function GetWebsiteDescription () {
     $webmsg = WebsiteMsg ();
-    echo $webmsg["keywords"];
+    return $webmsg["description"];
 }
 
 function WebsiteDescription () {
+    echo GetWebsiteDescription ();
+}
+
+function GetWebsiteAddress () {
     $webmsg = WebsiteMsg ();
-    echo $webmsg["description"];
+    return $webmsg["address"];
 }
 
 function WebsiteAddress () {
+    echo GetWebsiteAddress ();
+}
+
+function GetWebsiteQQ () {
     $webmsg = WebsiteMsg ();
-    echo $webmsg["address"];
+    return $webmsg["QQ"];
 }
 
 function WebsiteQQ () {
+    echo GetWebsiteQQ ();
+}
+
+function GetWebsiteTelephone () {
     $webmsg = WebsiteMsg ();
-    echo $webmsg["QQ"];
+    return $webmsg["telephone"];
 }
 
 function WebsiteTelephone () {
+    echo GetWebsiteTelephone ();
+}
+
+function GetWebsiteMobile () {
     $webmsg = WebsiteMsg ();
-    echo $webmsg["telephone"];
+    return $webmsg["mobile"];
 }
 
 function WebsiteMobile () {
+    echo GetWebsiteMobile ();
+}
+
+function GetWebsiteEmail () {
     $webmsg = WebsiteMsg ();
-    echo $webmsg["mobile"];
+    return $webmsg["email"];
 }
 
 function WebsiteEmail () {
+    echo GetWebsiteEmail ();
+}
+
+function GetWebsiteRecord () {
     $webmsg = WebsiteMsg ();
-    echo $webmsg["email"];
+    return $webmsg["record"];
 }
 
 function WebsiteRecord () {
+    echo GetWebsiteRecord ();
+}
+
+function GetWebsiteImportantWord () {
     $webmsg = WebsiteMsg ();
-    echo $webmsg["record"];
+    return $webmsg["importantword"];
 }
 
 function WebsiteImportantWord () {
-    $webmsg = WebsiteMsg ();
-    echo $webmsg["importantword"];
+    echo GetWebsiteImportantWord ();
 }
 
 function GetSiteUrl () {
@@ -154,6 +194,14 @@ function BaiduMapY () {
 function BaiduMapZoom () {
     $webmsg = WebsiteMsg ();
     echo $webmsg["baidumapzoom"];
+}
+
+function SetConfig ($arr) {
+    foreach ($arr as $k => $v) {
+        $sql = "UPDATE `wf_config` SET `cvalue` = ? WHERE `ckey` = ?";
+        $params = array($v, $k);
+        ExecuteSql ($sql, $params);
+    }
 }
 
 function GetWxToken () {

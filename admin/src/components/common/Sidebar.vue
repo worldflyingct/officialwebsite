@@ -44,7 +44,7 @@
                         title: '系统首页'
                     },
                     {
-                        icon: 'el-icon-lx-calendar',
+                        icon: 'el-icon-rank',
                         index: 'news',
                         title: '新闻管理'
                     },
@@ -52,6 +52,11 @@
                         icon: 'el-icon-date',
                         index: 'spiderlist',
                         title: '蜘蛛记录'
+                    },
+                    {
+                        icon: 'el-icon-lx-calendar',
+                        index: 'config',
+                        title: '系统配置'
                     }
                 ]
             }

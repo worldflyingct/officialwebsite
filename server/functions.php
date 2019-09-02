@@ -207,20 +207,33 @@ function SetConfig ($arr) {
 }
 
 function GetWxToken () {
-    $webmsg = WebsiteMsg ();
-    return array(
-        "wxaccesstoken" => $webmsg["wxaccesstoken"],
-        "wxtokentime" => $webmsg["wxtokentime"]
-    );
-}
-
-function SetWxToken ($accesstoken, $time) {
     global $config;
-    $sql = "UPDATE `".$config["prefix"]."config` SET `cvalue` = ? WHERE `ckey` = ?";
-    $params = array($accesstoken, "wxaccesstoken");
-    ExecuteSql ($sql, $params);
-    $params = array($time, "wxtokentime");
-    ExecuteSql ($sql, $params);
+    $webmsg = WebsiteMsg ();
+    $nowtime = time();
+    $expiresin = 7200 - ($nowtime - intval($webmsg["wxtokentime"]));
+    if ($expiresin < 3600) {
+        $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$webmsg["wxappid"]."&secret=".$webmsg["wxappsecret"];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $res = curl_exec($ch);
+        curl_close($ch);
+        $obj = json_decode($res, true);
+        $accesstoken = $obj["access_token"];
+        $expiresin = 7200;
+        $sql = "UPDATE `".$config["prefix"]."config` SET `cvalue` = ? WHERE `ckey` = ?";
+        $params = array ($accesstoken, "wxaccesstoken");
+        ExecuteSql ($sql, $params);
+        $params = array ($nowtime, "wxtokentime");
+        ExecuteSql ($sql, $params);
+    } else {
+        $accesstoken = $webmsg["wxaccesstoken"];
+    }
+    return array(
+        "access_token" => $webmsg["wxaccesstoken"],
+        "expires_in" => $webmsg["wxtokentime"]
+    );
 }
 
 function SetWxUser ($json) {

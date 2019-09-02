@@ -231,8 +231,8 @@ function GetWxToken () {
         $accesstoken = $webmsg["wxaccesstoken"];
     }
     return array(
-        "access_token" => $webmsg["wxaccesstoken"],
-        "expires_in" => $webmsg["wxtokentime"]
+        "access_token" => $accesstoken,
+        "expires_in" => $expiresin
     );
 }
 

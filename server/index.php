@@ -52,6 +52,7 @@ switch ($do) {
     case "apisetconfig":require("api/setconfig.php");break;
     case "sitemap":require("view/sitemap.php");break;
     default:
+        header("HTTP/1.1 404 Not Found");
         echo "This is a 404 page.";
         break;
 }

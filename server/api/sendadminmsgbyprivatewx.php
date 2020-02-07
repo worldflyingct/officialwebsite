@@ -1,4 +1,9 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header("HTTP/1.1 404 Not Found");
+    echo "This is a 404 page.";
+    exit;
+}
 $webmsg = WebsiteMsg ();
 $postdata = '{"touser":"'.$webmsg["wxprivateadminopenid"].'","template_id":"'.$webmsg["wxprivatetemplateid"].'","data":{"body":{"value":"'.file_get_contents("php://input").'","color":"#173177"}}}';
 $accesstoken = GetPrivateWxToken ();

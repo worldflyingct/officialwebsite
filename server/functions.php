@@ -236,6 +236,36 @@ function GetWxToken () {
     );
 }
 
+function GetPrivateWxToken () {
+    global $config;
+    $webmsg = WebsiteMsg ();
+    $nowtime = time();
+    $expiresin = 7200 - ($nowtime - intval($webmsg["wxprivatetokentime"]));
+    if ($expiresin < 3600) {
+        $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$webmsg["wxprivateappid"]."&secret=".$webmsg["wxprivateappsecret"];
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $res = curl_exec($ch);
+        curl_close($ch);
+        $obj = json_decode($res, true);
+        $accesstoken = $obj["access_token"];
+        $expiresin = 7200;
+        $sql = "UPDATE `".$config["prefix"]."config` SET `cvalue` = ? WHERE `ckey` = ?";
+        $params = array ($accesstoken, "wxprivateaccesstoken");
+        ExecuteSql ($sql, $params);
+        $params = array ($nowtime, "wxprivatetokentime");
+        ExecuteSql ($sql, $params);
+    } else {
+        $accesstoken = $webmsg["wxprivateaccesstoken"];
+    }
+    return array(
+        "access_token" => $accesstoken,
+        "expires_in" => $expiresin
+    );
+}
+
 function SetWxUser ($json) {
     global $config;
     $obj = json_decode($json, true);
@@ -532,6 +562,7 @@ function SpiderLog() {
         if(stristr($useragent, $k) != null) {
             ExecuteSql ("INSERT `".$config["prefix"]."spiderlog` (`name`, `target`, `IP`, `time`) VALUES (?,?,?,NOW())",
                 array($v, $_SERVER["REQUEST_URI"], $_SERVER["REMOTE_ADDR"]));
+            ExecuteSql ("DELETE FROM `wf_spiderlog` WHERE `spiderlogId` NOT IN (SELECT `spiderlogId` FROM ( SELECT `spiderlogId` FROM `wf_spiderlog` ORDER BY `spiderlogId` DESC LIMIT 1000) AS tb)", array());
             break;
         }
     }

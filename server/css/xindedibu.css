@@ -123,7 +123,7 @@
 .dibu>.erweima>img{
     width: 100%;
 }
-.dibu>div>p{
+.dibu>div>a>p{
     float: left;
     line-height: 100px;
     color: #fff;

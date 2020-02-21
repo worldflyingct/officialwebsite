@@ -207,7 +207,7 @@ body {
     width: 290px;
     margin: 0 auto;
 }
-.dibu>div>p{
+.dibu>div>a>p{
     float: left;
     line-height: 100px;
     color: #fff;

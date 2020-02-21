@@ -33,7 +33,7 @@
         <img src="<?php AssetsUrl ();?>/imgs/erweima.jpg">
     </div>
     <div class="clearfix">
-        <p><?php WebsiteRecord ();?></p>
+        <a href="http://www.beian.miit.gov.cn" target="_blank" ref="nofollow"><p><?php WebsiteRecord ();?></p></a>
         <i id="chuxian" style="background: url('<?php AssetsUrl ();?>/imgs/phone123.png')no-repeat;background-size: 100%;"></i>
         <i id="weixin" style="background: url('<?php AssetsUrl ();?>/imgs/weixin123.png')no-repeat;background-size: 100%;"></i>
     </div>

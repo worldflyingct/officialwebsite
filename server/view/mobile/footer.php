@@ -9,7 +9,7 @@
     </div>
     <p class="footer-p2">邮箱：<?php WebsiteEmail ();?></p>
     <p class="footer-p3">地点：<?php WebsiteAddress ();?></p>
-    <p><?php WebsiteRecord ();?></p>
+    <a href="http://www.beian.miit.gov.cn" target="_blank" ref="nofollow"><p><?php WebsiteRecord ();?></p></a>
 </footer>
 <script>
     var _hmt = _hmt || [];
